@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{tarifs}\PYG{p}{(}\PYG{n}{entrees}\PYG{p}{)} \PYG{p}{:}
+   \PYG{k}{return} \PYG{n}{entrees}\PYG{o}{*}\PYG{l+m+mf}{5.25}\PYG{p}{,}\PYG{l+m+mi}{12}\PYG{o}{+}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{entrees}
+\end{Verbatim}

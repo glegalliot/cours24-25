@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{b}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{12}\PYG{o}{*}\PYG{n}{a}\PYG{o}{*}\PYG{n}{c}
+\PYG{k}{if} \PYG{n}{D}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0} \PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{o}{...................}\PYG{p}{)}
+\PYG{k}{elif} \PYG{n}{a}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0} \PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{o}{...................}\PYG{p}{)}
+\PYG{k}{else} \PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{o}{...................}\PYG{p}{)}
+\end{Verbatim}

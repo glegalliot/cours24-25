@@ -1,0 +1,41 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+%Exercices can1F08 can1F10 canF11
+
+\classe{\premiere spé}
+\titre{Ceinture blanche 02 - Corrigé}
+\maketitle
+
+\begin{exercice}[ : Dérivée d'une fonction polynôme]
+    Pour chacune des fonctions suivantes définies sur $\R$, déterminer l'expression algébrique de sa fonction dérivée :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $f_1(x)=-4x+1{,}6$
+        
+            \item $f_2(x)= -4x^2+10x-10$
+            \item $f_3(x)= -x^3-6x^2-5$
+        \end{enumerate}
+    \end{multicols}
+    
+    \end{exercice}
+
+    %\begin{multicols}{2}
+        \begin{enumerate}
+            \item On reconnaît une fonction affine de la forme $f_1(x)=mx+p$ avec $m=-4$ et $p=1{,}6$.\\
+            La fonction dérivée est donnée par $f_1'(x)=m$, soit ici $f_1'(x)=-4$.
+        
+            \item $f_2$ est une fonction polynôme du second degré de la forme $f_2(x)=ax^2+bx+c$.\\
+            La fonction dérivée est donnée par la somme des dérivées des fonctions $u$ et $v$ définies par $u(x)=-4x^2$ et $v(x)=10x-10$.\\
+             Comme $u'(x)=-8x$ et $v'(x)=10$, on obtient  $f_2'(x)=-8x+10$.
+            
+            \item $f_3$ est une fonction polynôme du troisième degré de la forme $f_3(x)=ax^3+bx^2+cx+d$ avec $c=0$.\\
+            La fonction dérivée est donnée par la somme des dérivées des fonctions $u$, $v$ et $w$ définies par $u(x)=-x^3$, $v(x)=-6x^2$ et $w(x)=-5$.\\
+             Comme $u'(x)=-3x^2$, $v'(x)=-12x$ et $w'(x)=0$, on obtient  $f_3'(x)=-3x^2-12x$. 
+        \end{enumerate}
+    %\end{multicols}
+
+\end{document}

@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt,french]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[thinfonts,latinmath]{uglix2}
+\pagestyle{empty}
+\begin{document}
+\titreinterro{Interrogation de cours - A}{\premiere}{04/10/2021}
+
+\exonote{}
+
+\double{
+	On définit sur $\R$ la fonction $f$ par 
+	$$f(x)=\dfrac{5x+10}{6}.$$
+	
+	\textbf{1.} Pourquoi $f$ est-elle affine ? \textbf{Justifier}\\
+	
+	\carreauxseyes{8}{4.8}
+	}
+{
+\textbf{2.} Représenter $\courbe{f}$ dans le repère ci-dessous.
+\def\xmin{-5} \def\ymin{-4}\def\xmax{7}\def\ymax{6}
+\begin{center}
+	\begin{tikzpicture}[scale=.7]
+		\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+	\end{tikzpicture}
+\end{center}
+}{8.5cm}
+
+\vspace{1cm}
+\exonote{}
+
+\double{
+	\def\xmin{-8} \def\ymin{-8}\def\xmax{8}\def\ymax{8}
+	\begin{tikzpicture}[scale=.5]
+		\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{-2*\x+6});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{3*\x-7});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{2/7*\x+1});
+		\draw (4,-4) node[below]{$\mathcal{C}_f$};
+		\draw (-7,-4) node[below]{$\mathcal{C}_g$};
+		\draw (-1,-7) node[below]{$\mathcal{C}_h$};
+		
+\end{tikzpicture}}
+{	On a représenté ici trois fonctions affines $f$, $g$ et $h$.\\
+	
+	Compléter  sans justifier:\\
+	
+	$f(x)=\qquad$\dotfill\\
+	
+	$g(x)=\qquad$\dotfill\\
+	
+	$h(x)=\qquad$\dotfill\\	
+	
+}
+{8.5cm}
+\eject
+\exonote{}
+
+$f$ est une fonction affine telle que $f(2)=1$ et $f(5)=3$.\\
+Déterminer l'expression algébrique de $f(x)$.\\
+
+\carreauxseyes{16.8}{19.2}\\
+
+\setcounter{exoNum}{0}
+\titreinterro{Interrogation de cours - B}{\premiere}{04/10/2021}
+
+\exonote{}
+
+\double{
+	On définit sur $\R$ la fonction $f$ par 
+	$$f(x)=\dfrac{-5x+20}{6}.$$
+	
+	\textbf{1.} Pourquoi $f$ est-elle affine ? \textbf{Justifier}\\
+	
+	\carreauxseyes{8}{4.8}
+}
+{
+	\textbf{2.} Représenter $\courbe{f}$ dans le repère ci-dessous.
+	\def\xmin{-5} \def\ymin{-4}\def\xmax{7}\def\ymax{6}
+	\begin{center}
+		\begin{tikzpicture}[scale=.7]
+			\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\end{tikzpicture}
+	\end{center}
+}{8.5cm}
+
+\vspace{1cm}
+\exonote{}
+
+\double{
+	\def\xmin{-8} \def\ymin{-8}\def\xmax{8}\def\ymax{8}
+	\begin{tikzpicture}[scale=.5]
+		\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{2*\x-6});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{-3*\x+7});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{-2/7*\x-1});
+		\draw (4,-4) node[below]{$\mathcal{C}_f$};
+		\draw (-7,-4) node[below]{$\mathcal{C}_g$};
+		\draw (-1,-7) node[below]{$\mathcal{C}_h$};
+		
+\end{tikzpicture}}
+{	On a représenté ici trois fonctions affines $f$, $g$ et $h$.\\
+	
+	Compléter  sans justifier:\\
+	
+	$f(x)=\qquad$\dotfill\\
+	
+	$g(x)=\qquad$\dotfill\\
+	
+	$h(x)=\qquad$\dotfill\\	
+	
+}
+{8.5cm}
+\eject
+\exonote{}
+
+$f$ est une fonction affine telle que $f(1)=5$ et $f(4)=3$.\\
+Déterminer l'expression algébrique de $f(x)$.\\
+
+\carreauxseyes{16.8}{19.2}\\
+\end{document}

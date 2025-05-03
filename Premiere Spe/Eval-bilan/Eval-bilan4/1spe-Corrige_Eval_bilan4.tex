@@ -1,0 +1,405 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+
+
+\classe{\premiere spé}
+\titre{Corrigé de l'évaluation-bilan 4 - A}
+\maketitle
+
+\exo{}
+%D'après le sujet 1P10
+Une chaîne de salons de coiffure propose à ses clients qui viennent pour une coupe, deux prestations supplémentaires cumulables :
+\begin{enumerate}[label=\textbullet]
+    \item Une coloration naturelle à base de plantes appelée « couleur-soin » ;
+    \item Des mèches blondes pour donner du relief à la chevelure, appelées « effet coup de soleil ».
+\end{enumerate}
+Le tableauc ci-contre donne la répartition incomplète des demandes des clients sur une semaine.\\
+
+\dleft{11cm}{
+   
+    On choisi un client au hasard.\\[.5em]
+    On note $C$ l'événement : « Le client souhaite une « couleur-soin » et $E$ l'événement : « Le client souhaite un « effet coup de soleil ».
+}
+{
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \rowcolor{UGLiOrange}& $C$ & $\overline{C}$ & Total\\
+        \hline
+        \cellcolor{UGLiOrange}$E$ & $ \textcolor{UGLiBlue}{10} $ & 15 & 25\\
+        \hline
+        \cellcolor{UGLiOrange}$\overline{E}$ &$ \textcolor{UGLiBlue}{14} $ & $ \textcolor{UGLiBlue}{1} $  & $ \textcolor{UGLiBlue}{15} $\\
+        \hline
+        \cellcolor{UGLiOrange}Total & 24 & $ \textcolor{UGLiBlue}{16} $ & 40\\
+        \hline
+    \end{tabular}
+}
+
+\textbf{Pour chaque question, plusieurs réponses peuvent être correctes.}
+\begin{enumerate}
+    \item La probabilité que le client ait choisi une « couleur-soin » et un « effet coup de soleil » est :
+    \begin{multicols}{4}
+        \begin{enumerate}[label=]
+            \item \ding{111} $P_E(C)$
+            \item \textcolor{UGLiBlue}{\ding{52} $P(C \cap E)$}
+            \item \textcolor{UGLiBlue}{\ding{52} $25 \%$}
+            \item \ding{111} $40\%$
+        \end{enumerate}
+    \end{multicols}
+
+    \item $P_{\overline{E}}(C)$ représente la probabilité que le client :
+    \begin{enumerate}[label=]
+        \item \ding{111} ait  choisi une « couleur-soin » sans « effet coup de soleil » ;
+        \item \ding{111} ait  choisi une « couleur-soin » et « effet coup de soleil » ;
+        \item \ding{111} n'ait pas choisi un « effet coup de soleil » sachant qu'il a choisi une « couleur-soin » ;
+        \item \textcolor{UGLiBlue}{\ding{52} ait choisi une « couleur-soin » sachant qu'il n'a pas choisi un « effet coup de soleil ».}   
+    \end{enumerate}
+
+    \item La probabilité que le client n'ait choisi ni une « couleur-soin », ni un « effet coup de soleil » est :
+    \begin{multicols}{4}
+        \begin{enumerate}[label=]
+            \item \ding{111} $25 \%$
+            \item \textcolor{UGLiBlue}{\ding{52} $2,5 \%$}
+            \item \textcolor{UGLiBlue}{\ding{52}  $\dfrac{1}{40}$}
+            \item \ding{111} $\dfrac{1}{16}$
+        \end{enumerate}
+    \end{multicols}
+\end{enumerate}
+
+\textcolor{UGLiBlue}{\textbf{Corrigé :}\\
+D'après le tableau, on a\,:
+\begin{multicols}{2}
+    \begin{tabbing}
+        \textbf{1.} $P(E\cap C)$ \= $=\dfrac{10}{40}$\\[.5em]
+        \> $=\dfrac{1}{4}$\\[.5em]
+        \> $=0{,}25$\\[.5em]
+        \> $=25\%$
+    \end{tabbing}
+    \begin{tabbing}
+        \textbf{3.} $P(\overline{C}\cap \overline{E})$ \= $=\dfrac{1}{40}$\\[.5em]
+        \> $=0,025$\\[.5em]
+        \> $=2,5\%$
+    \end{tabbing}
+\end{multicols}
+}
+\newpage
+
+\exo{}
+%Exercice 1P10
+Une agence de voyage propose deux formules week-end pour se rendre à Londres depuis Paris.\\ Les clients choisissent leur moyen de transport : train ou avion.\\ De plus, s'ils le souhaitent, ils peuvent compléter leur formule par l'option  « visites guidées ».\\[.5em]
+Une étude a produit les données suivantes\,:
+\begin{enumerate}[label=\textbullet]
+    \item 42 \% des clients optent pour l'avion ;
+    \item Parmi les clients ayant choisi le train, 44 \% choisissent aussi l'option  «\,visites guidées\,» ;
+    \item 30 \% des clients ont choisi à la fois l'avion et l'option  «\,visites guidées\,».
+\end{enumerate}
+
+ On interroge au hasard un client de l'agence ayant souscrit à une formule week-end à Londres.\\ On considère les événements suivants\,:
+ \begin{enumerate}[label=\textbullet]
+     \item $A$ :  le client a choisi l'avion ;
+     \item $V$ : le client a choisi l'option  «\,visites guidées\,».
+ \end{enumerate}
+
+\begin{enumerate}
+    \item Donner les probabilités $P(A)$, $P_{\bar{A}}(V)$ et $P(A \cap V)$ et construire un arbre de probabilités représentant la situation.
+    \item Calculer $P_A(V)$.
+    \item Démontrer que la probabilité pour que le client interrogé ait choisi l'option  «\,visites guidées\,»  est égale à $0{,}555$ environ.
+    \item Calculer la probabilité pour que le client interrogé ait pris l'avion sachant qu'il n'a pas choisi l'option  «\,visites guidées\,». Arrondir le résultat au centième.
+    \item On interroge au hasard deux clients de manière aléatoire et indépendante.\\ Quelle est la probabilité qu'aucun des deux ne prenne l'option  «\,visites guidées\,»\,? On donnera les résultats sous forme de valeurs approchées à $10^{-3}$ près.
+\end{enumerate}
+
+\textcolor{UGLiBlue}{
+    \textbf{Corrigé :}
+\begin{enumerate}
+    \item De l'énoncé, on déduit que\,:\\ $P(A)=0{,}42$\\ $P_{\bar{A}}(V)=0{,}44$\\ $P(A \cap V)=0{,}3$\\On peut alors construire cet arbre de probabilités\,:
+    \def\abun{$A$}
+    \def\alun{0,42}
+    \def\abdeux{$\barmaj{A}$}
+    \def\aldeux{0,58}
+    \def\abtrois{$V$}
+    \def\altrois{}
+    \def\abquatre{$\barmaj{V}$}
+    \def\alquatre{}
+    \def\abcinq{$V$}
+    \def\alcinq{0,44}
+    \def\absix{$\barmaj{V}$}
+    \def\alsix{0,56}
+    \begin{center}
+        \arbreproba
+    \end{center}
+    \item On a donc $P_{A}(V)=\dfrac{P(A \cap V)}{P(A)}=\dfrac{0{,}3}{0{,}42}=\dfrac{30}{42}=\dfrac{5}{7} $.
+    \item Comme $A$ et $\bar A$ forment une partition de l'univers, on peut appliquer la loi des probabilités totales\,: \\$P(V)=P(A \cap V)+P(\bar{A} \cap V). $\\Or $P(\bar{A} \cap V)=P(\bar{A}) \times P_{\bar{A}}(V)=(1-0{,}42) \times 0{,}44=0{,}2552$.\\Donc $P(V)=0{,}3+0{,}2552=0{,}5552$.
+    \item On a $P_{\bar{V}}(A)=\dfrac{P(\bar{V} \cap A)}{P(\bar{V})}=\dfrac{P(A \cap \bar{V})}{P(\bar{V})}=\dfrac{P(A) \times P_A(\bar{V})}{P(\bar{V})}$.\\Or, d'après la question précédente\,:\,$P(\bar{V})=1-P(V)=1-0{,}5552=0{,}4448$\\et d'après la question $2: P_{A}(\bar{V})=1-P_{A}(V)=1-\dfrac{5}{7}=\dfrac{2}{7}$.\\Donc $P_{\bar{V}}(A)=\dfrac{0{,}42 \times \dfrac{12}{42}}{0{,}4448} \approx0{,}27$.
+    \item On a vu que $P(\bar{V})=1-0{,}5552=0{,}4448$.\\Comme les deux événements sont indépendants, en les appelant $\bar {V_1}$ et $\bar{V_2}$, on a : $P(\bar{V_1}\cap\bar{V_2})=P(\bar{V_1})\times P(\bar{V_2})$\\La probabilité cherchée est donc égale à $P(\bar{V_1}\cap\bar{V_2})=0{,}4448 \times 0{,}4448\approx0{,}198$.
+\end{enumerate}
+}
+
+
+\exo{}
+Soit $x$ un réel compris entre 0 et 1.\\
+Soient $A$ et $B$ deux événements tels que $\quad P(A)=x, \quad P(B)=1-x\quad$ et $\quad P(A \cap B)=\dfrac{3}{16}$.\\[.5em]
+Déterminer toutes les valeurs de $x$ possibles pour que $A$ et $B$ soient indépendants.\\
+
+\textcolor{UGLiBlue}{
+    \textbf{Corrigé :}
+    \begin{tabbing}
+        $A$ et $B$ sont indépendants$\quad$ \=$\iff\quad P(A \cap B)=P(A) \times P(B)$\\
+        \>  $\iff\quad \dfrac{3}{16}=x \times (1-x)$\\[.5em]
+        \>  $\iff\quad \dfrac{3}{16}=x-x^2$\\[.5em]
+        \>  $\iff\quad x^2-x+\dfrac{3}{16}=0$
+    \end{tabbing}
+    Le discriminant de ce polynôme est :
+    \begin{tabbing}
+        $\Delta$ \= $=(-1)^2-4\times 1\times \dfrac{3}{16}$\\
+        \> $=1-\dfrac{3}{4}$\\
+        \> $=\dfrac{1}{4}$
+    \end{tabbing} 
+    Les racines de ce polynôme sont donc :
+    \begin{tabbing}
+        $x_1$ \= $=\dfrac{+1+\sqrt{\dfrac{1}{4}}}{2\times 1}\qquad$ \= et \qquad $x_2$ \= $=\dfrac{+1-\sqrt{\dfrac{1}{4}}}{2\times 1}$\\[.5em]
+        \> $=\dfrac{1+\dfrac{1}{2}}{2}$ \> \> $=\dfrac{1-\dfrac{1}{2}}{2}$\\[.5em]
+        $x_1$\> $=\dfrac{3}{2}\times \dfrac{1}{2}$ \> $\phantom{et }\qquad x_2$\> $=\dfrac{1}{2}\times \dfrac{1}{2}$\\[.5em]
+        \> $=\dfrac{3}{4}$ \> \> $=\dfrac{1}{4}$
+    \end{tabbing}
+    On a donc : $A$ et $B$ sont indépendants si et seulement si $x=\dfrac{3}{4}$ ou $x=\dfrac{1}{4}$.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\setcounter{section}{0}
+
+\classe{\premiere spé}
+\titre{Corrigé de l'évaluation-bilan 4 - B}
+\maketitle
+
+\exo{}
+%D'après le sujet 1P10
+Une chaîne de salons de coiffure propose à ses clients qui viennent pour une coupe, deux prestations supplémentaires cumulables :
+\begin{enumerate}[label=\textbullet]
+    \item Une coloration naturelle à base de plantes appelée « couleur-soin » ;
+    \item Des mèches blondes pour donner du relief à la chevelure, appelées « effet coup de soleil ».
+\end{enumerate}
+Le tableauc ci-contre donne la répartition incomplète des demandes des clients sur une semaine.\\
+
+\dleft{11cm}{
+   
+    On choisi un client au hasard.\\[.5em]
+    On note $C$ l'événement : « Le client souhaite une « couleur-soin » et $E$ l'événement : « Le client souhaite un « effet coup de soleil ».
+}
+{
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \rowcolor{UGLiOrange}& $C$ & $\overline{C}$ & Total\\
+        \hline
+        \cellcolor{UGLiOrange}$E$ & $\textcolor{UGLiBlue}{8} $ & 10 & 18\\
+        \hline
+        \cellcolor{UGLiOrange}$\overline{E}$ &$\textcolor{UGLiBlue}{17}$ & $\textcolor{UGLiBlue}{5}$  & $\textcolor{UGLiBlue}{22}$\\
+        \hline
+        \cellcolor{UGLiOrange}Total & 25 & $\textcolor{UGLiBlue}{15}$  & 40\\
+        \hline
+    \end{tabular}
+}
+
+\textbf{Pour chaque question, plusieurs réponses peuvent être correctes.}
+\begin{enumerate}[label=]
+    \item La probabilité que le client ait choisi une « couleur-soin » et un « effet coup de soleil » est :
+    \begin{multicols}{4}
+        \begin{enumerate}[label=]
+            \item \textcolor{UGLiBlue}{\ding{52}$P(C \cap E)$}
+            \item \ding{111} $P_E(C)$
+            \item \textcolor{UGLiBlue}{\ding{52} $20\%$}
+            \item \ding{111} $32\%$
+        \end{enumerate}
+    \end{multicols}
+
+    \item $P_{\overline{E}}(C)$ représente la probabilité que le client :
+    \begin{enumerate}[label=]
+        \item \ding{111} n'ait pas choisi un « effet coup de soleil » sachant qu'il a choisi une « couleur-soin » ;
+        \item \textcolor{UGLiBlue}{\ding{52} ait choisi une « couleur-soin » sachant qu'il n'a pas choisi un « effet coup de soleil » ;}
+        \item \ding{111} ait  choisi une « couleur-soin » sans « effet coup de soleil » ;
+        \item \ding{111} ait  choisi une « couleur-soin » et « effet coup de soleil » ;
+    \end{enumerate}
+
+    \item La probabilité que le client n'ait choisi ni une « couleur-soin », ni un « effet coup de soleil » est :
+    \begin{multicols}{4}
+        \begin{enumerate}[label=]
+            \item \ding{111} $5 \%$
+            \item \textcolor{UGLiBlue}{\ding{52} $12,5 \%$}
+            \item \ding{111}$\dfrac{5}{15}$
+            \item \ding{111} $\dfrac{4}{40}$
+        \end{enumerate}
+    \end{multicols}
+\end{enumerate}
+
+\textcolor{UGLiBlue}{\textbf{Corrigé :}\\
+D'après le tableau, on a\,:
+\begin{multicols}{2}
+    \begin{tabbing}
+        \textbf{1.} $P(C\cap E)$ \= $=\dfrac{8}{40}$\\[.5em]
+        \> $=\dfrac{1}{5}$\\[.5em]
+        \> $=0{,}2$\\[.5em]
+        \> $=20\%$
+    \end{tabbing}
+    \begin{tabbing}
+        \textbf{3.} $P(\overline{C}\cap \overline{E})$ \= $=\dfrac{5}{40}$\\[.5em]
+        \> $=\dfrac{1}{8}$\\[.5em]
+        \> $=0,125$\\[.5em]
+        \> $=12,5\%$
+    \end{tabbing}
+\end{multicols}
+}
+
+\newpage
+
+\exo{}
+%Exercice 1P10
+Une agence de voyage propose deux formules week-end pour se rendre à Londres depuis Paris.\\ Les clients choisissent leur moyen de transport : train ou avion.\\ De plus, s'ils le souhaitent, ils peuvent compléter leur formule par l'option  « visites guidées ».\\[.5em]
+Une étude a produit les données suivantes\,:
+\begin{enumerate}[label=\textbullet]
+    \item 49 \% des clients optent pour l'avion ;
+    \item Parmi les clients ayant choisi le train, 35 \% choisissent aussi l'option  «\,visites guidées\,» ;
+    \item 25 \% des clients ont choisi à la fois l'avion et l'option  «\,visites guidées\,».
+\end{enumerate}
+
+ On interroge au hasard un client de l'agence ayant souscrit à une formule week-end à Londres.\\ On considère les événements suivants\,:
+ \begin{enumerate}[label=\textbullet]
+     \item $A$ :  le client a choisi l'avion ;
+     \item $V$ : le client a choisi l'option  «\,visites guidées\,».
+ \end{enumerate}
+
+\begin{enumerate}
+    \item Donner les probabilités $P(A)$, $P_{\bar{A}}(V)$ et $P(A \cap V)$ et construire un arbre de probabilités représentant la situation.
+    \item Calculer $P_A(V)$.
+    \item Démontrer que la probabilité pour que le client interrogé ait choisi l'option  «\,visites guidées\,»  est égale à $0{,}429$ environ.
+    \item Calculer la probabilité pour que le client interrogé ait pris l'avion sachant qu'il n'a pas choisi l'option  «\,visites guidées\,». Arrondir le résultat au centième.
+    \item On interroge au hasard deux clients de manière aléatoire et indépendante.\\ Quelle est la probabilité qu'aucun des deux ne prenne l'option  «\,visites guidées\,»\,? On donnera les résultats sous forme de valeurs approchées à $10^{-3}$ près.
+\end{enumerate}
+
+\textcolor{UGLiBlue}{
+    \textbf{Corrigé :}
+\begin{enumerate}
+    \item De l'énoncé, on déduit que\,:\\ $P(A)=0{,}49$\\ $P_{\bar{A}}(V)=0{,}35$\\ $P(A \cap V)=0{,}25$\\On peut alors construire cet arbre de probabilités\,:
+    \def\abun{$A$}
+    \def\alun{0,49}
+    \def\abdeux{$\barmaj{A}$}
+    \def\aldeux{0,51}
+    \def\abtrois{$V$}
+    \def\altrois{}
+    \def\abquatre{$\barmaj{V}$}
+    \def\alquatre{}
+    \def\abcinq{$V$}
+    \def\alcinq{0,35}
+    \def\absix{$\barmaj{V}$}
+    \def\alsix{0,65}
+    \begin{center}
+        \arbreproba
+    \end{center}
+    \item On a donc $P_{A}(V)=\dfrac{P(A \cap V)}{P(A)}=\dfrac{0{,}25}{0{,}49}=\dfrac{25}{49}$.
+    \item Comme $A$ et $\bar A$ forment une partition de l'univers, on peut appliquer la loi des probabilités totales\,: \\
+    $P(V)=P(A \cap V)+P(\bar{A} \cap V). $\\
+    Or $P(\bar{A} \cap V)=P(\bar{A}) \times P_{\bar{A}}(V)=(1-0{,}49) \times 0{,}35=0{,}1785$.\\
+    Donc $P(V)=0{,}25+0{,}1785=0{,}4285$.
+    \item On a $P_{\bar{V}}(A)=\dfrac{P(\bar{V} \cap A)}{P(\bar{V})}=\dfrac{P(A \cap \bar{V})}{P(\bar{V})}=\dfrac{P(A) \times P_A(\bar{V})}{P(\bar{V})}$.\\
+    Or, d'après la question précédente\,:\,$P(\bar{V})=1-P(V)=1-0{,}4285=0{,}5715$\\
+    et d'après la question $2: P_{A}(\bar{V})=1-P_{A}(V)=1-\dfrac{25}{49}=\dfrac{24}{49}$.\\Donc $P_{\bar{V}}(A)=\dfrac{0{,}49 \times \dfrac{24}{49}}{0{,}5715} \approx0{,}42$.
+    \item On a vu que $P(\bar{V})=1-0{,}4285=0{,}5715$.\\Comme les deux événements sont indépendants, en les appelant $\bar {V_1}$ et $\bar{V_2}$, on a : $P(\bar{V_1}\cap\bar{V_2})=P(\bar{V_1})\times P(\bar{V_2})$\\La probabilité cherchée est donc égale à $P(\bar{V_1}\cap\bar{V_2})=0{,}5715 \times 0{,}5715\approx0{,}327$.
+\end{enumerate}
+}
+
+
+\exo{}
+Soit $x$ un réel compris entre 0 et 1.\\
+Soient $A$ et $B$ deux événements tels que $\quad P(A)=x, \quad P(B)=1-x\quad$ et $\quad P(A \cap B)=\dfrac{2}{9}$.\\[.5em]
+Déterminer toutes les valeurs de $x$ possibles pour que $A$ et $B$ soient indépendants.\\
+
+\textcolor{UGLiBlue}{
+    \textbf{Corrigé :}
+    \begin{tabbing}
+        $A$ et $B$ sont indépendants$\quad$ \=$\iff\quad P(A \cap B)=P(A) \times P(B)$\\
+        \>  $\iff\quad \dfrac{2}{9}=x \times (1-x)$\\[.5em]
+        \>  $\iff\quad \dfrac{2}{9}=x-x^2$\\[.5em]
+        \>  $\iff\quad x^2-x+\dfrac{2}{9}=0$
+    \end{tabbing}
+    Le discriminant de ce polynôme est :
+    \begin{tabbing}
+        $\Delta$ \= $=(-1)^2-4\times 1\times \dfrac{2}{9}$\\
+        \> $=1-\dfrac{8}{9}$\\
+        \> $=\dfrac{1}{9}$
+    \end{tabbing} 
+    Les racines de ce polynôme sont donc :
+    \begin{tabbing}
+        $x_1$ \= $=\dfrac{+1+\sqrt{\dfrac{1}{9}}}{2\times 1}\qquad$ \= et \qquad $x_2$ \= $=\dfrac{+1-\sqrt{\dfrac{1}{9}}}{2\times 1}$\\[.5em]
+        \> $=\dfrac{1+\dfrac{1}{3}}{2}$ \> \> $=\dfrac{1-\dfrac{1}{3}}{2}$\\[.5em]
+        $x_1$\> $=\dfrac{4}{3}\times \dfrac{1}{2}$ \> $\phantom{et }\qquad x_2$\> $=\dfrac{2}{3}\times \dfrac{1}{2}$\\[.5em]
+        \> $=\dfrac{2}{3}$ \> \> $=\dfrac{1}{3}$
+    \end{tabbing}
+    On a donc : $A$ et $B$ sont indépendants si et seulement si $x=\dfrac{2}{3}$ ou $x=\dfrac{1}{3}$.
+}
+
+
+
+\end{document}
+
+% Corrigé exercice 1 sujet A
+
+\subsection*{Corrigé sujet A}
+\textbf{1.} 
+
+%Corrigé exercice 2 sujet B
+
+\subsection*{Corrigé sujet A}
+
+\textbf{1.} De l'énoncé, on déduit que\,:\\ $P(A)=0{,}49$\\ $P_{\bar{A}}(V)=0{,}35$\\ $P(A \cap V)=0{,}25$\\On peut alors construire cet arbre de probabilités\,: \\\begin{tikzpicture}[baseline]
+
+    \tikzset{
+      point/.style={
+        thick,
+        draw,
+        cross out,
+        inner sep=0pt,
+        minimum width=5pt,
+        minimum height=5pt,
+      },
+    }
+    \clip (-5,-1) rectangle (18,10);
+    	\draw[color ={blue}] (0.6,2.3)--(5,5);
+	\draw[color ={blue}] (0.6,2.3)--(5,1);
+	\draw[color ={blue}] (5,5)--(9,7.5);
+	\draw[color ={blue}] (5,5)--(9,4);
+	\draw[color ={blue}] (5,1)--(9,3);
+	\draw[color ={blue}] (5,1)--(9,0);
+	\draw (5,5.2) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$A$}}};
+	\draw (5,1.3) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$\bar A$}}};
+	\draw (0,2.3) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$\Omega$}}};
+	\draw (2.5,4.1) node[anchor = center] {\colorbox {white}{\scriptsize  \color{black}{$0{,}49$}}};
+	\draw (2.5,2.1) node[anchor = center] {\colorbox {white}{\scriptsize  \color{black}{$0{,}51$}}};
+	\draw (6.8,0.9) node[anchor = center] {\colorbox {white}{\scriptsize  \color{black}{$0{,}65$}}};
+	\draw (6.8,2.7) node[anchor = center] {\colorbox {white}{\scriptsize  \color{black}{$0{,}35$}}};
+	\draw (13.5,7.8) node[anchor = center] {\colorbox {white}{\normalsize  \color{red}{$P(A\cap V)=0{,}25$}}};
+	\draw (9,7.7) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$V$}}};
+	\draw (9,4.3) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$\bar V$}}};
+	\draw (9,3.1) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$V$}}};
+	\draw (9,0.2) node[anchor = center] {\colorbox {white}{\normalsize  \color{black}{$\bar V$}}};
+
+\end{tikzpicture}
+\\On a donc $P_{A}(V)=\dfrac{P(A \cap V)}{P(A)}=\dfrac{0{,}25}{0{,}49}=\dfrac{25}{49} $.
+
+\medskip
+\textbf{2.} Comme $A$ et $\bar A$ forment une partition de l'univers, on peut appliquer la loi des probabilités totales\,: \\$P(V)=P(A \cap V)+P(\bar{A} \cap V). $\\Or $P(\bar{A} \cap V)=P(\bar{A}) \times P_{\bar{A}}(V)=(1-0{,}49) \times 0{,}35=0{,}179$.\\Donc $P(V)=0{,}25+0{,}179=0{,}429$.
+
+\medskip
+\textbf{3.} On a $P_{\bar{V}}(A)=\dfrac{P(\bar{V} \cap A)}{P(\bar{V})}=\dfrac{P(A \cap \bar{V})}{P(\bar{V})}=\dfrac{P(A) \times P_A(\bar{V})}{P(\bar{V})}$.\\Or, d'après la question précédente\,:\,$P(\bar{V})=1-P(V)=1-0{,}429=0{,}572$\\et d'après la question $1: P_{A}(\bar{V})=1-P_{A}(V)=1-\dfrac{25}{49}=\dfrac{24}{49}$.\\Donc $P_{\bar{V}}(A)=\dfrac{0{,}49 \times \dfrac{24}{49}}{0{,}572} \approx0{,}42$.
+
+\medskip
+\textbf{4.} On a vu que $P(\bar{V})=1-0{,}429=0{,}572$.\\Comme les deux événements sont indépendants, en les appelant $\bar {V_1}$ et $\bar{V_2}$, on a : $P(\bar{V_1}\cap\bar{V_2})=P(\bar{V_1})\times P(\bar{V_2})$\\La probabilité cherchée est donc égale à $P(\bar{V_1}\cap\bar{V_2})=0{,}572 \times 0{,}572\approx0{,}327$.
+
+\end{document}

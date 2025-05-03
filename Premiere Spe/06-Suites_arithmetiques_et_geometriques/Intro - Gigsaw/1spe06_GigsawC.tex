@@ -1,0 +1,115 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spe}
+\titre{Suites arithmétiques et géométriques}
+\maketitle
+\section*{Partie C}
+
+
+\exo{ : Compléter les suites logiques}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	\rowcolor{UGLiOrange}Rang & \hspace{0.5cm}0\hspace{0.5cm} & \hspace{0.5cm}1\hspace{0.5cm} & \hspace{0.5cm}2\hspace{0.5cm} & \hspace{0.5cm}3\hspace{0.5cm} & \hspace{0.5cm}4\hspace{0.5cm} & \hspace{0.5cm}5\hspace{0.5cm} & \hspace{0.5cm}6\hspace{0.5cm} & \hspace{0.5cm}7\hspace{0.5cm} & \hspace{0.5cm}8\hspace{0.5cm}  \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 1 : & $1$ & $3$ & $5$ & $7$ & $9$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 2 : & $81$ & $27$ & $9$ & $3$ & $1$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 3 : & $15$ & $10$ & $5$ & $0$ & $-5$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 4 : & $8$ & $-4$ & $2$ & $-1$ & $\dfrac{1}{2}$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 5 : & $1$ & $5$ & $13$ & $29$ & $61$ & & & & \\
+	\hline
+\end{tabular}
+
+
+\begin{definition}[]
+	Une suite $(u_n)$ est dite \textbf{arithmétique} s'il existe un réel $r$ tel que pour tout entier $n$ on a  $u_{n+1}=u_n+r$.\\
+	Cette expression est appelée formule de récurrence.\\
+	Le nombre $r$ est appelé \textbf{raison} de la suite $(u_n)$.
+\end{definition}
+
+\begin{definition}[]
+	Une suite $(u_n)$ est dite \textbf{géométrique} s'il existe un réel $q$ tel que pour tout entier $n$ on a  $u_{n+1}=q\times u_n$.\\
+	Cette expression est appelée formule de récurrence.\\
+	Le nombre $q$ est appelé \textbf{raison} de la suite $(u_n)$.
+\end{definition}
+
+
+
+
+\exo{ : Compléter lorsque la suite est soit arithmétique, soit géométrique}
+\begin{tabular}{|c|p{3.5cm}|p{3.5cm}|c|c|c|}
+	\hline
+	 & Relation de récurrence de la suite & \centering Nature & $u_0$ & $u_1$ & $u_{10}$ \\
+	 \hline
+	 Suite 1 & & & \hspace{1.5cm} & \hspace{1.5cm} & \hspace{1.5cm} \\
+	 \hline
+	 Suite 2 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+	 Suite 3 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+	 Suite 4 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+	 Suite 5 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+\end{tabular}
+
+
+
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{1cm}
+\exo{}
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item 	 Le programme suivant est en lien avec l'une des suites de la page 1. Laquelle ?\\[.7em]
+		\carreauxseyes{7.2}{2.4}
+        \begin{pyc}
+            \begin{minted}{python}
+u = 8
+
+for i in range(n):
+   u = u * (-0.5)
+print(u)
+            \end{minted}
+        \end{pyc}
+
+		Quelle est la valeur finale de $u$ si $n$ vaut 10 ?\\[.7em]
+		\carreauxseyes{7.2}{2.4}\\[1em]
+		\begin{minipage}{2cm}
+			\includegraphics[width=1.8cm]{qr_code_python}
+		\end{minipage}
+		\begin{minipage}{5.5cm}
+			\href{https://www.numworks.com/fr/professeurs/tutoriels/python/}{\textbf{Tutoriel vidéo :}}\\
+			https://www.numworks.com/ \\
+			fr/professeurs/tutoriels/ \\
+			python/ \\
+		\end{minipage}
+		
+		
+		\item	Compléter le programme ci-dessous pour qu'il puisse afficher le terme de rang $n$ de la suite 3.
+		\begin{pyc}
+            \begin{minted}{python}
+u = ...
+
+for i in range(n):
+   u = ...
+print(u)
+            \end{minted}
+        \end{pyc}
+
+		\item 	\'Ecrire un programme qui détermine le rang à partir duquel les termes de la suite 2 sont inférieurs à 0,0001.\\[.5em]
+		\carreauxseyes{7.2}{6.4}
+	\end{enumerate}
+\end{multicols}
+
+
+
+\end{document}

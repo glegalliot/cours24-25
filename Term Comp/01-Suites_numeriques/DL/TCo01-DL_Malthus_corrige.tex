@@ -1,0 +1,114 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+\begin{document}
+\classe{\terminale Comp}
+\titre{Corrigé du DL - Modèle de Malthus}
+\maketitle
+
+\textcolor{UGLiBlue}{En 1798, Thomas Malthus publie \textit{An essay on the principle of population} dans lequel il émet l'hypothèse suivante : l'accroissement de la population, beaucoup plus rapide que celui des ressources alimentaires, conduira son pays à la famine.\\[.5em]
+En 1800, la population de l'Angleterre était estimée à 8 millions d'habitants et l'agriculture anglaise pouvait nourrir 10 millions de personnes.\\
+Malthus admet que la population augmente de 2,8 \% chaque année et que les progrès de l'agriculture permettent de nourrir 400 000 personnes de plus chaque année.\\[.5em]
+Pour tout entier naturel $n$, on note $p_n$ la population (en millions) en 1800$+n$ et $a_n$ le nombre de personnes (en millions) pouvant être nourries par l'agriculture la même année. Ainsi $p_0=8$ et $a_0=10$. \\[.5em]
+\textit{On arrondira si besoin les réponses à 0,001.}}
+
+\begin{enumerate}
+    \item \textcolor{UGLiBlue}{Donner la relation de récurrence permettant d'exprimer $p_{n+1}$ en fonction de $p_n$ pour $n\in\N$.\\
+    En déduire l'expression de $p_n$ en fonction de $n$.}
+    \begin{tabbing}
+        Soit $n\in\N, \qquad p_{n+1}$   \=  $=\left(1+\dfrac{2,8}{100}\right) p_n$\\
+        \>  $=1,028\ p_n$
+    \end{tabbing}
+    $(p_n)$ est donc une suite géométrique de premier terme $p_0=8$ et de raison $1,028$.\\
+    D'où $\quad p_n=8\times 1,028^n$.
+    \item \textcolor{UGLiBlue}{Donner la relation de récurrence permettant d'exprimer $a_{n+1}$ en fonction de $a_n$ pour $n\in\N$.\\
+    En déduire l'expression de $a_n$ en fonction de $n$.}\\[.5em]
+    $400\ 000=0,4$ millions.\\
+    Soit $n\in\N, \qquad a_{n+1}=a_n+0,4$.\\[.5em]
+    $(a_n)$ est donc une suite arithmétique de premier terme $a_0=10$ et de raison $0,4$.\\
+    D'où $\quad a_n=0,4 n+10$.
+    \item \textcolor{UGLiBlue}{Calculer $p_{50}$ et $a_{50}$. 
+    Interpréter ces résultats dans le contexte de l'exercice.}
+    \begin{multicols}{2}
+        \begin{tabbing}
+            $p_{50}$    \=$=8\times 1,028^{50}$\\
+                \>  $\approx 31,8$
+        \end{tabbing}
+        \begin{tabbing}
+            $a_{50}$    \=$=0,4\times 50+10$\\
+                \>  $=30$
+        \end{tabbing}
+    \end{multicols}
+    D'après ce modèle, en 1850, la population de l'Angleterre aurant du être de 31,8 millions de personnes environ et l'agriculture n'aurait pu nourrir que 30 millions de personnes.
+
+    \item \textcolor{UGLiBlue}{Calculer les limites des suites $(p_n)$ et $(a_n)$.}
+
+        \begin{tabbing}
+            $\lim\limits_{n\to+\infty} 1,028^n=+\infty \qquad$ \= donc $\qquad \lim\limits_{n\to+\infty} 8\times 1,028^n=+\infty\qquad$ \= et $\qquad \lim\limits_{n\to+\infty} p_n=+\infty$\\[.5em]
+            $\lim\limits_{n\to+\infty} 0,4\ n=+\infty$  \> donc $\qquad \lim\limits_{n\to+\infty} 0,4\ n+10=+\infty$    \> et $\qquad \lim\limits_{n\to+\infty} a_n=+\infty$
+        \end{tabbing}
+  
+    \item \textcolor{UGLiBlue}{Représenter graphiquement les termes des suites $p$ et $a$ pour $n=0, 10, ..., 50$.\\
+    Vers quelle année la situation semble-t-elle devenir critique ?}
+    \begin{center}
+        \def\xmin{-10} \def\ymin{-10}\def\xmax{60}\def\ymax{40}
+        \begin{tikzpicture}[scale=.13]
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+            %\reperenb{\xmin}{\ymin}{\xmax}{\ymax}{$x$}{$y$}
+            \draw[ultra thin,style=UGLiBlue,step=1](\xmin,\ymin) grid (\xmax,\ymax);
+            \draw[style=UGLiBlue,step=10](\xmin,\ymin) grid (\xmax,\ymax);
+            \draw[thick, >=stealth,->] (\xmin,0) --(\xmax,0) node[below left] {$n$};
+            \draw[thick, >=stealth,->] (0,\ymin) --(0,\ymax) node[below left, UGLiRed] {$p_n$};
+            \draw (0,0) node[below left]{$0$};
+            \draw (0,35) node[left,UGLiDarkGreen]{$a_n$};
+
+            \draw (10,1)--(10,-1) node[below]{$10$};
+            \draw (20,1)--(20,-1) node[below]{$20$};
+            \draw (30,1)--(30,-1) node[below]{$30$};
+            \draw (40,1)--(40,-1) node[below]{$40$};
+            \draw (50,1)--(50,-1) node[below]{$50$};
+
+            \draw (1,10)--(-1,10) node[left]{$10$};
+            \draw (1,20)--(-1,20) node[left]{$20$};
+            \draw (1,30)--(-1,30) node[left]{$30$};
+            %\draw (1,40)--(-1,40) node[left]{$40$};
+            %\draw (1,50)--(-1,50) node[left]{$50$};
+
+            \draw (0,8) \ball (10,10.54) \ball (20,13.9) \ball (30,18.32) \ball (40,24.14) \ball (50,31.82) \ball;
+
+            \shade [ball color=UGLiDarkGreen] (0,10) circle (20pt);
+            \shade [ball color=UGLiDarkGreen] (10,14) circle (20pt);
+            \shade [ball color=UGLiDarkGreen] (20,18) circle (20pt);
+            \shade [ball color=UGLiDarkGreen] (30,22) circle (20pt);
+            \shade [ball color=UGLiDarkGreen] (40,26) circle (20pt);
+            \shade [ball color=UGLiDarkGreen] (50,30) circle (20pt);
+
+            \draw[UGLiDarkGreen, domain=0:\xmax,variable=\x] plot({\x},{10+0.4*\x});
+            \draw[UGLiRed, domain=0:\xmax,variable=\x] plot({\x},{8*1.028^\x});
+            %\draw[ultra thick,->,>=stealth] (1,1) -- node[above]{$1$} (2,1) ;
+
+            %\draw[ultra thick,UGLiOrange,->,>=stealth] (2,1) -- node[right]{$m=3$} (2,4) ;
+
+            %\draw[ultra thick,UGLiRed,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{3*\x-2});
+            %\draw 	(2.2,4.5) node[UGLiRed, right]{$(d_2)$};
+        \end{tikzpicture}
+    \end{center}
+    La situation devient critique lorsque les termes de la suite $(p_n)$ deviennent supérieurs à ceux de la suite $(a_n)$. On lit graphiquement que ce phénomène a lieu autour pour $n\approx 45$ soit en 1845 environ.
+
+    \item \textcolor{UGLiBlue}{À l'aide de la calculatrice, déterminer précisément en quelle année, selon ce modèle, la situation aurait dû devenir critique.}\\[.5em]
+    À l'aide de la calculatrice, on a  :
+    $$p_{45}\approx 27,72\quad \text{et} \quad a_{45}=28\qquad \text{mais}\qquad p_{46}\approx28,5\quad \text{et}\quad a_{46}=28.4.$$
+    D'après ce modèle, la population dépasse les ressources disponibles au cours de l'année 1845.
+
+    \item \textcolor{UGLiBlue}{Que s'est-il réellement passé en Angleterre ? \textit{Faire des recherches.}\\
+    Quelles critiques peut-on faire du modèle proposé par Malthus ?}\\[.5em]
+    Thomas Malthus était partisan du contrôle des naissances pour éviter une croissance trop forte de la population. Son modèle sert d'argument en faveur de la mise en place de cette politique.\\
+    En 1850, la population de l'Angleterre était d'environ 16,5 millions d'habitants. Le modèle de Malthus prévoyait une population d'environ 32 millions d'habitants ; il projetait une croissance bien plus forte que la croissance réelle.
+
+
+\end{enumerate}
+\end{document}

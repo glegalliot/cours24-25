@@ -1,0 +1,110 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+\usepackage{yhmath}
+
+\pagestyle{empty}
+
+\begin{document}
+\classe{\premiere spé}
+\titre{Cercle trigonométrique}
+\maketitle
+
+$\repaff$ est un repère orthonormé du plan.\\
+Le sens direct est le sens trigonométrique (sens contraire des aiguilles d'une montre).\\
+\begin{center}
+	\begin{tikzpicture}[scale = 4]	
+		\draw 	(0,0) circle(1);
+		\draw   (0,0)--(000:1)\ball;
+		\draw   (0,0)--(030:1)\ball;
+		\draw   (0,0)--(045:1)\ball;
+		\draw   (0,0)--(060:1)\ball;
+		\draw   (0,0)--(090:1)\ball;
+		\draw   (0,0)--(120:1)\ball; 
+		\draw   (0,0)--(135:1)\ball; 
+		\draw   (0,0)--(150:1)\ball;
+		\draw   (0,0)--(180:1)\ball;
+		\draw   (0,0)--(210:1)\ball;
+		\draw   (0,0)--(225:1)\ball;
+		\draw 	(0,0)--(240:1)\ball;
+		\draw   (0,0)--(270:1)\ball;
+		\draw   (0,0)--(300:1)\ball;
+		\draw   (0,0)--(315:1)\ball;
+		\draw   (0,0)--(330:1)\ball;
+		
+		\draw   (000:1.2) node{I};
+		\draw   (030:1.2) node{A};
+		\draw   (045:1.2) node{B};
+		\draw   (060:1.2) node{C};
+		\draw   (090:1.2) node{J};
+		\draw   (120:1.2) node{D}; 
+		\draw   (135:1.2) node{E};
+		\draw   (150:1.2) node{F};
+		\draw   (180:1.2) node{K};
+		\draw   (210:1.2) node{G};
+		\draw   (225:1.2) node{H};
+		\draw 	(240:1.2) node{M};
+		\draw   (270:1.2) node{L};
+		\draw   (300:1.2) node{P};
+		\draw   (315:1.2) node{Q};
+		\draw   (330:1.2) node{R};
+		\draw (0,0) node[below left]{O};
+	\end{tikzpicture}
+\end{center}
+\subsection*{En enroulant dans le sens direct.}
+\begin{enumerate}
+	\item Calculer le périmètre du cercle.
+	\item En déduire les longueurs respectives des arcs $\wideparen{IJ}$, $\wideparen{IK}$ et $\wideparen{IL}$.
+	\item Donner, en degrés, les mesures des angles suivants : $\widehat{IOA}$, $\widehat{IOB}$, 
+	$\widehat{IOC}$,$\dots$,$\widehat{IOR}$.\\
+	En déduire les longueurs respectives des arcs $\wideparen{IA}$, $\wideparen{IB}$,$\dots$,$\wideparen{IR}$.
+	\begin{center}
+        \tabstyle[UGLiOrange]
+ \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+ \hline
+ \ccell Angle & $\widehat{IOA}$ & $\widehat{IOB}$ & $\widehat{IOC}$ & $\widehat{IOJ}$ & $\widehat{IOD}$ & $\widehat{IOE}$ & $\widehat{IOF}$ & $\widehat{IOK}$ \\\hline
+ \ccell Mesure (degré) & & & & & & & \\\hline
+ \ccell Arc & $\wideparen{IA}$ & $\wideparen{IB}$ & $\wideparen{IC}$ & $\wideparen{IJ}$ & $\wideparen{ID}$ & $\wideparen{IE}$ & $\wideparen{IF}$ & $\wideparen{IK}$ \\\hline
+ \ccell Longueur & & & & & & & \\\hline
+ \ccell Angle & $\widehat{IOG}$ & $\widehat{IOH}$ & $\widehat{IOM}$ & $\widehat{IOL}$ & $\widehat{IOP}$ & $\widehat{IOQ}$ & $\widehat{IOR}$ & \bcell \\\hline
+ \ccell Mesure (degré) & & & & & & & \bcell\\\hline
+ \ccell Arc  & $\wideparen{IG}$ & $\wideparen{IH}$ & $\wideparen{IM}$ & $\wideparen{IL}$ & $\wideparen{IP}$ & $\wideparen{IQ}$ & $\wideparen{IR}$ & \bcell\\\hline
+ \ccell Longueur & & & & & & & \bcell \\\hline
+ \end{tabular}
+    \end{center}
+	\item Placer en \textsc{rouge} ces nombres à coté des points associés du cercle.
+\end{enumerate}
+
+\subsection*{Et maintenant dans l'autre sens.}
+\begin{enumerate}
+	\item En parcourant l'arc $\wideparen{IR}$, à quel nombre négatif peut-on associer $R$ ?
+	\item En raisonnant de même, placer en \textsc{vert} les nombres (négatifs) associés aux points du cercle.
+\end{enumerate}
+
+\subsection*{À quelques tours près, dans un sens ou dans l'autre.}
+\begin{enumerate}
+	\item En parcourant l'arc $\wideparen{IA}$ dans le sens direct en faisant trois tours « de trop » , à quel autre nombre peut-on associer $R$ ?
+	\item En raisonnant de même (avec des tours en plus dans un sens ou dans l'autre), placer en \textsc{bleu} d'autres nombres associés aux points du cercle.
+\end{enumerate}
+
+\subsection*{Prenons le problème à l'envers}
+Indiquer à quels points sont associés les nombres suivants :
+\begin{multicols}{5}
+	\begin{enumerate}[label=\textbullet]
+		\item $\dfrac{37\pi}{4}$
+		\item $\dfrac{23\pi}{6}$
+		\item $\dfrac{19\pi}{3}$
+		\item $\dfrac{41\pi}{2}$
+		\item $-\dfrac{29\pi}{6}$
+		\item $-\dfrac{101\pi}{4}$
+		\item $\dfrac{59\pi}{3}$
+		\item $-\dfrac{31\pi}{2}$
+		\item $-\dfrac{12\pi}{8}$
+		\item $\dfrac{57\pi}{12}$
+	\end{enumerate}
+\end{multicols}
+
+
+\end{document}

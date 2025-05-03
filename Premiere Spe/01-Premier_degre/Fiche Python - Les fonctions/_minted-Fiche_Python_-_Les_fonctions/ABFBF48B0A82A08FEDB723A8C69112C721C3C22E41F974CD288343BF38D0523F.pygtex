@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{nom\PYGZus{}de\PYGZus{}la\PYGZus{}fonction}\PYG{p}{(}\PYG{n}{paramètre1}\PYG{p}{,}\PYG{n}{paramètre2}\PYG{p}{,}\PYG{n}{etc}\PYG{p}{)} \PYG{p}{:}
+   \PYG{n}{instruction}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}
+   \PYG{k}{return} \PYG{n}{resultat}
+\end{Verbatim}

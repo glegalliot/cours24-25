@@ -1,0 +1,57 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spé}
+\titre{Ceinture verte 05 - Corrigé}
+\maketitle
+
+
+%Exercice 2N52-5 en selectionnant 4 questions
+
+
+\begin{exercice}[ : Équations avec un quotient]
+    Pour chacune des équations suivantes, préciser les valeurs interdites éventuelles puis résoudre l'équation :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\dfrac{8}{9x-5}=\dfrac{7}{-2x+7}$.
+	        \item $\dfrac{3x^2-3}{8x+24}=0$.
+	       
+        \end{enumerate}
+    \end{multicols}
+    
+\end{exercice}
+
+\begin{enumerate}
+    \item Déterminer les valeurs interdites revient à déterminer les valeurs qui annulent les dénominateurs des quotients, puisque la division par $0$ n'existe pas.\\Or $9x-5=0$ si et seulement si  $x=\dfrac{5}{9}$ et $-2x+7=0$ si et seulement si  $x=\dfrac{7}{2}$. \\
+    Donc l'ensemble des valeurs interdites est  $\left\{\dfrac{5}{9}\,;\,\dfrac{7}{2}\right\}$. \\Pour tout $x\in \mathbb{R}\smallsetminus\left\{\dfrac{5}{9}\,;\,\dfrac{7}{2}\right\}$,\\
+\begin{tabbing}
+$\dfrac{8}{9x-5}=\dfrac{7}{-2x+7} \quad$ \= $\iff\quad 
+7\times (9x-5)=8\times (-2x+7) \qquad\text{ car les produits en croix sont égaux.}$\\
+\>  $\iff \quad63x-35=-16x+56$\\
+\>  $\iff\quad79x= 91$\\
+\>  $\iff\quad x=\dfrac{91}{79}$
+\end{tabbing}
+$\dfrac{91}{79}$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{\dfrac{91}{79}\right\}$.
+
+
+
+    \item Déterminer les valeurs interdites revient à déterminer les valeurs qui annulent le dénominateur du quotient, puisque la division par $0$ n'existe pas.\\Or $8x+24=0$ si et seulement si  $x=-3$. \\
+    Donc l'ensemble des valeurs interdites est  $\left\{-3\right\}$.\\
+    Pour tout $x\in \mathbb{R}\smallsetminus\left\{-3\right\}$, \\
+      \begin{tabbing}
+      $\dfrac{3x^2-3}{8x+24}=0\quad$    \= $ \iff\quad
+      3x^2-3=0 \qquad \text{ car }\dfrac{A(x)}{B(x)}=0 \text { si et seulement si } A(x)=0 \text { et } B(x)\neq 0.$\\
+        \>    $\iff\quad 3x^2=3$\\
+        \>    $\iff\quad x^2=1$\\
+        \>  $\iff\quad x= 1\text{ ou } x= -1$
+     \end{tabbing}
+       $-1$ et $1$ ne sont pas des valeurs interdites, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{-1\,;\,1\right\}$.
+
+  
+\end{enumerate}
+
+\end{document}

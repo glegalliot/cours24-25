@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{annee\PYGZus{}seuil}\PYG{o}{=}\PYG{l+m+mi}{0}
+\PYG{n}{pop} \PYG{o}{=} \PYG{o}{....................................}
+\PYG{k}{while} \PYG{o}{....................................} \PYG{p}{:}
+   \PYG{n}{anne\PYGZus{}seuil} \PYG{o}{=} \PYG{o}{....................................}
+   \PYG{n}{pop} \PYG{o}{=} \PYG{n}{population}\PYG{p}{(}\PYG{n}{annee\PYGZus{}seuil}\PYG{p}{)}
+\end{Verbatim}

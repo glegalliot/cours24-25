@@ -1,0 +1,52 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+\begin{document}
+\classe{\terminale Comp}
+\titre{Emprunt bancaire}
+\maketitle
+
+Pour acheter sa maison, Zoé a besoin de souscrire un emprunt bancaire de 100 000 €.
+Elle a trouvé un prêt au taux de 3 \%.
+
+\begin{encadrecolore}{Info}{UGLiBlue}
+    Lorsque l'on souscrit un emprunt à un taux de 3 \%, on rembourse tous les mois les intérêts et une partie de l'emprunt.\\
+    Les intérêts sont calculés ainsi :
+    $$\text{montant des intérêts }=\dfrac{\text{3 \% du montant restant à rembourser}}{12} $$
+\end{encadrecolore}
+
+Zoé souhaite payer 600 € par mois pour rembourser son prêt.
+\begin{enumerate}
+    \item Zoé paye une première mensualité de 600 €.
+    \begin{enumalph}
+        \item Quel est le montant des intérêts le premier mois ?%\\[.5em]
+        %\carreauxseyes{16}{1.6}
+        \item Sur les 600 € de sa mensualité, quel est le montant reste-il pour le remboursement du prêt ?%\\[.5em]
+        %\carreauxseyes{16}{1.6}
+        \item Combien lui reste-il à payer après son premier remboursement ?%\\[.5em]
+        %\carreauxseyes{16}{1.6}
+    \end{enumalph}
+
+    \item Pour $n$ entier naturel, on note :
+    \begin{enumerate}[label=\textbullet]
+        \item $u_n$ le montant des intérêts le $n^{\text{e}}$ mois ;
+        \item $v_n$ le montant restant à rembourser après $n$ mois.
+    \end{enumerate}
+    On a donc : $\quad v_0=100\ 000 \ ; \quad u_1=.....................\quad$ et $\quad v_1=.....................$.
+    \begin{enumalph}
+        \item Montrer que pour tout $n$ entier $\quad u_{n+1}=0,0025\ v_n$
+        \item Montrer que pour tout $n$ entier $\quad v_{n+1}=1,0025\ v_n-600$.
+        \item En déduire l'expression de $v_n$ en fonction de $n$ puis celle de $u_{n+1}$ en fonction de $n$.
+        \item Donner les variations des suites $(v_n)$ et $(u_n)$.
+        \item Après combien de mois Zoé aura-t-elle complètement remboursé son crédit ?
+    \end{enumalph}
+    \item Pour $n$ entier naturel strictement positif, on note $S_n$ le montant total des intérêts payés après $n$ mois.
+    \begin{enumalph}
+        \item Montrer que pour tout $n$ entier natuel, $\quad S_n=600\ n-140\ 000\left(1,0025^n-1\right)$.
+        \item Calculer le montant total des intérêts payés par Zoé.
+    \end{enumalph}
+\end{enumerate}
+\end{document}

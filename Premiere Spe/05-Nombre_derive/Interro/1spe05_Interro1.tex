@@ -1,0 +1,155 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Jeudi 27/02/2025}\\
+\classe{\premiere spé}
+\titre{Interrogation - Sujet A}
+\maketitle
+\vspace*{.1cm}
+
+\exo{ Questions de cours}\bareme{4 pts}\\
+On se donne une fonction $f$ définie que $\R$, $a$ un nombre réel et $h$ un nombre réel non nul.\\
+On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère orthonormé.
+\begin{enumerate}
+    \item Donner le taux de variation de $f$ entre $a$ et $a+h$.\\[.5em]
+    \carreauxseyes{16}{1.6}
+    \item Donner deux manières de définir le nombre dérivé de $f$ en $a$.\\[.5em]
+    \carreauxseyes{16}{3.2}
+    \item Donner l'équation de la tangente à $\mathcal{C}_f$ en $a$.\\[.5em]
+    \carreauxseyes{16}{1.6}
+\end{enumerate}
+
+
+\dleft{10cm}{
+    \exo{}\bareme{1,5 pt}\\
+    $f$ est une fonction dérivable sur $\R$ dont la courbe $\mathcal{C}_f$ est représentée ci-contre ainsi que trois de ses tangentes.\\[.5em]	
+	Lire $f'(0)$, $f'(2)$ et $f'(6)$.\\[.5em]
+	\carreauxseyes{9.6}{4}
+}
+{
+    \begin{tikzpicture}[scale=0.6]
+		\reperevl{-2}{-2}{8}{10}
+		\clip (-2,-2) rectangle (8,10);
+		\draw [thick, domain = -2:8, samples = 1000] plot(\x,{1/24*(\x)^3-0.5*\x+2});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4/3});
+		\draw [domain = -2:8, samples = 2] plot(\x,{2-0.5*\x});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4.5*(\x-6)+8});
+		\draw [ball color=gray] (0,2) circle (.05) (2,4/3) circle (.05) (6,8) circle(.05);
+	\end{tikzpicture}
+}
+
+
+\begin{minipage}{10.5cm}
+    \exo{}\bareme{4,5 pts}\\
+	Le plan est muni d'un repère $\rep$.\\
+	On considère la fonction $f$ définie sur $\R$ par $f(x)=x^2-4x+\dfrac{3}{2}$.\\
+	
+	$\mathcal{C}_f$ est sa courbe représentative dans le repère $\rep$.
+	\begin{enumerate}[]
+		\item 	Soit $h$ un réel non nul.\\
+        Calculer le taux d'accroissement de $f$ entre $3$ et $3+h$.
+		\item En déduire $f'(3)$.
+		\item 	Donner l'équation de la tangente $(T_3)$ à $\mathcal{C}_f$ au point d'abscisse 3 et la tracer sur ce graphique.\\
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{6.5cm}
+	\begin{center}
+		\begin{tikzpicture}
+			\clip (-1,-3) rectangle (5,4);
+			\reperev{-1}{-3}{5}{4}
+			\draw [thick, domain = -2:7, samples = 1000] plot(\x,{\x*\x-4*\x+1.5});
+			\draw (4,3.5) node{$\courbe{f}$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+\vspace{1cm}
+\carreauxseyes{16.8}{17.6}
+
+\newpage
+
+\setcounter{exoNum}{0}
+
+
+\textcolor{UGLiBlue}{Jeudi 27/02/2025}\\
+\classe{\premiere spé}
+\titre{Interrogation - Sujet B}
+\maketitle
+\vspace*{.1cm}
+
+\exo{ Questions de cours}\bareme{4 pts}\\
+On se donne une fonction $f$ définie que $\R$, $a$ un nombre réel et $h$ un nombre réel non nul.\\
+On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère orthonormé.
+\begin{enumerate}
+    \item Donner le taux de variation de $f$ entre $a$ et $a+h$.\\[.5em]
+    \carreauxseyes{16}{1.6}
+    \item Donner deux manières de définir le nombre dérivé de $f$ en $a$.\\[.5em]
+    \carreauxseyes{16}{3.2}
+    \item Donner l'équation de la tangente à $\mathcal{C}_f$ en $a$.\\[.5em]
+    \carreauxseyes{16}{1.6}
+\end{enumerate}
+
+
+\dleft{10cm}{
+    \exo{}\bareme{1,5 pt}\\
+    $f$ est une fonction dérivable sur $\R$ dont la courbe $\mathcal{C}_f$ est représentée ci-contre ainsi que trois de ses tangentes.\\[.5em]	
+	Lire $f'(0)$, $f'(2)$ et $f'(6)$.\\[.5em]
+	\carreauxseyes{9.6}{4}
+}
+{
+    \begin{tikzpicture}[scale=0.6]
+		\reperevl{-2}{-2}{8}{10}
+		\clip (-2,-2) rectangle (8,10);
+		\draw [thick, domain = -2:8, samples = 1000] plot(\x,{1/24*(\x)^3-0.5*\x+2});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4/3});
+		\draw [domain = -2:8, samples = 2] plot(\x,{2-0.5*\x});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4.5*(\x-6)+8});
+		\draw [ball color=gray] (0,2) circle (.05) (2,4/3) circle (.05) (6,8) circle(.05);
+	\end{tikzpicture}
+}
+
+
+\begin{minipage}{10.5cm}
+    \exo{}\bareme{4,5 pts}\\
+	Le plan est muni d'un repère $\rep$.\\
+	On considère la fonction $f$ définie sur $\R$ par $f(x)=x^2-2x-\dfrac{3}{2}$.\\
+	
+	$\mathcal{C}_f$ est sa courbe représentative dans le repère $\rep$.
+	\begin{enumerate}[]
+		\item 	Soit $h$ un réel non nul.\\
+        Calculer le taux d'accroissement de $f$ entre $3$ et $3+h$.
+		\item En déduire $f'(3)$.
+		\item 	Donner l'équation de la tangente $(T_3)$ à $\mathcal{C}_f$ au point d'abscisse 3 et la tracer sur ce graphique.\\
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{6.5cm}
+	\begin{center}
+		\begin{tikzpicture}
+			\clip (-1,-3) rectangle (5,4);
+			\reperev{-1}{-3}{5}{4}
+			\draw [thick, domain = -2:7, samples = 1000] plot(\x,{\x*\x-2*\x-1.5});
+			\draw (3,3.5) node{$\courbe{f}$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+\vspace{1cm}
+\carreauxseyes{16.8}{17.6}
+\end{document}

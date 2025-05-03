@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Variables}
+	\PYG{n}{A} \PYG{n}{est} \PYG{n}{un} \PYG{n}{nombre} \PYG{n}{réel}
+	\PYG{n}{N} \PYG{n}{est} \PYG{n}{un} \PYG{n}{entier}
+\PYG{n}{Debut}
+   	\PYG{n}{N} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m+mi}{0}
+   	\PYG{n}{A} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{5}
+   	\PYG{n}{Afficher} \PYG{l+s+s2}{\PYGZdq{}Entrer la valeur de epsilon : \PYGZdq{}}
+   	\PYG{n}{Lire} \PYG{n}{E}
+   	\PYG{n}{Tant} \PYG{n}{que} \PYG{n}{A} \PYG{o}{\PYGZgt{}} \PYG{n}{E}
+      	\PYG{n}{N} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{N}\PYG{o}{+}\PYG{l+m+mi}{1}
+      	\PYG{n}{A} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{A}\PYG{o}{*}\PYG{n}{A}
+   	\PYG{n}{Fin} \PYG{n}{Tant} \PYG{n}{Que}
+   	\PYG{n}{Afficher} \PYG{l+s+s2}{\PYGZdq{}La valeur du seuil est : \PYGZdq{}}\PYG{p}{,}\PYG{n}{N}
+\PYG{n}{Fin}
+\end{Verbatim}

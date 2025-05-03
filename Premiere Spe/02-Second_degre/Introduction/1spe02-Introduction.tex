@@ -1,0 +1,81 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+\begin{document}
+\classe{\premiere spé}
+\titre{Second degré - Introduction}
+\maketitle
+
+
+Résoudre les équations suivantes :
+
+\begin{multicols}{2}
+
+	\begin{encadrecolore}{\'Equation 1}{UGLiPurple}
+		$$(1-x)(4x+3)=0$$
+	\end{encadrecolore}
+
+	\begin{encadrecolore}{\'Equation 2}{UGLiPurple}
+		$$f(x)=0$$
+		\begin{center}
+			\def\xmin{-4} \def\ymin{-1}\def\xmax{4}\def\ymax{8}
+			\def\F{\x*\x+\x+2}
+			\begin{tikzpicture}[scale=0.8]
+				\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+				\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+				\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+				\draw[UGLiRed,thick,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\F});		
+			\end{tikzpicture}\\
+			\emph{\footnotesize courbe représentative de la fonction $f$}
+		\end{center}
+	\end{encadrecolore}
+
+	\begin{encadrecolore}{\'Equation 3}{UGLiPurple}
+		$$\left(x+\dfrac{1}{2}\right)^2+\dfrac{7}{4}=0$$
+	\end{encadrecolore}
+
+	\begin{encadrecolore}{\'Equation 4}{UGLiPurple}
+		$$x^2-4x+4=0$$
+	\end{encadrecolore}
+
+	\begin{encadrecolore}{\'Equation 5}{UGLiPurple}
+		$$h(x)=0$$
+		\begin{center}
+			\def\xmin{-2} \def\ymin{-1}\def\xmax{6}\def\ymax{5}
+			\def\F{\x*\x-4*\x+4}
+			\begin{tikzpicture}[scale=0.8]
+				\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+				\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+				\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+				\draw[UGLiRed,thick,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\F});		
+			\end{tikzpicture}\\
+			\emph{\footnotesize courbe représentative de la fonction $h$}
+		\end{center}
+	\end{encadrecolore}
+
+
+\begin{encadrecolore}{\'Equation 6}{UGLiPurple}
+	$$-4x^2+x+3=0$$
+\end{encadrecolore}
+
+\begin{encadrecolore}{\'Equation 7}{UGLiPurple}
+	$$g(x)=0$$
+	\begin{center}
+		\def\xmin{-4} \def\ymin{-2}\def\xmax{4}\def\ymax{5}
+		\def\F{-4*\x*\x+\x+3}
+		\begin{tikzpicture}[scale=0.8]
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+			\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+			\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+			\draw[UGLiRed,thick,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\F});		
+		\end{tikzpicture}\\
+		\emph{\footnotesize courbe représentative de la fonction $g$}
+	\end{center}
+\end{encadrecolore}
+\end{multicols}
+
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Vendredi 11/10/2024}\\
+\classe{\terminale Comp}
+\titre{Interrogation 4}
+\maketitle
+\begin{center}
+	Calculatrice interdite
+\end{center}
+
+
+
+\begin{enumerate}
+    \item Déterminer la limite de la suite $(u_n)$ définie pour tout entier  $n$ strictement positif par : $$u_n=2+\dfrac{1}{n^9}-n^7$$
+    \carreauxseyes{16}{7.2}
+	\item Déterminer la limite de la suite $(v_n)$ définie pour tout entier positif $n$ par : $$v_n=5^n-4^n$$
+	\carreauxseyes{16}{7.2}
+\end{enumerate}
+\end{document}
+
+On sait que $\lim\limits_{n\to\infty} \dfrac{1}{n^9}=0$ et $\lim\limits_{n\to\infty} n^7=+\infty$.\\Ainsi, d'après les règles des limites de la somme, $\lim\limits_{n\to\infty} \dfrac{1}{n^9}-n^7={\color[HTML]{f15929}\boldsymbol{-\infty}}$.
+
+\end{document}

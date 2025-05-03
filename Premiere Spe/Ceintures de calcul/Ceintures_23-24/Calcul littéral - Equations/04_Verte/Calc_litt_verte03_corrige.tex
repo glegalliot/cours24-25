@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spé}
+\titre{Ceinture verte 03 - Corrigé}
+\maketitle
+
+
+%Exercice 2N52-5 en selectionnant 4 questions
+
+
+\begin{exercice}[ : Équations avec un quotient]
+    Pour chacune des équations suivantes, préciser les valeurs interdites éventuelles puis résoudre l'équation :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\dfrac{4x+1}{-3x+7}=9$.
+	        \item $\dfrac{x^2-16}{-7x-28}=0$.
+	        %\item  $\dfrac{-6}{7x+4}=\dfrac{3}{9x}$.
+        \end{enumerate}
+    \end{multicols}
+    
+\end{exercice}
+
+\begin{enumerate}
+    \item Déterminer les valeurs interdites revient à déterminer les valeurs qui annulent le dénominateur du quotient, puisque la division par $0$ n'existe pas.\\Or $-3x+7=0$ si et seulement si  $x=\dfrac{7}{3}$. 
+    Donc l'ensemble des valeurs interdites est  $\left\{\dfrac{7}{3}\right\}$. \\
+    Pour tout $x\in \mathbb{R}\smallsetminus\left\{\dfrac{7}{3}\right\}$,
+    \begin{tabbing}
+        $\dfrac{4x+1}{-3x+7}=9 \quad$ \= $\iff \quad 4x+1=9\times(-3x+7)\,\,\,\,\,\,\,\text{ car les produits en croix sont égaux.}$\\
+        \>  $\iff \quad 4x+1= -27x+63$\\
+        \>  $\iff \quad 31x= 62$\\
+        \>  $\iff \quad x=\dfrac{62}{31}$\\
+        \>  $\iff \quad x=2$
+    \end{tabbing}
+    $2$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{2\right\}$.
+
+    \item $-7x-28=0$ si et seulement si  $x=-4$. 
+    Donc l'ensemble des valeurs interdites est  $\left\{-4\right\}$.\\
+    Pour tout $x\in \mathbb{R}\smallsetminus\left\{-4\right\}$, 
+    \begin{tabbing}
+        $\dfrac{x^2-16}{-7x-28}=0 \quad$    \=  $\iff \quad x^2-16=0\,\,\,\,\,\,\, \text{ car }\dfrac{A(x)}{B(x)}=0 \text { si et seulement si } A(x)=0 \text { et } B(x)\neq 0$\\
+        \>  $\iff \quad x^2=16$\\
+        \>  $\iff \quad x=\sqrt{16}\quad$ ou $\quad x=-\sqrt{16}$\\
+        \>  $\iff \quad x=4 \quad$ ou $\quad x=-4$
+    \end{tabbing}
+    $-4$ est une valeur interdite et $4$ n'en est pas une, donc l'ensemble des solutions est  $\mathcal{S}=\left\{4\right\}$.
+
+    %\item  $7x+4=0 \quad \iff \quad x=-\dfrac{4}{7}\quad$ et $\quad 9x=0 \quad \iff \quad x=0$.\\
+    %Donc l'ensemble des valeurs interdites est  $\left\{-\dfrac{4}{7}\,;\,0\right\}$. \\Pour tout $x\in \mathbb{R}\smallsetminus\left\{-\dfrac{4}{7}\,;\,0\right\}$,
+    %\begin{tabbing}
+    %    $\dfrac{-6}{7x+4}=\dfrac{3}{9x} \quad$  \= $\iff \quad 3\times (7x+4)=-6\times (9x)\,\,\,\,\,\,\, \text{ car les produits en croix sont égaux.}$\\
+    %    \>  $\iff \quad 21x+12=-54x$\\
+    %    \>  $\iff \quad 75x= -12$\\
+    %    \>  $\iff \quad x=-\dfrac{4}{25}$ $\qquad -\dfrac{4}{25}$ n'est pas une valeur interdite, donc $\mathcal{S}=\left\{-\dfrac{4}{25}\right\}$.
+
+    %\end{tabbing}
+    
+
+\end{enumerate}
+\end{document}

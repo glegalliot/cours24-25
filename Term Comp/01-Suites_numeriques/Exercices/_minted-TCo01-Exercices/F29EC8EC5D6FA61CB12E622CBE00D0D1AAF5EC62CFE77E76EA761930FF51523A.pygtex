@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{algues}\PYG{p}{(}\PYG{o}{...}\PYG{p}{)} \PYG{p}{:}
+    \PYG{n}{plage} \PYG{o}{=} \PYG{l+m+mi}{230}
+    \PYG{n}{ramasse} \PYG{o}{=} \PYG{l+m+mf}{8.5}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{o}{...}\PYG{p}{)} \PYG{p}{:}
+        \PYG{n}{plage} \PYG{o}{=} \PYG{o}{...}
+        \PYG{n}{ramasse} \PYG{o}{=} \PYG{o}{...}
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{plage}\PYG{p}{,}\PYG{n}{ramasse}\PYG{p}{)}
+\end{Verbatim}

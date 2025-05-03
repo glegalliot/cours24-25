@@ -1,0 +1,78 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Mercredi 13/11/2024}\\
+\classe{\terminale Comp}
+\titre{Évaluation-bilan 2}
+\maketitle
+\begin{center}
+	Calculatrice autorisée. Toutes les réponses doivent être justifiées.
+\end{center}
+
+\vspace*{1cm}
+
+\exo{}\bareme{4 pts}\\
+Soit $(u_n)$ la suite définie par $u_0=1$ et pour tout $n\in\N, \quad u_{n+1}=\dfrac{3}{4}u_n+1$.
+\begin{enumerate}
+    
+        \item Représenter graphiquement la fonction $f$ définie sur $\R$ par $\quad f(x)=\dfrac{3}{4}x+1$.
+        \item Représenter sur le graphique les quatre premiers termes de la suite $(u_n)$.
+        \item Conjecturer les variations et la limite de la suite.
+    \end{enumerate}
+    \begin{center}
+        \def\xmin{-3} \def\ymin{-3}\def\xmax{10}\def\ymax{6}
+        \begin{tikzpicture}[scale=1]
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \reperenb{\xmin}{\ymin}{\xmax}{\ymax}{}{}
+        \end{tikzpicture}
+    \end{center}
+    \carreauxseyes{16}{4}
+
+
+\exo{}\bareme{10 pts}\\
+Dans une ruche formée de 50 000 abeilles, on estime à 20 \% la proportion d'abeilles de la colonie qui décèdent chaque jour à cause d'un insecticide. On suppose que le nombre de naissances et de décès de manière naturelle reste identique (1000 naissances et 500 décès de manière naturelle par jour).\\
+Pour tout entier naturel $n$, on note $u_n$ le nombre d'individus de la colonie $n$ jours après le début des pulvérisations de l'insecticide. On a donc $u_0=50\ 000$.
+\begin{enumerate}
+    \item Montrer que, pour tout entier naturel $n, \quad u_{n+1}=0,8u_n+500$.\\[.5em]
+    \carreauxseyes{16}{6.4}
+    \item Déterminer l'expression de $u_n$ en fonction de $n$.\\[.5em]
+    \carreauxseyes{16}{13.6}\\
+    \carreauxseyes{16}{11.2}
+    \item Quel est le sens de variation de la suite $(u_n)$ ? Justifier la réponse et interpréter avec le contexte.\\[.5em]
+    \carreauxseyes{16}{5.6}
+    \item Des études ont montré qu'une colonie d'abeilles n'est plus en mesure d'assurer sa survie si elle compte moins de 5000 individus. La colonie étudiée va-t-elle survivre ? Justifier.\\[.5em]
+    \carreauxseyes{16}{5.6}
+\end{enumerate}
+
+\exo{}\bareme{6 pts}\\
+Un globe-trotter s'est fixé pour but de parcourir une distance de 4500 kilomètres.\\
+Le jour du départ (jour zéro), il en parcourt 40, mais chaque jour, fatigué par l'effort, il parcourt 1\% de moins que la veille.
+\begin{enumerate}
+	\item 	On appelle $p_n$ la distance parcourue le n-ième jour.\\
+	Déterminer la nature de la suite $(p_n)$. En déduire l'expression de $p_n$ en fonction de $n$.\\[0.5em]
+	\carreauxseyes{16}{6.4}
+    \item Quel est la distance totale parcourue après 15 jours ? Arrondir au kilomètre.\\[0.5em]
+	\carreauxseyes{16}{6.4}
+	\item 	Exprimer la distance totale parcourue au bout de $n$ jours. Le globe-trotter atteindra-t-il son but ?\\[0.5em]
+	\carreauxseyes{16}{6.4}
+\end{enumerate}
+\end{document}

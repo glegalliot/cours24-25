@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{a} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}entrez a\PYGZdq{}}\PYG{p}{))}
+\PYG{n}{b} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}entrez b\PYGZdq{}}\PYG{p}{))}
+\PYG{n}{c} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}entrez c\PYGZdq{}}\PYG{p}{))}
+\PYG{n}{delta} \PYG{o}{=} \PYG{n}{b} \PYG{o}{**} \PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4} \PYG{o}{*} \PYG{n}{a} \PYG{o}{*} \PYG{n}{c}
+\PYG{k}{if} \PYG{n}{delta} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{k}{elif} \PYG{n}{delta} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{else} \PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+\end{Verbatim}

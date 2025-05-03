@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt,exos]{nsi} 
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+
+\classe{\terminale Comp}
+\titre{Dynamique des populations :\\ du discret au continu}
+\maketitle
+
+\dleft{11.5cm}{
+En 1950, un pays comptait 30,5 millions d'habitants.\\
+Depuis cette date, sa population a un taux annuel moyen de natalité de 20 pour 1000, c'est-à-dire qu'il y a en moyene 20 naissances enregistrées au cours d'une année pour 1000 habitants.\\
+De façon analogue, depuis 1950, le taux annuel moyen de mortalité est de 15 pour 1000.\\
+De plus, chaque année en moyenne, 100 000 nouveaux arrivants s'installent dans ce pays.
+}
+{\includegraphics[width=5cm]{baby-feet-2612403_640.jpg}}
+
+
+\textbf{On cherche à modéliser l'évolution de la population de ce pays.}
+
+\subsection*{Partie 1 : Modèle à temps discret}
+On note $p(n)$ la population de ce pays, en millions d'habitants, l'année $1950+n$ avec $n$ entier naturel. Ainsi $p(0)=30,5$.
+\begin{enumerate}
+    \item À l'aide des informations données sur l'évolution de cette population, expliquer pourquoi pour tout entier naturel $n$, on a $\quad p(n+1)-p(n)=0,005p(n)+0,1$.
+    \item Estimer la population de ce pays en 2050, si les conditions d'évolution de la population restent les mêmes.
+\end{enumerate}
+
+\subsection*{Partie 2 : Modèle à temps continu}
+On considère la fonction $p$ définie sur l'intervalle $\fio{0}{+\infty}$ qui, à un instant $1950+t$, en années, associe la population de ce pays, en millions d'habitants.\\
+Ainsi $p(0)=30,5$ et pour tout réel $t\geqslant 0, \quad p(t+1)-p(t)=0,005p(t)+0,1$ \textbf{$(R)$}.
+\begin{enumerate}
+    \item On suppose que la fonction $p$ est dérivable sur $\fio{0}{+\infty}$.\\[.5em]
+    On approche $p(t+1)-p(t)=\dfrac{p(t+1)-p(t)}{1}$ par $p'(t)$.\\[.5em]
+    Que devient la relation $(R)$ avec cette approximation ?
+    \begin{encadrecolore}{Info :}{UGLiDarkBlue}
+        Pour tout réel $t\geqslant 0$, on a $p'(t)=\lim\limits_{h\to 0}\dfrac{p(t+h)-p(t)}{h}$.\\[.5em]
+        En démographie, en économie, etc., il est fréquent d'approcher $p'(t)$ par $p(t+1)-p(t)$.
+    \end{encadrecolore}  
+    \item Vérifier que toute fonction définie sur $\fio{0}{+\infty}$ par $p(t)=k e^{0,005t}-20$, où $k$ est un réel, vérifie la relation obtenue à la question \textbf{1.}.
+    \item Utiliser la condition initiale $p(0)=30,5$ pour déterminer la valeur de $k$.
+    \item En supposant que l'évolution se poursuive ainsi, estimer la population de ce pays en 2050.\\
+    Comparer cette estimation à celle obtenue à la question \textbf{2.} de la partie 1.
+\end{enumerate}
+\end{document}

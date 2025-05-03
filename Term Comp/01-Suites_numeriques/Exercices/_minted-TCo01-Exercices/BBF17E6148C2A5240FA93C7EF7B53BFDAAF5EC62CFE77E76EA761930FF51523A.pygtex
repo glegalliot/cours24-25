@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{seuil}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)} \PYG{p}{:}
+    \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{c} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{c} \PYG{o}{\PYGZlt{}} \PYG{n}{m} \PYG{p}{:}
+        \PYG{n}{c} \PYG{o}{=} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{c}\PYG{o}{+}\PYG{l+m+mi}{3}
+         \PYG{n}{n} \PYG{o}{=} \PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}
+    \PYG{k}{return} \PYG{n}{n}
+\end{Verbatim}

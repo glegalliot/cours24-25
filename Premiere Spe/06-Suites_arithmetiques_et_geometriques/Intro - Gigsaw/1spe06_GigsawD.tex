@@ -1,0 +1,90 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spe}
+\titre{Suites arithmétiques et géométriques}
+\maketitle
+\section*{Partie D}
+
+\exo{ : Compléter les suites logiques}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	\rowcolor{UGLiOrange}Rang & \hspace{0.5cm}0\hspace{0.5cm} & \hspace{0.5cm}1\hspace{0.5cm} & \hspace{0.5cm}2\hspace{0.5cm} & \hspace{0.5cm}3\hspace{0.5cm} & \hspace{0.5cm}4\hspace{0.5cm} & \hspace{0.5cm}5\hspace{0.5cm} & \hspace{0.5cm}6\hspace{0.5cm} & \hspace{0.5cm}7\hspace{0.5cm} & \hspace{0.5cm}8\hspace{0.5cm}  \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 1 : & $1$ & $3$ & $5$ & $7$ & $9$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 2 : & $81$ & $27$ & $9$ & $3$ & $1$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 3 : & $15$ & $10$ & $5$ & $0$ & $-5$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 4 : & $8$ & $-4$ & $2$ & $-1$ & $\dfrac{1}{2}$ & & & & \\
+	\hline
+	\cellcolor{UGLiOrange}Suite 5 : & $1$ & $5$ & $13$ & $29$ & $61$ & & & & \\
+	\hline
+\end{tabular}
+
+
+\begin{definition}[]
+	Une suite $(u_n)$ est dite \textbf{arithmétique} s'il existe un réel $r$ tel que pour tout entier $n$ on a  $u_{n+1}=u_n+r$.\\
+	Cette expression est appelée formule de récurrence.\\
+	Le nombre $r$ est appelé \textbf{raison} de la suite $(u_n)$.
+\end{definition}
+
+\begin{definition}[]
+	Une suite $(u_n)$ est dite \textbf{géométrique} s'il existe un réel $q$ tel que pour tout entier $n$ on a  $u_{n+1}=q\times u_n$.\\
+	Cette expression est appelée formule de récurrence.\\
+	Le nombre $q$ est appelé \textbf{raison} de la suite $(u_n)$.
+\end{definition}
+
+
+
+\exo{ : Compléter lorsque la suite est soit arithmétique, soit géométrique}
+\begin{tabular}{|c|p{3.5cm}|p{3.5cm}|c|c|c|}
+	\hline
+	 & Relation de récurrence de la suite & \centering Nature & $u_0$ & $u_1$ & $u_{10}$ \\
+	 \hline
+	 Suite 1 & & & \hspace{1.5cm} & \hspace{1.5cm} & \hspace{1.5cm} \\
+	 \hline
+	 Suite 2 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+	 Suite 3 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+	 Suite 4 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+	 Suite 5 & & & \hspace{.9cm} & \hspace{.9cm} & \hspace{.9cm} \\
+	 \hline
+\end{tabular}
+
+
+
+
+\exo{}
+\begin{minipage}{9cm}
+	\begin{enumerate}
+		\item 	Quelles formules saisir dans les cellules B3 et C3 pour obtenir après étirement les termes des suites 1 et 2 de la page 1 ?\\[.5em]
+		Cellule B3 : \dotfill\\[.5em]
+		Cellule C3 : \dotfill\\[.5em]
+		Quel semble être le sens de variation de la suite 2 ? Pourquoi ?
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{8cm}
+	\flushright \includegraphics[width=7.5cm]{tableur}
+\end{minipage}
+\flushright \carreauxseyes{16.8}{2.4}
+
+\begin{enumerate}[label=\bfseries 2.]
+	\item 	 Pour déterminer les termes d'une suite 6, on complète la colonne D de la façon suivante :\\
+	D2 = 3 \hspace{.2cm} et \hspace{.2cm} D3 = D2*1,5.
+	\begin{enumalph}
+		\item 	Donner la formule de récurrence de la suite 6.\\[.5em]
+				\carreauxseyes{16}{2.4}
+		\item 	Déterminer le rang à partir duquel la suite dépasse 1500.\\[.5em]
+				\carreauxseyes{16}{2.4}
+	\end{enumalph}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt,french]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[thinfonts,latinmath]{uglix2}
+\pagestyle{empty}
+\begin{document}
+\titreinterro{Évaluation - Premier degré}{\premiere}{27/09/2022}
+\begin{center}
+	Calculatrice autorisée
+\end{center}
+
+Modéliser :\\
+Calculer :\\
+Communiquer :\\
+Chercher : \\
+\exonote{ (8 points)}
+Résoudre les inéquations suivantes :
+\begin{multicols}{3}
+	\begin{enumerate}[\bfseries 1.]
+		\item 	$5x-2> 8x+31$
+		\item 	$(2x+1)(3x-2)\geqslant0$
+		\item	$\dfrac{-5x-2}{-7x+8}\geqslant0$
+	\end{enumerate}
+\end{multicols}\ \\[-2em]
+\carreauxseyes{16.8}{16}\\
+
+
+
+\exonote{ (8 points)}
+\begin{enumerate}[\bfseries 1.]
+	\item 	Donner sans justifier les équations des droites $(d_1)$ et $(d_2)$.
+	\item 	On considère $f_1$ et $f_2$ les fonctions représentées par $(d_1)$ et $(d_2)$.\\
+			Résoudre graphiquement $f_1(x)=f_2(x)$.
+
+\double
+{\carreauxseyes{8.8}{4.8}}
+{%\flushright
+	\def\xmin{-2} \def\ymin{-5}\def\xmax{9}\def\ymax{4}
+	\def\F{-1/3*\x+2}\def\G{2/7*\x-3}
+	\begin{tikzpicture}[scale=.6]
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\reperevl{\xmin}{\ymin}{\xmax}{\ymax}
+		\draw[thick,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\F});	
+		\draw[thick,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\G});
+		\draw (0,2)\ball (0,-3)\ball (6,0)\ball(7,-1)\ball;	
+		\draw (-1.2,2.5) node [above]{$(d_1)$};	
+		\draw (-1.2,-3.5) node [below]{$(d_2)$};	
+\end{tikzpicture}}{7.5cm}
+
+\ligne
+
+	\item	On considère la fonction affine $f$ telle que $f(1)=6$ et $f(7)=1$.\\
+	Déterminer par le calcul une expression algébrique de $f$.\\[1em]
+	\carreauxseyes{16.8}{8}
+	\item	Le point $\pc{K}{-10}{65}$ appartient-il à $(d)$, la droite représentative de $f$ ?\\[1em]
+\carreauxseyes{16.8}{4}
+\end{enumerate}
+
+\exonote{ (8 points)}
+\begin{enumerate}[\bfseries 1.]
+	\item 	Démontrer que, pour tout $x$ réel différent de $5$, $\quad \dfrac{x}{2x-10}-2=\dfrac{-3x+20}{2x-10}$.\\
+			En déduire les solutions de $\quad \dfrac{x}{2x-10}\geqslant2$.
+	\item 	Résoudre l'inéquation $\quad \dfrac{1-4x}{x-3}<4$.
+\end{enumerate}
+\carreauxseyes{16.8}{20.8}
+
+\exonote{ (2 points + 4 points bonus)}
+Soit $f$ une fonction affine définie pour tout $x\in \R$ par $\ f(x)=mx+p$.\\
+On appelle $f^2$ la fonction définie pour tout $x\in\R$ par $\ f^2(x)=f(f(x))$.\\
+On généralise cette notation pour $n\in\N$ : \ pour tout $x\in\R, \quad f^{n+1}(x)=f(f^n(x)) \quad$ et $\quad f^0(x)=x$.
+\begin{enumerate}[\bfseries 1.]
+	\item 	Vérifier que pour $n=1, n=2$ et $n=3$, les fonctions $f^n$ sont affines.
+	\item 	Quelle conjecture peut-on faire sur le taux d'accroissement et l'ordonnée à l'origine de $f^n$ pour $n\in\N^*$ ?
+	\item	Déterminer une fonction affine $f$ vérifiant la propriété suivante : \og Il existe un entier $n>1$ tel que $f^n(x)=2048x-2047$.
+\end{enumerate}
+\carreauxseyes{16.8}{18.4}
+\end{document}

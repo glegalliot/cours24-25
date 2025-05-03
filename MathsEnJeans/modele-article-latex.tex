@@ -1,0 +1,214 @@
+\documentclass[a4paper,french,11pt]{article}
+\usepackage[francais]{babel}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+%%%%%%%%%%%%%%
+%%%% dé-commenter pour mettre tout en police Calibri - nécessite de compiler avec XeLaTex ou LuaLaTex.
+%%%% Commenter pour revenir en Fourier
+%%%% dé-commenter/ commenter aussi la ligne après \begin{document}
+%\usepackage[T1]{fontenc}
+%\usepackage{fontspec}
+%\setsansfont{Calibri}
+%\renewcommand*\normalfont{\sffamily}
+%%%%%%%%%%%%%%
+\usepackage{fourier}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{epsfig} 
+\usepackage{epstopdf}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,tmargin=1.5cm, bmargin=3cm}
+\setlength\hoffset{1em}
+\setlength\headheight{32pt}
+\setlength\parindent{1em}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black, 
+	urlcolor=[rgb]{0.05,0,0.25}
+	}
+
+\titleformat{\section}{\bfseries\Large}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\bfseries\large}{\hspace{.5em}\thesubsection.}{0.5em}{}
+
+\newtheorem{theo}{Théorème}
+\newtheorem*{theo*}{Théorème}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem{lemme}{Lemme}
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{cor}{Corollaire}
+\newtheorem*{cor*}{Corollaire}
+\theoremstyle{definition}\newtheorem{defn}{Definition}
+\newtheorem*{defn*}{Definition}
+\theoremstyle{remark}\newtheorem{rem}{Remarque}
+\newtheorem*{rem*}{Remarque}
+
+%%%%%%%%%%%%%%
+%%% Pour le comité d'édition, pour insérer des notes :
+% À chaque appel de note, insérer : \appelnote{X} où X est un label (numéro ou autre)
+% Le label sera enregistré avec le préfixe "note:" - si besoin d'une référence, utiliser \ref{note:X}.
+% Les appels de note seront numérotés automatiquement dans l'ordre où ils sont insérés.
+% Voir le paragraphe des notes à la fin pour ajouter le texte des notes.
+
+\newcounter{note}
+\newcommand\appelnote[1]{%
+	\refstepcounter{note}\label{note:#1}\fboxsep0pt\colorbox{yellow}{\hypertarget{anote#1}{\hyperlink{note#1}{(\thenote)}}}%
+}
+\newcommand\note[1]{%
+	\par\vspace{1ex}
+ 	\noindent\fboxsep0pt\colorbox{yellow}{\hypertarget{note#1}{\hyperlink{anote#1}{(\ref{note:#1})}}}\ %
+}
+%%%%%%%%%%%%%%
+%% pied de page et entête
+%
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{\empty}
+\renewcommand{\footrulewidth}{.5pt}
+\fancyfoot[L]{\sffamily MATh.en.JEANS 20..-20..\empty}
+\fancyfoot[C]{\sffamily Collège de Bidule, Triffouillis-les-Oies}
+\fancyfoot[R]{\sffamily Page \thepage}
+%%%%%%%%%%%%%%
+
+
+\begin{document}
+%%%%%%%%%%%%%%
+%%% dé-commenter pour mettre tout en police Calibri ou commenter pour revenir en Fourier
+%\sffamily
+%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\begin{center}
+\fcolorbox[gray]{0}{0.95}{%
+	\begin{minipage}[c]{.975\linewidth}
+		\begin{center}\sffamily
+			Cet article est rédigé par des élèves. Il peut comporter des oublis ou des imperfections,\\
+			autant que possible signalés par nos relecteurs dans les notes d'édition.
+%		English version:
+%			This article is written by students. It may include omissions and imperfections, which are reported as
+%			far as possible by our reviewers in the editing notes.
+		\end{center}
+	\end{minipage}
+}
+
+\vspace{10ex}
+\huge\sffamily\textbf{Un joli titre}
+
+\vspace{3ex}
+\large
+Année 20..-20..
+
+\vspace{3ex}
+Toto et Titi, classe de 4ème
+\end{center}
+\vspace{2ex}
+{\sffamily \large
+\noindent{\'{E}tablissement(s)~:} Collège de Bidule, Triffouillis-les-Oies
+
+\vspace{.5ex}
+\noindent{Enseignant$\cdot$e(s)~:} Marcel Dugenou
+
+\vspace{.5ex}
+\noindent{Chercheur$\cdot$Chercheuse(s)~:} Eugène Duraton, Université de Perpette-les-Oies
+}
+
+%\tableofcontents  
+\vspace{2ex}
+\begin{itemize}\color{red}\em
+	\item \'Evitez autant que possible d'utiliser d'autres packages que ceux proposés dans ce modèle.
+    \item Ne diminuez pas les marges. 
+    \item Les dessins et images doivent être légendés et lisibles. Les fournir dans des fichiers séparés,\\ regroupés dans une archive.
+    \item N'insérez pas de textes ou de formules sous forme d'images.
+\end{itemize}
+\section{Introduction}
+
+\subsection{Sujet}
+{\em Le problème doit être posé en termes clairs}
+
+\subsection{Résultats}
+{\em Si votre article est un peu long, annoncez ici les principaux résultats et conjectures obtenus}
+
+\section{Quelques pistes pour rédiger}
+Penser que les lecteurs et lectrices ne connaissent rien à votre sujet, contrairement à vous qui y êtes plongé$\cdot$es depuis plusieurs mois. 
+
+Ce qui vous parait évident, parce que vous y avez beaucoup réfléchi durant toute l’année, peut ne pas l’être pour les personnes qui liront votre article, en particulier pour des élèves du même niveau que vous.
+
+Il faut donc tout leur expliquer : 
+\begin{itemize}
+    \item bien définir les termes et notations utilisés,
+    \item vérifier la cohérence des notations à la fois dans le texte, et entre texte et illustrations,
+    \item faire des figures claires et explicites, si nécessaire accompagnées d'une légende,
+\end{itemize}
+et surtout 
+\begin{itemize}
+    \item justifier tout ce qui est affirmé.
+\end{itemize}
+À éviter : 
+\begin{itemize}
+    \item trop de commentaires personnels, 
+    \item les illustrations inutiles.
+\end{itemize}
+\section{{Une section}}
+{\color{red}{\em Mettez autant de sections que vous le souhaitez, avec des titres appropriés \ldots}}
+
+\subsection{Une sous-section}
+{\color{red}{\em Et de même pour les sous-sections}}
+
+\vspace{2ex}
+
+\emph{Exemples d'environnements mathématiques (versions avec ou sans numérotation).}
+\begin{defn*} Une définition
+\end{defn*}
+\begin{theo*}[de Pythagore]
+	Un théorème classique utilisé ici.
+\end{theo*}
+\begin{prop*}
+	Un premier résultat
+\end{prop*}
+\begin{theo}\label{montheo}
+	Le théorème principal.
+\end{theo}
+\begin{lemme}\label{monlemme}
+	Unrésultat intermédiaire qui servira à démontrer le théorème \ref{montheo}.
+\end{lemme}
+\begin{proof}
+	Bla, bla, bla\ldots
+	
+	Bla, bla, bla\ldots
+\end{proof}
+\begin{proof}[Preuve du théorème \ref{montheo}]
+	En appliquant le lemme \ref{monlemme}, \ldots
+	
+	\ldots
+	
+	et finalement le théorème est démontré.
+\end{proof}
+\begin{cor}
+	Une conséquence du théorème \ref{montheo}.
+\end{cor}
+\begin{rem*}
+	Ceci résout notre problème.
+\end{rem*}
+
+
+\section{Conclusion}
+
+
+%%%%%%%%%%%%%%
+%%% Pour le comité d'édition, dé-commenter puis ajouter pour chacune des notes
+%%% \note{X} et le texte de la note.
+%%% le label X doit correspondre à celui de l'appel de note.
+%\vspace{2ex}
+% \section*{Notes d'édition}
+% \addcontentsline{toc}{section}{Notes d'édition}
+% \noindent\fcolorbox[gray]{0}{0.95}{
+% \begin{minipage}{.975\textwidth}
+%
+%%% \note{X} \ldots
+%
+% \end{minipage}
+% }
+ 
+\end{document}

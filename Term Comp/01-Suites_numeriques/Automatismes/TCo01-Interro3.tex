@@ -1,0 +1,89 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Mercredi 25/09/2024}\\
+\classe{\terminale Comp}
+\titre{Interrogation 3}
+\maketitle
+\begin{center}
+	Calculatrice autorisée
+\end{center}
+
+%\vspace{1cm}
+
+\begin{enumerate}
+    \item Soit $u$ la suite arithmétique de premier terme $u_1 = 2$ et de raison $7$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $u_n$, le terme général de la suite $u$.
+        \item Calculer $\mathcal{S}_{30} = u_1 + u_2 + ... + u_{30} $.
+    \end{enumalph}
+    \carreauxseyes{16}{7.2}
+    \item Soit $v$ la suite géométrique de premier terme $v_1 = 10$ et de raison $2$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $v_n$, le terme général de la suite $v$.
+        \item Calculer $\mathcal{S}_{15} = v_1 + v_2 + ... + v_{15}$.
+    \end{enumalph}
+    \carreauxseyes{16}{6.4}
+\end{enumerate}
+
+%\end{document}
+
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N.\quad u_n$\=$=u_1+(n-1)\times 7$\\
+            \>  $=2+7(n-1)$\\
+            \>  $=2+7n-7$\\
+            \>  $=-5+7n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{30}$    \=  $=u_1 + u_2 + ... + u_{30} $\\[.5em]
+            \>  $=30\times \dfrac{u_1+u_{30}}{2}$\\[.5em]
+            \>  $=30\times \dfrac{2+(-5+7\times 30)}{2}$\\[.5em]
+            \>  $=30\times \dfrac{2+205}{2}$\\[.5em]
+            \>  $=30\times \dfrac{207}{2}$\\[.5em]
+            \>  $=3105$
+        \end{tabbing}
+    \end{enumalph}
+
+    \columnbreak
+
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad v_n$\=$=v_1\times 2^{n-1}$\\
+            \>  $=10\times 2^{n-1}$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{15}$    \=  $= v_1 + v_2 + ... + v_{15}$\\[.5em]
+            \>  $=v_1\times \dfrac{1-2^{15}}{1-2}$\\[.5em]
+            \>  $=10\times \dfrac{1-2^{15}}{1-2}$\\[.5em]
+            \>  $= 10 \times 32\ 767$\\[.5em]
+            \>  $= 327\ 670$
+        \end{tabbing}
+    \end{enumalph}
+\end{enumerate}
+\end{multicols}
+
+\end{document}

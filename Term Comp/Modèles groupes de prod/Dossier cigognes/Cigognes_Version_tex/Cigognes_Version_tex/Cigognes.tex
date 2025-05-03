@@ -1,0 +1,199 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc} %permet de taper directement à l?écran, dans le fichier *.tex, les caractères accentués.
+
+%Caractères mathématiques
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%
+
+
+%Image%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eps,pst-fill,pst-node,pst-math} %pst-node : graph, pst-tree : arbre
+\usepackage{pst-blur}%	Pour bclogo
+\usepackage{pstricks-add}
+\usepackage{tikz}
+\usepackage{pst-func}%pour sujet de bac APMEP (gauss) ....
+\usepackage{graphicx} %pour l?insertion d?image
+
+%Couleurs
+\usepackage{color} %	Permet d'utiliser la couleur
+\usepackage{xcolor}%Définie des couleurs
+
+
+
+\usepackage[colorlinks=true]{hyperref}%	Hyperlien 
+%\url{ exemple de lien}
+%\href{lien}{texte}
+
+
+
+%pointillés
+\newcommand{\Pointilles}[2][3]{%
+\multido{}{#1}{%
+\makebox[#2]{\dotfill}\\[\parskip]
+}}
+
+
+
+
+% Intervalles
+\newcommand{\intervalleOO}[2]{\left]{#1}\,{;}\,{#2}\right[}
+\newcommand{\intervalleOF}[2]{\left]{#1}\,{;}\,{#2}\right]}
+\newcommand{\intervalleFO}[2]{\left[{#1}\,{;}\,{#2}\right[}
+\newcommand{\intervalleFF}[2]{\left[{#1}\,{;}\,{#2}\right]}
+
+% Couple 
+\newcommand{\couple}[2]{\left(#1\,{;}\,{#2}\right)}
+
+% Parenthese 
+\newcommand{\pag}{\left(}%        parenthèse gauche
+\newcommand{\pad}{\right)} %       parenthèse droite  
+
+
+%Infini
+\newcommand{\pI}{{\ensuremath{+\infty}}} 
+\newcommand{\mI}{{\ensuremath{-\infty}}} 
+\newcommand{\pmi}{{\ensuremath{\pm \ \infty}}} % +ou- infini
+
+%Double flèches
+\newcommand{\ssi}{\Longleftrightarrow} % Pour faire le symbole equivalent
+\newcommand{\implique}{\Longrightarrow} % Pour faire le symbole implique
+
+%Limites
+\newcommand{\limiteb}[1]{\displaystyle\lim_{#1}}
+\newcommand{\limite}[2]{\displaystyle\lim_{#1\rightarrow #2}}
+
+%degre
+\newcommand{\degre}{\ensuremath{^\circ}}
+
+
+\usepackage{geometry}%	Marge
+\geometry{hmargin=1cm,vmargin=2 cm}
+\usepackage{bclogo}%pour bclogo (cadre et logo sur le bord)
+\usepackage{enumerate} 
+\usepackage{tabularx}
+
+
+
+%Entête et pied de page%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}%packag$e entete et pied de page
+\pagestyle{fancy}%style entete et pied de page
+\fancyhf{}%annule entete et pied de page classique pour mettre fancy
+\fancyhead[L]{Classe de Terminale Enseignement scientifique}
+\fancyfoot[C]{\thepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+
+ \begin{bclogo}[couleur=white , logo=\hspace{10pt} ,barre=none, ombre=true,epOmbre=0.25, couleurOmbre=black!30]{\footnotesize{\hspace{0.1cm} Questionner les modèles mathématiques}}
+ 
+ \vspace{0.5}
+\begin{center}
+\Large{ÉVOLUTION D'UNE POPULATION DE CIGOGNES BLANCHES EN ALSACE}
+\end{center}
+ \vspace{0.5}
+\end{bclogo}
+
+Une population est un groupe d'individus appartenant à une même espèce et vivant dans une zone définie.\\
+Les écologistes s'efforcent de comprendre les causes de la variation de la taille des populations et de prédire les tendances de ces nombres dans le temps et d'un endroit à l'autre.\\
+La taille d'une population augmente grâce aux naissances et à l'immigration d'individus de l'extérieur. Les décès et l'émigration diminuent la taille de la population.\\
+Ces entrées et sorties peuvent être représentées sous la forme d'une équation où l'indice $t$ indique un moment discret dans le temps.
+
+\begin{center}
+  \begin{minipage}[c]{.6\linewidth}
+La population alsacienne de cigognes blanches (\emph{ciconia ciconia}), en déclin à partir de la
+fin des années 1950, comme toutes les populations de l'ouest européen, a fait l'objet de
+dénombrements très sûrs, compte-tenu de la rareté de l'espèce et de la facilité de son
+observation.
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.3\linewidth}
+\begin{center}
+\includegraphics[scale=0.2]{cigogne.eps} 
+\end{center}
+   \end{minipage}
+\end{center}
+
+On dispose donc d'excellentes données dues à Schierer (1972).
+Durant la période 1960-70 le nombre de couples nicheurs de cette population a évolué de
+la manière suivante.
+
+\begin{center}
+\includegraphics[scale=0.2]{tab.eps} 
+\end{center}
+
+\textbf{Le but de l'activité est de modéliser l'évolution de la population des cigognes.}
+
+\section*{\small Partie A - Étude graphique}
+
+\begin{enumerate}
+\item Représenter le nuage de points dans le repère ci dessous.
+\begin{center}
+\includegraphics[scale=0.2]{graph.eps} 
+\end{center}
+\item Quelle(s) remarque(s) peut-on faire ?
+\\\Pointilles[2]{\linewidth}
+\end{enumerate}
+
+\section*{\small Partie B - Modélisation par une suite arithmétique}
+
+\begin{enumerate}
+\item Quelle formule faut-il entrer dans la cellule C4 du tableur afin que le calcul des variations absolues entre $1960$ et $1970$ se fasse automatiquement ? Compléter la ligne 5.
+
+\Pointilles[1]{\linewidth}
+\item Calculer la moyenne $r$ de ces variations absolues.
+
+\Pointilles[1]{\linewidth}
+\item On définit la suite $u$ qui au rang $n$ de l'année associe la population $u(n)$ de cigogne, on a donc $u(0) = 145$. On décide de modéliser l'évolution de cette population par un modèle linéaire dont la variation absolue est la valeur $r$ trouvée à la question précédente.
+\begin{enumerate}
+\item Que peut-on dire de la suite $u$ ? 
+\\\Pointilles[1]{\linewidth}
+\item Donner l'expression de $u(n)$ en fonction de $n$.
+\\\Pointilles[1]{\linewidth}
+\end{enumerate}
+\item Quelle formule faut-il entrer dans la cellule C5 du tableur afin que le calcul des termes de la suite $u$ se fasse automatiquement ? Compléter la ligne 5. 
+\\\Pointilles[1]{\linewidth}
+\item Représenter la suite $u$ sur le graphique précédent.
+\item On souhaite utiliser ce modèle et un algorithme afin de déterminer l'année d'extinction de l'espèce. On considère que cette espèce est éteinte lorsque le nombre de couples est strictement inférieur à $5$.
+\begin{center}
+  \begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\begin{tabular}{p{2cm}p{9cm}}
+& $n \longleftarrow 0$ \\ 
+& $u \longleftarrow 145$ \\ 
+ & Tant que $u.....................$ faire : \par 
+\qquad $n \longleftarrow n+1$\par 
+\qquad $u \longleftarrow .....................$\\
+&Fin Tant que\\
+&Afficher $1960 + n$\\
+\end{tabular} 
+\end{center}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\includegraphics[scale=0.4]{python.eps}
+\end{center}
+   \end{minipage}
+\end{center}
+\begin{enumerate}
+\item Compléter les pointillés des deux algorithmes.
+\item Déterminer la date théorique à laquelle cette population s'est éteinte avec ce modèle.
+\\\Pointilles[1]{\linewidth}
+\end{enumerate}
+\end{enumerate}
+
+\section*{\small Partie C - Ajustement affine par la méthode des moindres carrés}
+
+\begin{enumerate}
+\item A l'aide de la calculatrice, déterminer l'équation réduite de la droite d'ajustement linéaire par la méthode des moindres carrés de la série statistique (on arrondira les coefficients à l'unité).
+\\\Pointilles[1]{\linewidth}
+\item Représenter graphiquement cette droite d'ajustement sur le graphique précédent.
+\item Déterminer la date théorique à laquelle cette population s'est éteinte avec ce nouveau modèle.
+\\\Pointilles[2]{\linewidth}
+\end{enumerate}
+
+
+\end{document}

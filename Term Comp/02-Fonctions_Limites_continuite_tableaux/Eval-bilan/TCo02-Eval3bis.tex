@@ -1,0 +1,66 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Vendredi 10/01/2025}\\
+\classe{\terminale Comp}
+\titre{Évaluation-bilan 3 bis}
+\maketitle
+\begin{center}
+	Calculatrice autorisée. Toutes les réponses doivent être justifiées.
+\end{center}
+
+\vspace*{.2cm}
+
+
+
+
+\exo{}\bareme{12 pts}
+\begin{enumerate}
+    \item Soit $f$ la fonction définie sur $I=\fif{0}{40}$ par $\quad f(x)=(10x-10)e^{-0,1x}$.
+    \begin{enumalph}
+        \item Calculer $f(0)$ et $f(40)$.
+        \item Démontrer que pour tout $x\in I, \quad f'(x)=(11-x)e^{-0,1x}$.
+        \item Dresser le tableau de variations de la fonction $f$ sur $I=\fif{0}{40}$.
+        \item Démontrer que l'équation $f(x)=20$ admet exactement deux solutions sur l'intervalle $\fif{0}{40}$.
+    \end{enumalph}
+    \carreauxseyes{16}{14.4}\\
+    \carreauxseyes{16}{10.4}
+    \item Une entreprise fabrique $x$ centaines d'ordinateurs, où $x$ appartient à l'intervalle $\fif{0}{40}$.
+    On suppose que toute la production de l'entreprise est vendue et que le bénéfice, en milliers d'euros, de cette entreprise peut être modélisé par la fonction $f$ définie sur $\fif{0}{40}$ par $\quad f(x)=(10x-10)e^{-0,1x}$. 
+    \begin{enumalph}
+        \item Déterminer la perte de l'entreprise lorsqu'il n'y a pas de production.
+        \item Déterminer le bénéfice maximal de l'entreprise. À quel nombre d'ordinateurs produits cela correspond-il ?	
+        \item L'entreprise souhaite réaliser un bénéfice d'au moins 20 000 euros. Pour quel nombre d'ordinateurs produits cela est-il possible ?
+    \end{enumalph}
+    \carreauxseyes{16}{9.6}
+\end{enumerate}
+
+\exo{}\bareme{10 pts}\\
+On définit la fonction $g$ sur $\oio{1}{+\infty}$ par $\quad g(x)=\dfrac{x^2+3}{x-1}$.
+\begin{enumerate}
+    \item Montrer que pour tout $x\in\oio{1}{+\infty}, \quad g'(x)=\dfrac{x^2-2x-3}{(x-1)^2}$.
+    \item Calculer la limite de la fonction $g$ en $+\infty$.
+    \item Calculer la limite de la fonction $g$ en 1.
+    \item Étudier le signe de $x^2-2x-3$ pour $x$ appartenant à $\oio{1}{+\infty}$ puis dresser le tableau de variations de $g$.
+\end{enumerate}
+\carreauxseyes{16.8}{20}\\
+\carreauxseyes{16.8}{25.6}
+\end{document}

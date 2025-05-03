@@ -1,0 +1,98 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+%\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spé}
+\titre{Traversée de la rivière}
+\maketitle
+
+
+\subsection*{Lancers de dés}
+
+\textbf{On lance un dé à 6 faces.}
+\begin{enumerate}
+    \item Quelle est la probabilité de chacune des six issues possibles ? \dotfill
+    \item Quelle est la  probabilité d’obtenir un nombre supérieur ou égal à 4 ? \dotfill
+\end{enumerate}
+
+\textbf{On lace deux dés à six faces.}\\
+Les issues possibles sont donc les couples (1 ;1), (1 ; 2), … ,(6 ; 5) et (6 ; 6).\\
+Dans cette expérience aléatoire, on effectue la somme des deux dés.
+\begin{enumerate}
+    \item Compléter le tableau ci-dessous qui pour chaque issue $(i;j)$ donne la somme des deux dés.
+    \begin{center}
+        \tabstyle[UGLiBlue]
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            \ccell + & \ccell 1  & \ccell 2 & \ccell 3 & \ccell 4 & \ccell 5 & \ccell 6\\\hline
+            \ccell 1 & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ \\\hline
+            \ccell 2 & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ \\\hline
+            \ccell 3 & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ \\\hline
+            \ccell 4 & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ \\\hline
+            \ccell 5 & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ \\\hline
+            \ccell 6 & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ & $\qquad$ \\\hline
+        \end{tabular}
+    \end{center}
+    \item Compléter alors le tableau ci-dessous qui établit la loi de probabilité de cette expérience aléatoire.\\[.5em]
+    \tabstyle[UGLiBlue]
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \ccell Issue : Somme des deux dés  & \ccell 2 & \ccell 3 & \ccell 4 & \ccell 5 & \ccell 6 & \ccell 7 & \ccell 8 & \ccell 9 & \ccell 10 & \ccell 11 & \ccell 12\\\hline
+            \ccell Probabilité & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ & $\ \quad$ \rule[-1.2em]{0pt}{3em} \\\hline
+            
+        \end{tabular}
+\end{enumerate}
+
+\subsection*{Expertise du jeu}
+\begin{center}
+    \includegraphics[width=15cm]{riviere.png}
+\end{center}
+
+\textbf{Nombre de joueurs :}  3 ou 4 joueurs\\[.5em]
+\textbf{Matériel :} Trois dés, un pion, un plateau de jeu, six tuiles rochers, et quatre choix de sauts.\\[.5em]
+\textbf{Règles :} Au début du jeu, les tuiles rochers sont placées aléatoirement sur la rivière. L’objectif est de traverser la rivière et de rejoindre la rive droite en s’aidant des rochers et sans tomber à l’eau. Au moment de jouer, le joueur place le pion sur la rive gauche et exécute ensuite la stratégie de saut choisie. Le joueur gagne un point si il parvient à rejoindre la rive droite sans tomber à l’eau.\\
+
+\section*{Votre travail d’expertise :}
+L’objectif est de comparer les choix de sauts proposés dans ce jeu sur un exemple de disposition des tuiles rochers. Une carte « Stratégie de saut » est donc distribuée à chaque élève dans le but de l’expertiser.
+Dans un premier temps, jouez ensemble pour tester votre saut et le comparer aux sauts des autres joueurs.\\
+
+\textbf{Première Synthèse :} Après avoir joué plusieurs parties, les stratégies semblent-elles équitables sur cet exemple ?\\[.5em]
+\carreauxseyes{16.8}{5.6}
+
+\textbf{Bonus :} Combien y-t-il de dispositions possibles des tuiles sur le plateau ? \\[.5em]
+\carreauxseyes{16.8}{4}
+
+Le choix de la stratégie de saut est-il indépendant de la disposition des tuiles ? \\[.5em]
+\carreauxseyes{16.8}{4}
+
+\newpage
+
+\subsection*{Analyse mathématique de la stratégie « Petit saut + grand saut »}
+Sur cet exemple de plateau, l’objectif est de calculer la probabilité d’atteindre la rive droite si le joueur choisit la stratégie « Petit saut + grand saut ».
+\begin{enumerate}
+    \item Quelle est la probabilité que le pion se retrouve sur un rocher après le petit saut ?\\[.5em]
+    \carreauxseyes{16.8}{3.2}
+    \item On suppose que le pion se retrouve sur le rocher de la case 4 après le petit saut. Quelle est alors la probabilité d’atteindre la rive droite après le grand saut ?\\[.5em]
+    \carreauxseyes{16.8}{3.2}
+    \item Quelle est la probabilité que le pion atteigne la rive droite en passant par le rocher de la case 6 après le petit saut ?\\[.5em]
+    \carreauxseyes{16.8}{3.2}
+    \item Calculer la probabilité d’atteindre la rive droite avec cette stratégie « Petit saut + grand saut ».\\[.5em]
+    \carreauxseyes{16.8}{8}
+\end{enumerate}
+
+\subsection*{Analyse mathématique de la stratégie « Grand saut + petit saut »}
+Sur cet exemple de plateau, l’objectif est de calculer la probabilité d’atteindre la rive droite si le joueur choisit la stratégie « Grand saut + petit saut ».
+\begin{enumerate}
+    \item Quelle est la probabilité que le pion se retrouve sur le rocher de la case 5 après le grand saut ?\\[.5em]
+    \carreauxseyes{16.8}{3.2}
+    \item Quelle est la probabilité que le pion atteigne directement la rive droite après le grand saut  ?\\[.5em]
+    \carreauxseyes{16.8}{3.2}
+    \item On suppose que le pion se retrouve sur le rocher de la case 6. Quelle est alors la probabilité d’atteindre la rive droite après le petit saut qui suit ?\\[.5em]
+    \carreauxseyes{16.8}{3.2}
+    \item Calculer la probabilité d’atteindre la rive droite avec cette stratégie « Grand saut + petit saut ».\\[.5em]
+    \carreauxseyes{16.8}{8}
+\end{enumerate}
+\end{document}

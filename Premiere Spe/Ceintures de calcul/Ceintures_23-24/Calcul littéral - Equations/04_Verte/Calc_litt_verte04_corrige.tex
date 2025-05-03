@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spé}
+\titre{Ceinture verte 04 - Corrigé}
+\maketitle
+
+
+%Exercice 2N52-5 en selectionnant 4 questions
+
+
+\begin{exercice}[ : Équations avec un quotient]
+    Pour chacune des équations suivantes, préciser les valeurs interdites éventuelles puis résoudre l'équation :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\dfrac{-3x-4}{-4x-9}=9$.
+	        \item $\dfrac{64-4x^2}{3x+9}=0$.
+	       % \item  $\dfrac{1}{-x-8}=\dfrac{-6}{7x+9}$.
+        \end{enumerate}
+    \end{multicols}
+    
+\end{exercice}
+
+\begin{enumerate}
+    \item Déterminer les valeurs interdites revient à déterminer les valeurs qui annulent le dénominateur du quotient, puisque la division par $0$ n'existe pas.\\Or $-4x-9=0\quad \iff \quad x=-\dfrac{9}{4}$. Donc l'ensemble des valeurs interdites est  $\left\{-\dfrac{9}{4}\right\}$. \\
+    Pour tout $x\in \mathbb{R}\smallsetminus\left\{-\dfrac{9}{4}\right\}$,
+    \begin{tabbing}
+        $\dfrac{-3x-4}{-4x-9}=9 \quad$  \=  $\iff \quad -3x-4=9\times(-4x-9)\,\,\,\,\,\,\,\text{ car les produits en croix sont égaux.}$\\
+        \>  $\iff\quad  -3x-4= -36x-81$\\
+        \>  $\iff\quad  33x= -77$\\
+        \>  $\iff\quad  x=-\dfrac{7}{3}$
+    \end{tabbing}
+    $-\dfrac{7}{3}$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{-\dfrac{7}{3}\right\}$.
+
+
+    \item $3x+9=0$ si et seulement si  $x=-3$. Donc l'ensemble des valeurs interdites est  $\left\{-3\right\}$.\\
+    Pour tout $x\in \mathbb{R}\smallsetminus\left\{-3\right\}$,
+    \begin{tabbing}
+        $\dfrac{64-4x^2}{3x+9}=0 \quad$ \=  $\iff\quad 64-4x^2=0\,\,\,\,\,\,\, \text{ car }\dfrac{A(x)}{B(x)}=0 \text { si et seulement si } A(x)=0 \text { et } B(x)\neq 0$\\
+        \>  $\iff\quad  4x^2=64$\\
+        \>  $\iff\quad  x^2=16$\\
+        \>  $\iff\quad  x= 4\text{ ou } x= -4$
+    \end{tabbing}
+    $-4$ et $4$ ne sont pas des valeurs interdites, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{-4\,;\,4\right\}$.
+
+    %\item $-x-8=0\quad \iff \quad x=-8\quad$ et $\quad 7x+9=0\quad \iff \quad x=-\dfrac{9}{7}$. \\
+    %Donc l'ensemble des valeurs interdites est  $\left\{-8\,;\,-\dfrac{9}{7}\right\}$. \\Pour tout $x\in \mathbb{R}\smallsetminus\left\{-8\,;\,-\dfrac{9}{7}\right\}$,
+    %\begin{tabbing}
+    %    $\dfrac{1}{-x-8}=\dfrac{-6}{7x+9} \quad$    \=  $\iff\quad -6\times (-x-8)=1\times (7x+9)\,\,\,\,\,\,\, \text{ car les produits en croix sont égaux.}$\\
+    %    \>  $\iff\quad 6x+48=7x+9$\\
+    %    \>  $\iff\quad -1x= -39$\\
+    %    \>  $\iff\quad x=39$
+    %\end{tabbing}
+    %$39$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{39\right\}$.
+
+\end{enumerate}
+
+\end{document}

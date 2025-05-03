@@ -1,0 +1,36 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+\begin{document}
+\classe{\terminale Comp}
+\titre{DL - Modèle de Malthus}
+\maketitle
+
+En 1798, Thomas Malthus publie \textit{An essay on the principle of population} dans lequel il émet l'hypothèse suivante : l'accroissement de la population, beaucoup plus rapide que celui des ressources alimentaires, conduira son pays à la famine.\\[.5em]
+En 1800, la population de l'Angleterre était estimée à 8 millions d'habitants et l'agriculture anglaise pouvait nourrir 10 millions de personnes.\\
+Malthus admet que la population augmente de 2,8 \% chaque année et que les progrès de l'agriculture permettent de nourrir 400 000 personnes de plus chaque année.\\[.5em]
+Pour tout entier naturel $n$, on note $p_n$ la population (en millions) en 1800$+n$ et $a_n$ le nombre de personnes (en millions) pouvant être nourries par l'agriculture la même année. Ainsi $p_0=8$ et $a_0=10$. \\[.5em]
+\textit{On arrondira si besoin les réponses à 0,001.}
+
+\begin{enumerate}
+    \item Donner la relation de récurrence permettant d'exprimer $p_{n+1}$ en fonction de $p_n$ pour $n\in\N$.\\
+    En déduire l'expression de $p_n$ en fonction de $n$.
+    
+    \item Donner la relation de récurrence permettant d'exprimer $a_{n+1}$ en fonction de $a_n$ pour $n\in\N$.\\
+    En déduire l'expression de $a_n$ en fonction de $n$.
+
+    \item Calculer $p_{50}$ et $a_{50}$. 
+    Interpréter ces résultats dans le contexte de l'exercice.
+
+    \item Calculer les limites des suites $(p_n)$ et $(a_n)$.
+   
+    \item Représenter graphiquement les termes des suites $p$ et $a$ pour $n=0, 10, ..., 50$.\\
+    Vers quelle année la situation semble-t-elle devenir critique ?
+    \item À l'aide de la calculatrice, déterminer précisément en quelle année, selon ce modèle, la situation aurait dû devenir critique.
+    \item Que s'est-il réellement passé en Angleterre ? \textit{Faire des recherches.}\\
+    Quelles critiques peut-on faire du modèle proposé par Malthus ?
+\end{enumerate}
+\end{document}

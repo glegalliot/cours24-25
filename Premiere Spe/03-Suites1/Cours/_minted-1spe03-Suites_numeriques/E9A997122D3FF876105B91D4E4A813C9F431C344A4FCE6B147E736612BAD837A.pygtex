@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Variables}
+	\PYG{n}{a}\PYG{p}{,} \PYG{n}{n}\PYG{p}{,} \PYG{n}{i} \PYG{n}{sont} \PYG{n}{des} \PYG{n}{entiers} \PYG{n}{naturels}
+\PYG{n}{Debut}
+	\PYG{n}{Afficher} \PYG{l+s+s2}{\PYGZdq{}Entrer le nombre de termes souhaités\PYGZdq{}}
+	\PYG{n}{Lire} \PYG{n}{n}
+	\PYG{n}{Afficher} \PYG{l+s+s2}{\PYGZdq{}Entrer la valeur de départ\PYGZdq{}}
+	\PYG{n}{Lire} \PYG{n}{a}
+	\PYG{n}{Répéter} \PYG{n}{n} \PYG{n}{fois} \PYG{p}{:}
+		\PYG{n}{Si} \PYG{n}{a} \PYG{n}{est} \PYG{n}{pair}\PYG{p}{:}
+		 	\PYG{n}{Alors} \PYG{n}{a} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{n}{a} \PYG{o}{/} \PYG{l+m+mi}{2}
+		\PYG{n}{Sinon}\PYG{p}{:}
+		 	\PYG{n}{a} \PYG{o}{\PYGZlt{}\PYGZhy{}} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{n}{a} \PYG{o}{+} \PYG{l+m+mi}{1}
+		\PYG{n}{Fin} \PYG{n}{Si}
+		\PYG{n}{Afficher} \PYG{n}{a}
+	\PYG{n}{Fin} \PYG{n}{Pour}
+\PYG{n}{Fin}
+\end{Verbatim}

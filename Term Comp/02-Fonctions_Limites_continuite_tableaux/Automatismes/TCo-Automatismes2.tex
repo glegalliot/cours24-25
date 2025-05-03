@@ -1,0 +1,231 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\geometry{margin=2cm}
+
+
+
+
+%\aut{intitulé}
+%
+\newcounter{autNum}
+\setcounter{autNum}{0}
+%
+\newcommand{\aut}[1]
+{
+	\addtocounter{autNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Automatisme\ \theautNum\ \normalsize{#1}}\smallskip	
+}
+
+%\aut{intitulé}
+%
+\newcounter{corNum}
+\setcounter{corNum}{0}
+%
+\newcommand{\cor}[1]
+{
+	\addtocounter{corNum}{1}
+	{\titlefont\color{UGLiOrange}\Large Corrigé\ \thecorNum\ \normalsize{#1}}\smallskip	
+}
+
+
+\begin{document}
+\classe{\terminale Comp}
+\titre{Automatismes 2 - Fonctions}
+\maketitle
+
+\begin{multicols}{2}
+\aut{}\\%1AN14-3
+Pour chacune des fonctions suivantes, déterminer l'expression de sa fonction dérivée.
+
+\begin{enumerate}[]
+	\item $f(x)=8$
+	\item $g(x)=5x-7$
+	\item $h(x)=8x^3+7x^2-5x-3$
+\end{enumerate}
+\vfill\null\columnbreak
+
+\cor{}
+\begin{enumerate}[]
+    \item $f^\prime(x)= 0$.
+    \item $g^\prime(x)=1\times 5+0$.\\On effectue les produits.\\On obtient alors : $g^\prime(x)=5$.
+    \item $h^\prime(x)=3\times 8x^{2}+2\times 7x+1\times (-5)+0$.\\On effectue les produits.\\On obtient alors : $h^\prime(x)=24x^{2}+14x-5$.
+    \end{enumerate}
+
+\end{multicols}
+
+%\begin{multicols}{2}
+	\aut{}%1AN14-1
+	\begin{enumerate}[]
+		\item Donner la dérivée de la fonction $f$, dérivable pour tout $x\in\R^*_+$, définie par  $f(x)=\sqrt{x}$.
+		\item Donner la dérivée de la fonction $g$, dérivable pour tout $x\in\R$, définie par  $g(x)=\dfrac{x^{7}}{8}$.
+		\item Donner la dérivée de la fonction $h$, dérivable pour tout $x\in\R$, $m\in\R$ et $p\in\R$, définie par  $h(x)=48+20x$.
+	\end{enumerate}
+
+	\cor{}
+	\begin{enumerate}[]
+		\item L'expression de la dérivée de la fonction $f$ définie par $f(x)=\sqrt{x}$ est : ${\color[HTML]{f15929}\boldsymbol{f'(x)=\dfrac{1}{2\sqrt{x}}}}$.
+		\item L'expression de la dérivée de la fonction $g$ définie par $g(x)=\dfrac{x^{7}}{8}$ est : ${\color[HTML]{f15929}\boldsymbol{g'(x)=\dfrac{7}{8}x^{6}}}$.
+		\item L'expression de la dérivée de la fonction $h$ définie par $h(x)=48+20x$ est : ${\color[HTML]{f15929}\boldsymbol{h'(x)=20}}$.
+		\end{enumerate}
+%\end{multicols}
+
+%\begin{multicols}{2}
+	\aut{}%1AN14-1
+	\begin{enumerate}[]
+		\item Donner la dérivée de la fonction $f$, dérivable pour tout $x\in\R$, définie par  $f(x)=x^2$.
+		\item Donner la dérivée de la fonction $g$, dérivable pour tout $x\in\R^*$, définie par  $g(x)=\dfrac{10}{x}$.
+		\item Donner la dérivée de la fonction $h$, dérivable pour tout $x\in\R$, définie par  $h(x)=\dfrac{x^{7}}{5}$.
+	\end{enumerate}
+
+	\cor{}
+	\begin{enumerate}[]
+		\item L'expression de la dérivée de la fonction $f$ définie par $f(x)=x^2$ est : ${\color[HTML]{f15929}\boldsymbol{f'(x)=2x}}$.
+		\item L'expression de la dérivée de la fonction $g$ définie par $g(x)=\dfrac{10}{x}$ est : ${\color[HTML]{f15929}\boldsymbol{g'(x)=-\dfrac{10}{x^2}}}$.
+		\item L'expression de la dérivée de la fonction $h$ définie par $h(x)=\dfrac{x^{7}}{5}$ est : ${\color[HTML]{f15929}\boldsymbol{h'(x)=\dfrac{7}{5}x^{6}}}$.
+		\end{enumerate}
+%\end{multicols}
+
+\aut{}%1AN14-1
+	\begin{enumerate}[]
+		\item Soit $n$ un entier naturel strictement positif.\\
+		Donner la dérivée de la fonction $f$, dérivable pour tout $x\in\R$, définie par  $f(x)=x^n$.
+		\item Donner la dérivée de la fonction $g$, dérivable pour tout $x\in\R^*$, définie par  $g(x)=\dfrac{-10}{x}$.
+		\item Donner la dérivée de la fonction $h$, dérivable pour tout $x\in\R$, définie par  $h(x)=-7x-69$.
+	\end{enumerate}
+
+	\cor{}
+	\begin{enumerate}[]
+		\item L'expression de la dérivée de la fonction $f$ définie par $f(x)=x^n$ est : ${\color[HTML]{f15929}\boldsymbol{f'(x)=nx^{n - 1}}}$.
+		\item L'expression de la dérivée de la fonction $g$ définie par $g(x)=\dfrac{-10}{x}$ est : ${\color[HTML]{f15929}\boldsymbol{g'(x)=\dfrac{10}{x^2}}}$.
+		\item L'expression de la dérivée de la fonction $h$ définie par $h(x)=-7x-69$ est : ${\color[HTML]{f15929}\boldsymbol{h'(x)=-7}}$.\\
+
+		\end{enumerate}
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\R$ par $\ f(x)=(2x-3)e^x$.\\
+Déterminer l'expression de sa fonction dérivée.\\
+
+\cor{}\\
+$f$ est dérivable sur $\R$ comme produit de fonction dérivables sur $\R$.\\
+On rappelle le cours : si $u,v$ sont  deux fonctions dérivables sur un même intervalle $I$ alors leur produit est dérivable sur $I$ et on a la formule : \[(u\times v)'=u'\times v+u\times v'.\]
+Ici $f=u\times v$ avec : \[\begin{aligned}u(x)&=2x-3&\qquad \text{et}\qquad & v(x)=e^x\\ u'(x)&=2&&v'(x)=e^x.\end{aligned}\]On applique la  formule rappellée plus haut : \[f'(x)=\underbrace{2}_{u'(x)}\times e^x+(2x-3)\times\underbrace{e^x}_{v'(x)}.\]On peut réduire un peu l'expression : \[\begin{aligned}f'(x)&=(2+2x-3)e^x\\ & =(2x-1)e^x \end{aligned}\]
+
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\oio{0}{+\infty}$ par $\ f(x)=-9x^2\sqrt{x}$.\\
+Déterminer l'expression de sa fonction dérivée.\\
+
+\newpage
+\cor{}\\
+$f$ est dérivable sur $\oio{0}{+\infty}$ comme produit de fonction dérivables sur $\oio{0}{+\infty}$.\\
+On rappelle le cours : si $u,v$ sont  deux fonctions dérivables sur un même intervalle $I$ alors leur produit est dérivable sur $I$ et on a la formule : \[(u\times v)'=u'\times v+u\times v'.\]
+Ici $f=u\times v$ avec : \[\begin{aligned}u(x)&=-9x^2&\qquad \text{et}\qquad & v(x)=\sqrt{x}\\ u'(x)&=-18x&&v'(x)=\dfrac{1}{2\sqrt{x}}.\end{aligned}\]On applique la  formule rappellée plus haut : \[f'(x)=\underbrace{-18x}_{u'(x)}\times\sqrt{x}+(-9x^2)\times\underbrace{\dfrac{1}{2\sqrt{x}}}_{v'(x)}.\]On peut réduire un peu l'expression : \[\begin{aligned}f'(x)&=-18x\sqrt{x}-\dfrac{9x^2}{2\sqrt{x}}\\ & =\dfrac{-2\times 18x\left(\sqrt{x}\right)^2}{2\sqrt{x}} +\dfrac{-9x^2}{2\sqrt{x}}\\ & = \dfrac{-36x^2-9x^2}{2\sqrt{x}}\\ & = \dfrac{-45x^2}{2\sqrt{x}}\end{aligned}\]
+
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\R$ par $\ f(x)=(7-2x^2)e^{-x}$.\\
+Déterminer l'expression de sa fonction dérivée.\\
+
+\cor{}\\
+$f$ est dérivable sur $\R$ comme produit de fonction dérivables sur $\R$.\\
+On rappelle le cours : si $u,v$ sont  deux fonctions dérivables sur un même intervalle $I$ alors leur produit est dérivable sur $I$ et on a la formule : \[(u\times v)'=u'\times v+u\times v'.\]
+Ici $f=u\times v$ avec : \[\begin{aligned}u(x)&=7-2x^2&\qquad \text{et}\qquad & v(x)=e^{-x}\\ 
+	u'(x)&=-2\times 2x & &v'(x)=-e^{-x}\\
+	& =-4x & &\end{aligned}\]
+	On applique la  formule rappellée plus haut : \[f'(x)=\underbrace{-4x}_{u'(x)}\times e^{-x}+(7-2x^2)\times\underbrace{(-e^{-x})}_{v'(x)}.\]
+	On peut factoriser l'expression : \[\begin{aligned}f'(x)&=-4xe^{-x}-(7-2x^2)e^{-x}\\ & =\left(-4x-(7-2x^2)\right)e^{-x}\\ & = \left(-4x-7+2x^2\right)e^{-x}\\ & = \left(2x^2-4x-7\right)e^{-x}\end{aligned}\]
+
+
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\R\backslash\{1\}$ par $\ f(x)=\dfrac{4x^2-3x-10}{2-2x}$.\\
+Déterminer l'expression de sa fonction dérivée.\\
+
+\cor{}\\
+On rappelle le cours : si $u,v$ sont  deux fonctions dérivables sur un même intervalle $I$, et que $v$ ne s'annule pas sur $I$ alors leur quotient est dérivable sur $I$ et on a la formule : \[\left(\dfrac{u}{v}\right)'=\dfrac{u'\times v-u\times v'}{v^2}.\]Ici $f=\dfrac{u}{v}$ avec : \[\begin{aligned}u(x)&=4x^2-3x-10,\ u'(x)=8x-3\\ v(x)&=2-2x,\ v'(x)=-2.\end{aligned}\]Ici la formule ci-dessus est applicable pour tout $x$ tel que $2-2x\neq 0$. C'est-à-dire $x\neq1$.\\On obtient alors : \[f'(x)=\dfrac{(8x-3)(2-2x)-(4x^2-3x-10)\times(-2)}{(2-2x)^2}.\]D'où, en développant le numérateur : \[f'(x)=\dfrac{-16x^{2}+22x-6-(-8x^{2}+6x+20)}{(2-2x)^2}.\]On réduit le numérateur pour obtenir : ${\color[HTML]{f15929}\boldsymbol{f'(x)=\dfrac{-8x^{2}+16x-26}{(2-2x)^2}}}$.\\
+
+{\bfseries \color{black}Remarque :} la plupart du temps, on veut le signe de la dérivée. Il serait donc plus logique de factoriser le numérateur si possible, mais cela sort du cadre de cet exercice.\\
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\R$ par $\ f(x)=\dfrac{e^x}{x^2+1}$.\\[.5em]
+Déterminer l'expression de sa fonction dérivée.\\
+
+\cor{}\\
+Pour tout $x\in  \R, \quad f(x)=\dfrac{u(x)}{v(x)}\quad$ avec :
+\[\begin{aligned}u(x)&=e^x,\qquad &u'(x)=e^x\\ v(x)&=x^2+1,\ &v'(x)=2x.\end{aligned}\]
+On applique la propriété de dérivation pour les quotients :
+\begin{tabbing}
+	$f'(x)$	\=$=\dfrac{u'(x)v(x)-u(x)v'(x)}{\left(v(x)\right)^2}$\\[.5em]
+	\>	$=\dfrac{e^x\left(x^2+1\right)-e^x\times 2x}{\left(x^2+1\right)^2}$\\[.5em]
+	\>	$=\dfrac{e^x\left(x^2-2x+1\right)}{\left(x^2+1\right)^2}$\\[.5em]
+	\>	$=\dfrac{e^x\left(x-1\right)^2}{\left(x^2+1\right)^2}$
+\end{tabbing}
+
+\vspace*{.5cm}
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\R$ par $\ f(x)=\dfrac{e^{-2x}}{x^2+1}$.\\[.5em]
+Déterminer l'expression de sa fonction dérivée.\\
+
+\cor{}\\
+Pour tout $x\in  \R, \quad f(x)=\dfrac{u(x)}{v(x)}\quad$ avec :
+\[\begin{aligned}u(x)&=e^{-2x},\qquad &u'(x)=-2\ e^{-2x}\\ v(x)&=x^2+1, &v'(x)=2x.\end{aligned}\]
+On applique la propriété de dérivation pour les quotients :
+\begin{tabbing}
+	$f'(x)$	\=$=\dfrac{u'(x)v(x)-u(x)v'(x)}{\left(v(x)\right)^2}$\\[.5em]
+	\>	$=\dfrac{-2\ e^{-2x}\left(x^2+1\right)-e^{-2x}\times 2x}{\left(x^2+1\right)^2}$\\[.5em]
+	\>	$=\dfrac{e^{-2x}\left[-2(x^2+1)-2x\right]}{\left(x^2+1\right)^2}$\\[.5em]
+	\>	$=\dfrac{e^{-2x}\left(-2x^2-2x-2\right)}{\left(x^2+1\right)^2}$
+\end{tabbing}
+
+\vspace*{.5cm}
+
+\aut{}\\%1AN14-5
+Soit $f$ la fonction définie sur $\R\setminus\left\{3\right\}$ par $\ f(x)=\dfrac{e^{-2x+1}}{-x+3}$.\\[.5em]
+Déterminer l'expression de sa fonction dérivée.\\
+
+\cor{}\\
+Pour tout $x\in  \R, \quad f(x)=\dfrac{u(x)}{v(x)}\quad$ avec :
+\[\begin{aligned}u(x)&=e^{-2x+1},\qquad &u'(x)=-2\ e^{-2x+1}\\ v(x)&=-x+3, &v'(x)=-1.\end{aligned}\]
+On applique la propriété de dérivation pour les quotients :
+\newpage
+\begin{tabbing}
+	$f'(x)$	\=$=\dfrac{u'(x)v(x)-u(x)v'(x)}{\left(v(x)\right)^2}$\\[.5em]
+	\>	$=\dfrac{-2\ e^{-2x+1}\left(-x+3\right)-e^{-2x+1}\times (-1)}{\left(-x+3\right)^2}$\\[.5em]
+	\>	$=\dfrac{e^{-2x+1}\left[-2(-x+3)-(-1)\right]}{\left(-x+3\right)^2}$\\[.5em]
+	\>	$=\dfrac{\left(2x-6+1\right)e^{-2x+1}}{\left(-x+3\right)^2}$\\[.5em]
+	\>	$=\dfrac{\left(2x-5\right)e^{-2x+1}}{\left(-x+3\right)^2}$
+\end{tabbing}
+
+\vspace*{.5cm}
+\aut{}\\
+Soit $f$ la fonction définie sur $\R$ par $\quad f(x)=\dfrac{x^2+3x}{x+1}$.
+\begin{enumerate}
+	\item Déterminer l'expression de sa fonction dérivée.
+	\item Donner le tableau de signes de $f'(x)$.
+	\item En déduire les variations de $f$ sur $\R$.
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+	\item 
+	\begin{tabbing}
+		Pour tout $x\in  \R, \quad f(x)=\dfrac{u(x)}{v(x)}\quad$ avec : \qquad \=$u(x)=x^2+3x$,\qquad \=$u'(x)=2x+3$\\
+		\>$v(x)=x+1$,\>$v'(x)=1$.
+	\end{tabbing}
+	\begin{tabbing}
+		Ainsi $\quad f'(x)$	\=$=\dfrac{u'(x)v(x)-u(x)v'(x)}{\left(v(x)\right)^2}$\\[.5em]
+		\>	$=\dfrac{(2x+3)(x+1)-(x^2+3x)\times 1}{(x+1)^2}$\\[.5em]
+		\>	$=\dfrac{2x^2+3x+2x+3-x^2-3x}{(x+1)^2}$\\[.5em]
+		\>	$=\dfrac{x^2+2x+3}{(x+1)^2}$.
+	\end{tabbing}
+	\item Pour tout $x\in  \R, \quad f'(x)=\dfrac{x^2+2x+3}{(x+1)^2}$.\\
+	$(x+1)$ est toujours positif donc $f'(x)$ est du signe de $x^2+2x+3$.\\
+	Le discriminant de ce trinôme est $\Delta=2^2-4\times 1\times 3=-8$.\\
+	Comme $\Delta<0$, ce polynôme du second degré est toujours du signe de son coefficient dominant.\\
+	Ainsi, $x^2+2x+3$ est toujours positif.\\
+	Donc $f'(x)$ est toujours positif.
+	\item On en déduit que $f$ est strictement croissante sur $\R$.
+\end{enumerate}
+\end{document}

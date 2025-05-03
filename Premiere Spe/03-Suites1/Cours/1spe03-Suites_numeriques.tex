@@ -1,0 +1,381 @@
+\documentclass[a4paper,11pt,cours]{nsi} % COMPILE WITH DRAFT
+\geometry{margin=2cm}
+
+\begin{document}
+
+\setcounter{chapter}{2} % 1 de moins que le num de chapitre
+
+\chapter{Suites numériques}
+
+
+\setcounter{chapter}{2} % 1 de moins que le num de chapitre
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{1cm}
+%\creativecommonsfooter  %Pour marquer le doc
+
+
+
+
+
+\section{Notion de suite}
+\begin{definition}[ : suite]
+	Une suite est une fonction dont l'ensemble de définition est $\N$, l'ensemble des entiers naturels.\\
+	La suite $u$ associe à tout nombre entier $n$ un unique réel $u(n)$. On note généralement ce nombre $u_n$, et on
+	l'appelle le \textbf{terme de rang $n$ de la suite $u$}.\\
+	La suite est notée $(u_n)_{n\in\N}$ ou plus simplement $(u_n)$.
+\end{definition}
+
+\begin{exemple}[s : divers modes de génération d'une suite]
+	Les termes d'une suite peuvent être générés de diverses manières. En voici trois (qui sont assez anecdotiques en première) :
+	\begin{enumerate}[label=\textbullet]
+		\item 	La suite $u$ dont le terme de rang $n$ est la  n$^{\text{ième}}$ décimale de $\pi$.\\
+		$u_0=3$, $u_1=1$, $u_2=4$, $u_3=1$, $\ldots$
+		\item 	La suite $d$ dont le terme de rang $n$ est le nombre d'entiers naturels qui divisent $n$.\\
+		$d_1=1$, $d_2=2$, $d_3=2$, $d_4=3$, $d_5=2$, $\ldots$
+		\item 	La suite $\phi$, dite \textbf{de Fibonacci}, dont les deux premiers termes valent 1 et dont chaque terme suivant s'obtient en faisant
+		la somme des deux précédents.\\
+		$\phi_0=1$, $\phi_1=1$, $\phi_2=2$, $\phi_3=3$, $\phi_4=5$, $\ldots$
+	\end{enumerate}
+\end{exemple}
+
+Ces exemples compliqués mais intéressants ne seront pas étudiés en détail; ils montrent cependant la diversité des méthodes que l'on peut 
+utiliser
+pour générer une suite.\\
+Voici trois modes courants de génération d'une suite :
+
+\subsection{À l'aide d'une fonction }
+Soit $f$ une fonction dont l'ensemble de définition contient $\N$, alors on peut définir la suite $(u_n)$ par : 
+$$\text{Pour tout } n\in\N,\quad u_n=f(n)$$
+\begin{exemple}[]
+	La suite $v$ est définie par : $$\text{Pour tout } n\in\N,\quad v_n=\dfrac{n}{n^2+1}\qquad (1)$$ 
+	
+	On a alors $v_0=f(0)=0$,
+	$v_1=f(1)=\dfrac{1}{2}$ $\ldots$\\[0.5em]
+	Pour calculer $v_{40}$, il suffit de remplacer $n$ par 40.\\
+	On dit que (1) est \textbf{l'expression du terme général de $v$}.
+\end{exemple}
+
+
+\subsection{À l'aide d'une relation de récurrence}
+On peut définir les termes d'une suite $(u_n)$ en donnant son premier terme $u_0$ et une relation qui permet de calculer un terme de la suite à partir du (ou des) précédents.
+
+
+\begin{exemple}[]
+	La suite $u$ est définie par $$u_0=2\quad\text{et}\quad \text{pour tout } n\in\N,\quad u_{n+1}=2u_n-5$$
+	On se sert de la relation de récurrence pour calculer d'abord $u_1$, puis $u_2$ et ainsi de suite :
+	\begin{multicols}{3}
+		\begin{tabbing}
+			$u_1$	\=	$=2u_0-5$\\
+			\>	$=2\times 2-5$\\
+			\>	$=-1$
+		\end{tabbing}
+		
+		\begin{tabbing}
+			$u_2$	\=	$=2u_1-5$\\
+			\>	$=2\times (-1)-5$\\
+			\>	$=-7$
+		\end{tabbing}
+		\begin{tabbing}
+			$u_3$	\=	$=2u_2-5$\\
+			\>	$=2\times (-7)-5$\\
+			\>	$=-19$
+		\end{tabbing}
+	\end{multicols}
+	Pour déterminer $u_n$, il faut d'abord calculer $u_0$, $u_1$, $\ldots$, $u_{n-1}$.
+\end{exemple}
+
+\subsection{À l'aide d'un algorithme}
+Voici un exemple célèbre, très simple à programmer : la suite de Syracuse, que nous noterons $\sigma$. On peut générer ses premiers termes avec l'algorithme suivant :
+
+\begin{encadrecolore}{Algorithme}{UGLiDarkBlue}
+	\begin{minted}{python}
+		Variables
+			a, n, i sont des entiers naturels
+		Debut
+			Afficher "Entrer le nombre de termes souhaités"
+			Lire n
+			Afficher "Entrer la valeur de départ"
+			Lire a
+			Répéter n fois :
+				Si a est pair:
+				 	Alors a <- a / 2
+				Sinon:
+				 	a <- 3 * a + 1
+				Fin Si
+				Afficher a
+			Fin Pour
+		Fin
+	\end{minted}	
+\end{encadrecolore}
+
+
+
+
+Une conjecture (encore non démontrée à ce jour) affirme que quelle que soit la valeur de l'entier $\sigma_0$ choisie par l'utilisateur 
+alors,
+pourvu que $n$ soit assez grand, la boucle pour
+finira par afficher 4, 2, 1, 4, 2, 1 $\ldots$ (programmez et essayez).
+
+\begin{exercice}[ ]
+	Pour chacune des suites suivantes, déterminer les trois premiers termes
+	\begin{enumerate}
+		\item 	$(u_n)$ définie pour tout $n \in \N$ par : $\quad u_n=\dfrac{2n+1}{n+5}$ \\[0.5em]
+		\carreauxseyes{16}{6.4}
+		\item 	$(v_n)$ définie pour tout $n \in \N$ par : $\quad \left\{
+		\begin{array}{l}
+			v_0=3\\ 
+			v_{n+1}=2v_n-5n\\
+		\end{array} \right.$\\[0.5em]
+		\carreauxseyes{16}{6.4}
+	\end{enumerate}
+\end{exercice}
+
+\subsection{Représentation graphique}
+Soit $u$ une suite et $\rep$ un repère du plan, alors on peut représenter $u$ dans $\rep$ en plaçant les points $\pc{A_n}{n}{u_n}$.
+\begin{center}
+	\def\xmin{-1} \def\ymin{-1}\def\xmax{7}\def\ymax{7}
+	\begin{tikzpicture}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+		\draw (0,3)\ball node[below right]{$A_0$}  (1,5)\ball node[below right]{$A_1$} (2,6)\ball node[below right]{$A_2$} (3,6.5)\ball node[below
+		right]{$A_3$} (4,6.75)\ball node[below right]{$A_4$} (5,6.5)\ball node[below right]{$A_5$} (6,6)\ball node[below right]{$A_6$};
+	\end{tikzpicture}
+\end{center}
+
+\begin{exercice}[ ]
+	Dans un repère, représenter graphiquement les trois premiers termes des deux suites $(u_n)$ et $(v_n)$ de l'exercice 1.
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item 	Représentation graphique des trois premiers termes de $(u_n)$ :
+			\begin{center}
+				\def\xmin{-1} \def\ymin{-0.4}\def\xmax{4}\def\ymax{2}
+				\begin{tikzpicture}[xscale=1,yscale=2]
+					\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+					\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+					\draw[UGLiBlue, very thin] (\xmin, 0.2) -- (\xmax, 0.2);
+					\draw[UGLiBlue, very thin] (\xmin, 0.4) -- (\xmax, 0.4);
+					\draw[UGLiBlue, very thin] (\xmin, 0.6) -- (\xmax, 0.6);
+					\draw[UGLiBlue, very thin] (\xmin, 0.8) -- (\xmax, 0.8);
+					\draw[UGLiBlue, very thin] (\xmin, 1.2) -- (\xmax, 1.2);
+					\draw[UGLiBlue, very thin] (\xmin, 1.4) -- (\xmax, 1.4);
+					\draw[UGLiBlue, very thin] (\xmin, 1.6) -- (\xmax, 1.6);
+					\draw[UGLiBlue, very thin] (\xmin, 1.8) -- (\xmax, 1.8);
+					\draw[UGLiBlue, very thin] (\xmin, -0.2) -- (\xmax, -0.2);
+					\draw[UGLiBlue, very thin] (\xmin, -0.4) -- (\xmax, -0.4);
+					\draw[UGLiBlue, very thin] (\xmin, -0.6) -- (\xmax, -0.6);
+					\draw[UGLiBlue, very thin] (\xmin, -0.8) -- (\xmax, -0.8);
+					\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+				\end{tikzpicture}
+			\end{center}
+			\item 	Représentation graphique des trois premiers termes de $(v_n)$ :
+			\begin{center}
+				\def\xmin{-1} \def\ymin{-2}\def\xmax{4}\def\ymax{8}
+				\begin{tikzpicture}[xscale=1,yscale=0.5]
+					\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+					\draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+					\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+	\end{multicols}
+\end{exercice}
+
+
+
+\section{Sens de variation d'une suite}
+\begin{definition}
+	Soit $u$ une suite.\\
+	On dit que $u$ est \textbf{croissante} si pour tout $ n\in\N,\quad u_{n+1}\geqslant u_n$.\\
+	
+	On dit que $u$ est \textbf{décroissante} si pour tout $n\in\N,\quad u_{n+1}\leqslant u_n$.\\
+	
+	On dit que $u$ est \textbf{constante} si pour tout $n\in\N,\quad u_{n+1}=u_n$.\\
+	
+	On dit que $u$ est \textbf{monotone} si elle est croissante ou décroissante.
+\end{definition}
+
+\begin{remarque}[ ]
+	Une suite peut être croissante (décroissante, constante ou monotone) \textbf{à partir d'un certain rang}.
+	Soit $n_0 \in\N$.\\
+	La suite $u$ est croissante à partir du rang $n_0$ si pour tout entier $n\geqslant n_0, \quad u_{n+1}\geqslant u_n$.
+\end{remarque}
+\subsection*{Exemples et méthodes}
+\begin{exemple}[ : suite définie par récurrence]
+	Soit $u$ la suite définie par
+	$$\left\{
+	\begin{array}{llll}
+		u_0 & = & 3 & \\
+		u_{n+1} & = & u_n+n^2 & \text{pour tout } n\in\N\\
+	\end{array}
+	\right. $$
+	Alors pour tout $n\in\N$ on a
+	\begin{tabbing}
+		$u_{n+1}-u_n$	\=	$=u_n+n^2-u_n$\\
+		\>	$=n^2$\\
+		\>	$\geqslant 0$
+	\end{tabbing}
+	Donc $u_{n+1}\geqslant u_n$ et on en conclut que cette suite est croissante.
+\end{exemple}
+
+\begin{exemple}[ : suite dont on connaît le terme général]
+	Soit $v$ la suite définie pour tout $n\in\N$ par $\quad v_n=n^2+6n+1$.\\
+	Alors $\quad v_n=(n+3)^2-8,\quad$ donc on peut écrire $\quad v_n=f(n) \quad$ où $f$ est la fonction polynôme du second degré définie sur $\R$ par $\quad f(x)=(x+3)^2-8$.\\
+	Or cette fonction est croissante sur $]-3;+\infty[$ donc \emph{a fortiori} sur $\R_+$. Ainsi $v$ est croissante.
+\end{exemple}
+
+L'exemple précédent ne doit pas laisser croire que si l'on a affaire à une série définie par son terme général, alors il faut étudier la fonction associée.\\
+Soit la suite $w$ définie pour tout $n\in\N$ par $w_n=\dfrac{1}{2^n}$. Alors
+\begin{tabbing}
+	$w_{n+1}-w_n$	\=	$=\dfrac{1}{2^{n+1}}-\dfrac{1}{2^n}$\\
+	\>	$=\dfrac{1}{2^{n+1}}-\dfrac{2}{2^{n+1}}$\\
+	\>	$=-\dfrac{1}{2^{n+1}}$\\
+	\>	$\leqslant 0$
+\end{tabbing}
+Donc $w_{n+1}\leqslant w_n$ et on en conclut que cette suite est décroissante.
+
+\begin{exemple}[ : suite strictement positive]
+	Soit $u$ la suite définie pour tout entier $n>0$ par: $\quad u_{n+1}=\dfrac{1}{n+1}$.\\
+	Puisque $u_n>0$ pour tout entier $n\neq 0$, on peut calculer :
+	\begin{tabbing}
+		$\dfrac{u_{n+1}}{u_n}$	\=	$=\dfrac{\dfrac{1}{n+1}}{\dfrac{1}{n}}$\\[0.5em]
+		\>	$=\dfrac{1}{n+1}\times \dfrac{n}{1}$\\[0.5em]
+		\>	$=\dfrac{n}{n+1}$
+	\end{tabbing}
+	Or $n<n+1$, donc $\quad \dfrac{u_{n+1}}{u_n}<1,\quad$ donc $\quad u_{n+1}<u_n$.\\
+	Ainsi $(u_n)$ est strictement décroissante.
+\end{exemple}
+
+\begin{methode}[s pour déterminer le sens de variation d'une suite $(u_n)$]
+	Voici trois méthodes parmi lesquelles on peut choisir :
+	\begin{enumerate}
+		\item 	On étudie le signe de la différence $u_{n+1}-u_n$.
+		\begin{enumerate}[label=\textbullet]
+			\item 	Si pour tout entier $n$, $\ u_{n+1}-u_n >0$, alors la suite est strictement croissante.
+			\item 	Si pour tout entier $n$, $\ u_{n+1}-u_n <0$, alors la suite est strictement décroissante.
+		\end{enumerate}
+		\item 	Si la suite est définie explicitement, on étudie le sens de variation de la fonction $f$ telle que $u_n=f(n)$.
+		\item	Si tous les termes de la suite sont strictement positifs, on compare $\dfrac{u_{n+1}}{u_n}$ à 1.
+		\begin{enumerate}[label=\textbullet]
+			\item 	Si pour tout entier $n$, $\dfrac{u_{n+1}}{u_n}>1$, alors la suite est strictement croissante.
+			\item 	Si pour tout entier $n$, $\dfrac{u_{n+1}}{u_n}<1$, alors la suite est strictement croissante.
+		\end{enumerate}
+	\end{enumerate}
+\end{methode}
+\section{Recherches de seuils}
+Soit $u$ une suite numérique. Voici deux situations classiques :
+\begin{enumerate}[label=\textbullet]
+	\item 	$u$ est une suite croissante et l'on conjecture que \textbf{pour n'importe nombre $M$, si grand soit-il}, on peut toujours trouver
+	un rang $n_0$ tel qu'à partir de ce rang $n_0$, tous les termes de la suite $u$ sont supérieurs à $M$.
+	\begin{center}
+		\begin{tikzpicture}[yscale=.75]
+			\draw[fill=gray!30,color=gray!30](-1,5.5) rectangle (8,7);
+			\reperevl{-1}{-1}{8}{7}
+			\draw (0,1)	\ball node[below right]{$A_0$}(1,1.34)\ball node[below right]{$A_1$}(2,1.7956)
+			\ball node[below right]{$A_2$}(3,2.406)\ball node[below right]{$A_3$}(4,3.224)
+			\ball node[below right]{$A_4$}(5,4.32)
+			\ball node[below right]{$A_5$}(6,5.789)\ball node[below right]{$A_6$} (7.2,6.5) node {\tiny{$A_7$, $A_8$, $\ldots$}};
+			\draw [dashed](6,0)node[below]{\tiny{$n_0=6$}}--(6,5.789);
+			\draw[dashed, color = gray!50] (-1,5.5) node [below right]{\color{black}\tiny$M=5,5$}--(8,5.5);
+		\end{tikzpicture}
+	\end{center}
+	Par exemple dans la situation représentée ci-dessus, pour $M=5,5$ on a  $n_0=6$ :
+	$$\text{pour tout } n\geqslant 6,\ u_n\geqslant 5,5$$
+	
+	Quand cette conjecture est vraie on écrit :
+	{\boldmath\textbf{$$\lim_{n\to+\infty}u_n=+\infty$$}}
+	
+	\item 	$u$ est une suite positive, décroissante, et l'on conjecture que \textbf{pour n'importe nombre positif $\varepsilon$, si petit soit-il},
+	on peut toujours trouver un rang $n_0$ tel qu'à partir de ce rang $n_0$, tous les termes de la suite $u$ sont
+	inférieurs à $\varepsilon$.
+	\begin{center}
+		
+		
+		\begin{tikzpicture}
+			\draw[fill=gray!30,color=gray!30](-1,1) rectangle (8,0);
+			\reperevl{-1}{-1}{8}{7}
+			\draw (0,6)	\ball node[below right]{$A_0$}(1,4)\ball node[below right]{$A_1$}(2,2.66666)
+			\ball node[below right]{$A_2$}(3,1.77777)\ball node[below right]{$A_3$}(4,1.185185)
+			\ball node[below right]{$A_4$}(5,0.7901423)
+			\ball node[below right]{$A_5$}(6,0.526748)\ball node[below right]{$A_6$}(7.5,.4) node {\tiny{$A_7$, $A_8$, $\ldots$}};
+			\draw [dashed](5,0)node[below]{\tiny{$n_0=5$}}--(5,0.79);
+			\draw[dashed, color=gray!50] (-1,1) node [above right]{\color{black}\tiny$M=1$}--(8,1);
+		\end{tikzpicture}
+	\end{center}
+	Par exemple dans la situation représentée ci-dessus, pour $\varepsilon=1$ on a  $n_0=5$ : $$\text{pour tout } n\geqslant 5,\ u_n\leqslant 1$$
+	
+	Quand cette conjecture est vraie, on écrit :
+	{\boldmath\textbf{	$$\lim_{n\to+\infty}u_n=0$$}}
+	
+\end{enumerate}
+
+\textbf{Rechercher un seuil} pour la suite $u$ c'est se fixer une valeur de $M$ (dans le premier cas, ou de $\varepsilon$ dans le deuxième) et
+déterminer $n_0$.
+
+\subsection{Par le calcul}
+Quand le terme général d'une suite n'est pas trop compliqué, on peut déterminer un seuil « à la main ».\\
+Considérons la suite $v$ définie pour tout $n\in \N$ par $v_n=3+4n$. On conjecture que $$\lim_{n\to+\infty}v_n=+\infty$$
+Prenons alors $M$ égal à 1000, alors
+\begin{tabbing}
+	$v_n\geqslant 1000\quad$	\=	$\Longleftrightarrow\quad 3+4n\geqslant 1000$\\
+	\>	$\Longleftrightarrow\quad 4n\geqslant 997$\\
+	\>	$\Longleftrightarrow\quad n\geqslant \dfrac{997}{4}$\\
+	\>	$\Longleftrightarrow\quad n\geqslant 249,25$\\
+	\>	$\Longleftrightarrow\quad n\geqslant 250\quad$ (car $n$ est entier)
+\end{tabbing}
+En prenant $n_0=250$ on peut donc écrire :
+$$n\geqslant 250 \Longrightarrow v_n\geqslant 1000$$
+
+
+\subsection{À l'aide d'un algorithme}
+
+Soit la suite $u$ définie par $$\left\{
+\begin{array}{llll}
+	u_0 & = & \dfrac{1}{2} & \\
+	u_{n+1} & = & u_n^2 & \text{pour tout } n\in\N\\
+\end{array}
+\right. $$
+Alors une étude rapide $u$ nous permet de conjecturer que $$\lim_{n\to+\infty}u_n=0$$
+\'Ecrivons alors un algorithme qui, quand l'utilisateur entre un nombre $\varepsilon$ strictement positif, retourne le seuil $n_0$
+pour lequel on a $$n\geq n_0 \Longrightarrow u_n\leqslant \varepsilon$$
+En langage naturel :
+
+
+\begin{encadrecolore}{Algorithme}{UGLiDarkBlue}
+	\begin{minted}{python}
+Variables
+	A est un nombre réel
+	N est un entier
+Debut
+   	N <- 0
+   	A <- 0,5
+   	Afficher "Entrer la valeur de epsilon : "
+   	Lire E
+   	Tant que A > E 
+      	N <- N+1
+      	A <- A*A
+   	Fin Tant Que
+   	Afficher "La valeur du seuil est : ",N
+Fin
+	\end{minted}	
+\end{encadrecolore}
+
+
+
+Voici le code \textsc{Python} :
+\begin{pyc}
+	\begin{minted}{python}
+n = 0
+a = 0.5
+epsilon = float(input('Entrer la valeur de epsilon : '))
+while a > epsilon:
+   	n = n + 1
+   	a = a ** 2
+print('La valeur du seuil est :', n)
+	\end{minted}
+\end{pyc}
+
+
+Lorsqu'on entre $10^{-20}$ pour $\varepsilon$ l'algorithme nous renvoie la valeur $7$ pour $n_0$.
+On en déduit donc $$n\geqslant 7 \Longrightarrow u_n\leqslant 10^{-20}$$
+\end{document}

@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{volume}\PYG{p}{(}\PYG{n}{h}\PYG{p}{)} \PYG{p}{:}
+   \PYG{k}{if} \PYG{n}{h} \PYG{o}{\PYGZlt{}} \PYG{l+m+mf}{2.5} \PYG{p}{:}
+      \PYG{n}{v} \PYG{o}{=} \PYG{l+m+mi}{6}\PYG{o}{*}\PYG{n}{h}
+   \PYG{k}{else} \PYG{p}{:}
+      \PYG{n}{v} \PYG{o}{=} \PYG{l+m+mf}{12.5} \PYG{o}{+} \PYG{n}{h}
+   \PYG{k}{return} \PYG{n}{v}
+\end{Verbatim}

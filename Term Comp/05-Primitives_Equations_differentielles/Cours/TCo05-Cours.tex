@@ -1,0 +1,357 @@
+\documentclass[a4paper,11pt,cours]{nsi} % COMPILE WITH DRAFT
+\geometry{margin=2cm}
+\usepackage[]{fontawesome5}
+\usepackage{pgfplots}
+
+
+\setcounter{chapter}{4} % 1 de moins que le num de chapitre
+
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{1cm}
+
+\chapter{Primitives et équations différentielles}
+
+\begin{document}
+
+\section{Équations différentielles et primitives d'une fonction}
+\begin{definition}[ : Équation différentielle]
+    \begin{enumerate}[label=\textbullet]
+        \item Une \textbf{équation différentielle} est une équation où l'inconnue est une fonction et où interviennent des dérivées de cette fonction.
+        \item \textbf{Résoudre une équation différentielle} sur un intervalle $I$, c'est trouver toutes les fonctions, dérivable sur $I$, qui sont solutions de cette équation.
+    \end{enumerate}
+\end{definition}
+
+\begin{exemple}[s]
+    \begin{enumerate}[label=\textbullet]
+        \item La fonction $f$ définie sur $\R$ par $e^{-x}$ est solution de l'équation différentielle $y'+y=0$.\\
+        En effet, pour tout $x\in\R$, $f'(x)=-e^{-x}$ et $f(x)+f'(x)=e^{-x}-e^{-x}=0$.
+        \item La fonction $f$ définie sur $\R$ par $e^{-x}$ est solution de l'équation différentielle $y"-y=0$.\\
+        En effet, pour tout $x\in\R$, $f'(x)=-e^{-x}$ et $f''(x)=e^{-x}$, donc $f''(x)-f(x)=e^{-x}-e^{-x}=0$.
+        \item La fonction $g$ définie sur $\oio{0}{+\infty}$ par $x\mapsto ln x$ est solution de l'équation différentielle $y'(x)=\dfrac{1}{x}$.
+    \end{enumerate}
+\end{exemple}
+
+\begin{definition}[ : Primitive d'une fonction]
+    Soit $f$ une fonction définie sur un intervalle $I$.\\
+    On appelle \textbf{primitive} de $f$ sur $I$ toute fonction solution de l'équation différentielle $F'=f$ sur $I$.\\[.5em]
+    Ainsi, une fonction $F$ est une primitive de $f$ sur $I$ lorsque, pour tout $x\in I$, $\quad F'(x)=f(x)$.
+\end{definition}
+
+\begin{exemple}[s]
+    \begin{enumerate}[label=\textbullet]
+        \item La fonction $x\mapsto x^2$ est solution de l'équation différentielle $y'=2x$.\\
+        Donc, la fonction $F : x\mapsto x^2$ est une primitive de $f : x\mapsto 2x$.
+        \item La fonction $x\mapsto e^x$ est solution de l'équation différentielle $y'=e^x$.\\
+        Donc, la fonction $G_1 : x\mapsto e^x$ est une primitive de $g : x\mapsto e^x$.
+        \item La fonction $x\mapsto e^x+2$ est également solution de l'équation différentielle $y'=e^x$.\\
+        Donc, la fonction $G_2 : x\mapsto e^x+2$ est une primitive de $g : x\mapsto e^x$.
+    \end{enumerate}
+\end{exemple}
+
+\newpage
+
+\begin{propriete}[ : Primitives de fonctions usuelles]
+    \renewcommand{\arraystretch}{2}
+    \tabstyle[UGLiRed]
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\ccell Fonction $f$ définie par : & \ccell Intervalle de définition & \ccell Primitive $F$ définie par :\\
+        $f(x)=a$, avec $a\in \R$ & $\R$ & $F(x)=ax+k$, avec $k$ un réel \\
+		\hline
+		$f(x)=x^n$, avec $n\in \N^*$ & $\R$ & $F(x)=\dfrac{1}{n+1}x^{n+1}$ \\
+		\hline
+        $f(x)=x^n$, avec $n$ entier, $n<-1$ & $\oio{-\infty}{0}$ ou $\oio{0}{+\infty}$ & $F(x)=\dfrac{1}{n+1}x^{n+1}$ \\
+        \hline
+        $f(x)=\dfrac{1}{\sqrt{x}}$ & $\oio{0}{+\infty}$ & $F(x)=2\sqrt{x}$ \\
+        \hline
+        $f(x)=e^x$ & $\R$ & $F(x)=e^x$ \\
+        \hline
+        $f(x)=\dfrac{1}{x}$ & $\oio{x}{+\infty}$ & $F(x)=\ln x$ \\
+		\hline
+	\end{tabular}
+    
+\end{propriete}
+
+
+\section{Existence et calcul de primitives}
+\begin{propriete}[]
+    Soit $f$ une fonction définie sur un intervalle $I$.
+    \begin{enumerate}[label=\textbullet]
+        \item Si $F$ est une primitive de $f$ sur $I$, alors, pour tout $k\in\R$, la fonction $x\mapsto F(x)+k$ est également une primitive de $f$ sur $I$.
+        \item Si $F$ et $G$ sont deux primitives de $f$ sur $I$, alors il existe une constante $C\in\R$ telle que, pour tout $x\in I$, $F(x)=G(x)+C$.
+    \end{enumerate}
+\end{propriete}
+    
+\begin{demonstration}
+    \begin{enumerate}[label=\textbullet]
+        \item Soit $C\in\R$.\\
+        Soient $F$ une primitive de $f$ sur $I$ et $G:x\mapsto F(x)+C$.\\
+        Alors, pour tout $x\in I$, $G'(x)=F'(x)+0=f(x)$.\\
+        Donc, $G$ est une primitive de $f$ sur $I$.
+        \item Soit $F$ et $G$ deux primitives de $f$ sur $I$.\\
+        Alors, pour tout $x\in I$, $F'(x)=f(x)$ et $G'(x)=f(x)$.\\
+        Donc, pour tout $x\in I$, $F'(x)=G'(x)$.\\
+        Soit $H:x\mapsto F(x)-G(x)$.\\
+        Alors, pour tout $x\in I$, $H'(x)=F'(x)-G'(x)=0$.\\
+        Donc, $H$ est une fonction constante. Il existe donc une constante $C\in\R$ telle que, pour tout $x\in I$, $H(x)=C$.\\
+        Donc, pour tout $x\in I$, $F(x)-G(x)=k$ et $F(x)=G(x)+C$.
+    \end{enumerate}
+\end{demonstration}
+
+\begin{remarque}[]
+    On dit que deux primitive d'une même fonction diffèrent d'une constante.
+\end{remarque}
+
+\begin{propriete}[]
+    Soient $f$ une fonction définie sur un intervalle $I$, $x_0$ un réel appartenant à $I$ et $y_0$ un réel.\\
+    Il existe \textbf{une unique primitive} $G$ de $f$ sur l'intervalle $I$ telle que \textbf{$G(x_0)=y_0$}. 
+\end{propriete}
+
+\begin{demonstration}
+    Avec les notations précédentes, $G(x_0)=y_0$ s'écrit $F(x_0)+C=y_0$, soit $C=y_0-F(x_0)$.\\
+    Donc, pour tout $x\in I$, $G(x)=F(x)+y_0-F(x_0)$.
+\end{demonstration}
+
+\begin{exemple}[]
+    Soit $f$ la fonction définie sur $\R$ par $f(x)=e^{2x}$.\\
+    Toutes les primitives de $f$ sont de la forme $x\mapsto \dfrac{1}{2}e^{2x}+C$, avec $C$ un réel.\\
+    La primitive de $f$ qui prend la valeur $0$ en en $1$ est $G$ définie par $G(x)=\dfrac{1}{2}e^{2x}+C$ avec $C$ tel que $G(1)=0$.\\
+    Donc, $G(1)=\dfrac{1}{2}e^2+C=0$, soit $C=-\dfrac{1}{2}e^2$.\\
+    Donc, la primitive de $f$ qui prend la valeur $0$ en $1$ est $G:x\mapsto \dfrac{1}{2}e^{2x}-\dfrac{1}{2}e^2$.
+\end{exemple}
+
+\section{Calcul de primitives}
+Toutes les propriétés suivantes se déduisent de la définition d'une primitive et des opérations sur les fonctions dérivables.
+
+\begin{propriete}[]
+    Soient $f$ et $g$ deux fonctions définies sur un intervalle $I$ et $F$ et $G$ deux primitives respectives de $f$ et $g$ sur $I$.
+    \begin{enumerate}[label=\textbullet]
+        \item La fonction $F+G$ est une primitive de $f+g$ sur $I$.
+        \item Pour tout réel $\lambda$, la fonction $\lambda F$ est une primitive de $\lambda f$ sur $I$.
+    \end{enumerate}
+\end{propriete}
+
+\begin{exemple}[]
+    Soit $f$ la fonction définie sur $\oio{0}{+\infty}$ par $f(x)=\dfrac{2}{x}+x^2$.\\
+    Pour tout $x\in\R$, $f(x)=2\times \dfrac{1}{x}+x^2$.\\
+    Donc une primitive $F$ de la fonction $f$ sur $\oio{0}{+\infty}$ est définie par $F(x)= 2\ln x+\dfrac{1}{3}x^3$.
+\end{exemple}
+\begin{propriete}[ : D'autres primitives]
+    Soit $u$ une fonction dérivable sur un intervalle $I$.\\[.5em]
+    \renewcommand{\arraystretch}{2}
+    \tabstyle[UGLiRed]
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\ccell Fonction $f$  & \ccell Primitive de $f$ sur $I$ & \ccell Condition sur $u$\\
+        $2uu'$ & $u^2+C$ & \\
+		\hline
+		$\dfrac{u'}{u}$ & $\ln(u) + C$ & $u>0$ pour tout $x\in I$ \\
+		\hline
+        $u'e^u$ & $e^u+C$ &  \\
+        \hline
+	\end{tabular}
+\end{propriete}
+\begin{exemple}[]
+    $f$ est la fonction définie sur $\R$ par $f(x)=\dfrac{2x}{4+x^2}$.\\[.5em]
+    Pour tout $x\in\R$, on pose $u(x)=4+x^2$. On a : $u'(x)=2x$.\\[.5em]
+    On a donc, pour tout $x\in\R$, $f(x)=\dfrac{2u'(x)}{u(x)}$.\\[.5em]
+    Donc, une primitive $F$ de la fonction $f$ sur $\R$ est définie par $F(x)=\ln(4+x^2)$.
+\end{exemple}
+
+\section{Résolution des équations différentielles de la forme $y'=ay+b$}
+\begin{propriete}[ : Équations différentielles de la forme $y'=ay$]
+    Soit $a$ un nombre réel non nul.\\
+    Les solutions sur $\R$ de l'équation différentielle $y'=ay$ sont les fonctions définies sur $\R$ par $x\mapsto ke^{ax}$, avec $k$ un réel.
+\end{propriete}
+
+\begin{demonstration}
+    \begin{enumerate}[label=\textbullet]
+        \item Montrons que les fonctions $x\mapsto ke^{ax}$, avec $k$ un réel, sont solutions de l'équation différentielle $y'=ay$.\\
+        Soit $f$ la fonction définie sur $\R$ par $f(x)=ae^{ax}$.\\
+        Pour tout $x\in\R$, $f'(x)=a\times ae^{ax}=af(x)$.\\
+        Donc, $f$ est une solution de l'équation différentielle $y'=ay$.
+        \item Montrons que toutes les solutions de l'équation différentielle $y'=ay$ sont de la forme $x\mapsto ke^{ax}$, avec $k$ un réel.\\
+        Soit $g$ une solution de l'équation différentielle $y'=ay$.\\
+        Alors, pour tout $x\in\R$, $g'(x)=ag(x)$.\\
+        Soit $h$ définie par $h(x)=g(x)e^{-ax}$.
+        \begin{tabbing}
+            Alors, pour tout $x\in\R$, $\quad h'(x)$ \= $=g'(x)e^{-ax}-ag(x)e^{-ax}$\\
+            \> $=ag(x)e^{-ax}-ag(x)e^{-ax}$\\
+            \> $=0$
+        \end{tabbing}
+        Donc, $h$ est une fonction constante. Il existe donc un réel $k$ tel que, pour tout $x\in\R$, $h(x)=k$.\\
+        Donc, pour tout $x\in\R$, $g(x)e^{-ax}=k$, soit $g(x)=ke^{ax}$.
+    \end{enumerate}
+\end{demonstration}
+
+\subsection*{Allure des courbes des fonctions solution selon le signe de $a$ et de $k$ :}
+\begin{multicols}{2}
+    \textbf{Cas $a>0$ :}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis lines = middle,
+                %xlabel = $x$,
+                %ylabel = {$y$},
+                domain = -2:2,
+                samples = 100,
+                width = 8cm,
+                height = 8cm,
+                xtick=\empty,
+                ytick=\empty,
+                minor tick num = 5,
+                enlargelimits = true,
+                legend pos = north west,
+            ]
+            \addplot[
+                thick,
+                UGLiBlue,
+            ]
+            {2*exp(x)};
+            \addlegendentry[UGLiBlue]{$k>0$}
+            \addplot[
+                thick,
+                UGLiOrange,
+            ]
+            {-2*exp(x)};
+            \addlegendentry[UGLiOrange]{$k<0$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \textbf{Cas $a<0$ :}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis lines = middle,
+                %xlabel = $x$,
+                %ylabel = {$y$},
+                domain = -2:2,
+                samples = 100,
+                width = 8cm,
+                height = 8cm,
+                xtick=\empty,
+                ytick=\empty,
+                minor tick num = 5,
+                enlargelimits = true,
+                legend pos = north east,
+            ]
+            \addplot[
+                thick,
+                UGLiBlue,
+            ]
+            {2*exp(-x)};
+            \addlegendentry[UGLiBlue]{$k>0$}
+            \addplot[
+                thick,
+                UGLiOrange,
+            ]
+            {-2*exp(-x)};
+            \addlegendentry[UGLiOrange]{$k<0$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{multicols}
+
+\begin{exemple}[]
+    L'équation différentielle $(E) : y'=3y$ admet pour solutions sur $\R$ les fonctions de la forme $x\mapsto ke^{3x}$, avec $k$ un réel.\\
+    L'unique solution de $(E)$ telle que $f(0)=2$ est la fonction $f$ définie par $f(x)=2e^{3x}$.
+\end{exemple}
+
+\begin{methode}[ : Résoudre une équation différentielle $y'=ay$]
+    \textbf{$(E)$ est l'équation différentielle $2y'+3y=0$.
+    \begin{enumerate}
+        \item Résoudre $(E)$ sur $\R$.
+        \item Déterminer la solution $f$ de $(E)$ telle que $f(4)=1$.
+    \end{enumerate}}
+    \begin{enumerate}
+        \item On commence par se ramener à une équation différentielle de la forme $y'=ay$.\\[.5em]
+        L'équation différentielle $2y'+3y=0$ est équivalente à $y'=-\dfrac{3}{2}y$.\\
+        Les solutions sur $\R$ de l'équation différentielle $y'=-\dfrac{3}{2}y$ sont les fonctions $f_k$ définies sur $\R$ par $f_k(x)=ke^{-\frac{3}{2}x}$, avec $k$ un réel.
+        \item Parmi toutes les solutions de $(E)$, on cherche l'unique solution qui vérifie $f(4)=1$.\\[.5em]
+        On résout l'équation $f_k(4)=1$, d'inconnue $k$.
+        \begin{tabbing}
+            $f(4)=1$ \= $\iff ke^{-\frac{3}{2}\times 4}=1$\\
+            \> $\iff ke^{-6}=1$\\
+            \> $\iff k=e^6$
+        \end{tabbing}   
+        Donc, la solution de $(E)$ telle que $f(4)=1$ est la fonction $f$ définie sur $\R$ par
+        \begin{tabbing}
+            $f(x)$ \= $=e^6e^{-\frac{3}{2}x}$\\
+            \> $=e^{6-\frac{3}{2}x}$
+        \end{tabbing}
+    \end{enumerate}
+\end{methode}
+
+\begin{propriete}[ : Équations différentielles de la forme $y'=ay+b$]
+    Soit $a$ et $b$ deux nombres réels non nuls.\\
+    Les solutions sur $\R$ de l'équation différentielle $y'=ay+b$ sont les fonctions définies sur $\R$ par $x\mapsto ke^{ax}-\dfrac{b}{a}$, avec $k$ un réel.
+\end{propriete}
+
+\begin{demonstration}
+    \begin{enumerate}[label=\textbullet]
+        \item On détermine d'abord une fonction constante $g:x\mapsto c$, $c\in\R$, solution particulière de l'équation différentielle $y'=ay+b$.\\
+        Pour tout $x\in\R$, $g'(x)=0$.
+        \begin{tabbing}
+            Ainsi, $g$ est solution de $y'=ay+b$ \= $\iff \text{Pour tout }x\in\R,\quad g'(x)=ag(x)+b$\\
+            \> $\iff 0=ac+b$\\
+            \> $\iff c=-\dfrac{b}{a}$
+        \end{tabbing}
+        Donc la fonction constante $g:x\mapsto -\dfrac{b}{a}$ est solution de l'équation différentielle $y'=ay+b$.
+        \item On montre ensuite que les fonctions $x\mapsto ke^{ax}-\dfrac{b}{a}$, avec $k$ un réel, sont solutions de l'équation différentielle $y'=ay+b$.\\
+        \item Soit $f$ une fonction définie et dérivable sur $\R$.
+        \begin{tabbing}
+            $f$ est solution de $y'=ay+b$ \= $\iff \text{Pour tout }x\in\R,\quad f'(x)=af(x)+b$\\
+            \> $\phantom{\iff } \text{Or pour tout }x\in\R,\quad g'(x)-ag(x)=b$\\
+            \> $\iff \text{Pour tout }x\in\R,\quad f'(x)-g'(x)=af(x)+b-(ag(x)+b)$\\
+            \> $\iff \text{Pour tout }x\in\R,\quad (f-g)'(x)=a(f-g)(x)$\\
+            \> $\iff (f-g)$ est solution de $y'=ay$\\
+            \> $\iff \text{il existe un réel } k, \text{tel que pour tout } x\in\R,\quad (f-g)(x)=ke^{ax}$\\
+            \> $\iff \text{il existe un réel } k, \text{tel que pour tout } x\in\R,\quad f(x)-g(x)=ke^{ax}$\\
+            \> $\iff \text{il existe un réel } k, \text{tel que pour tout } x\in\R,\quad f(x)=ke^{ax}+g(x)$\\
+            \> $\iff \text{il existe un réel } k, \text{tel que pour tout } x\in\R,\quad f(x)=ke^{ax}-\dfrac{b}{a}$
+        \end{tabbing}
+    \end{enumerate}
+\end{demonstration}
+
+\begin{methode}[ : Résoudre une équation différentielle $y'=ay+b$]
+    \textbf{$(E)$ est l'équation différentielle $y'=4y-5$.
+    \begin{enumerate}
+        \item Déterminer la fonction constante $g$ solution particulière de $(E)$.
+        \item Résoudre $(E)$ sur $\R$.
+        \item Déterminer la solution $f$ de $(E)$ telle que $f(2)=\dfrac{1}{4}$.
+    \end{enumerate}}
+    \begin{enumerate}
+        \item \textbf{On commence par déterminer une solution particulière de $(E)$ :}\\[.5em]
+        Soit $g$ la fonction constante solution de l'équation différentielle $y'=4y-5$.\\
+        On a : pour tout $x\in\R$, $g(x)=c$, avec $c\in\R$ et $g'(x)=0$.
+        \begin{tabbing}
+            $g$ est solution de $(E)$ \= $\iff \text{Pour tout }x\in\R,\quad g'(x)=4g(x)-5$\\
+            \> $\iff 0=4c-5$\\
+            \> $\iff c=\dfrac{5}{4}$
+        \end{tabbing}
+        Donc, la fonction constante $g$ solution de $(E)$ sur $\R$ est définie par $g(x)= \dfrac{5}{4}$.
+        \item \textbf{On résout ensuite l'équation différentielle homogène $(H) :y'=4y$ :}\\[.5em]
+        Les solutions de $(H)$ sur $\R$ sont les fonctions $h_k$ définies sur $\R$ par $h_k(x)=ke^{4x}$, avec $k$ un réel.\\[1em]
+        \textbf{On en déduit par addition les solutions de $(E)$ sur $\R$ :}\\[.5em]
+        Les solutions de $(E)$ sur $\R$ sont les fonctions $f_k$ définies par $f_k(x)= ke^{4x}+\dfrac{5}{4}$, avec $k$ un réel.
+        \item \textbf{On détermine enfin la solution de $(E)$ qui vérifie la condition initiale :}\\[.5em]
+        Soit $f_k$ une solution de $(E)$ sur $\R$, $k\in\R$.\\
+        On a donc : pour tout $x\in\R$, $f_k(x)=ke^{4x}+\dfrac{5}{4}$.\\
+        On résout l'équation $f_k(2)=\dfrac{1}{4}$, d'inconnue $k$.
+        \begin{tabbing}
+            $f_k(2)=\dfrac{1}{4}$ \= $\iff ke^{4\times 2}+\dfrac{5}{4}=\dfrac{1}{4}$\\
+            \> $\iff ke^8+\dfrac{5}{4}=\dfrac{1}{4}$\\
+            \> $\iff ke^8=-1$\\
+            \> $\iff k=-\dfrac{1}{e^8}$\\[.5em]
+            \> $\iff k=-e^{-8}$
+        \end{tabbing}
+        Donc, la solution de $(E)$ qui vérifie la condition initiale $f(2)=\dfrac{1}{4}$ est la fonction $f$ définie sur $\R$ par :
+        \begin{tabbing}
+            $f(x)$ \= $=-e^{-8}e^{4x}+\dfrac{5}{4}$\\[.5em]
+            \> $=-e^{4x-8}+\dfrac{5}{4}$
+        \end{tabbing}
+    \end{enumerate}
+\end{methode}
+
+\end{document}

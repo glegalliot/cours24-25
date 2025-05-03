@@ -1,0 +1,57 @@
+\documentclass[a4paper,10pt,exos]{nsi} 
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Olympiades nationnales 2023 - Exercice 3 (candidats non spé)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \classe{Olympiades}
+    \titre{Codes détecteurs et correcteurs}
+    \maketitle
+
+    {\titlefont\color{UGLiBlue}{Question préliminaire}}\\
+    \question Soient $a$ et $b$ deux nombres entiers.\\
+    Montrer que le nombre $a+b$ est pair si, et seulement si, $a$ et $b$ sont de la même parité.\\
+
+    {\titlefont\color{UGLiBlue}{Codage d'un message}}\\
+    \dleft{12cm}{
+        Un message est ici un nombre $M$ codé sous la forme d’un quadruplet $(x_1,x_2,x_3,x_4)$ où $x_1,x_2,x_3$ et $x_4$ sont des « bits », c'est-à-dire des nombres ne pouvant valoir que 0 ou 1. Le nombre $M$ que représente le quadruplet $(x_1,x_2,x_3,x_4)$, appelé aussi demi-octet d’information, vaut par définition :
+    }
+    {\includegraphics[width=4.5cm]{binary.jpg}}
+    $$ M=x_1+2\times x_2+4\times x_3+8\times x_4.$$
+        Par exemple, le code $(0,0,1,1)$ représente le nombre $M = 12$ puisque $12=0+2\times 0+4\times 1+8\times 1$.\\
+
+    \question \begin{enumalph}
+        \item Quel est le message $M$ que code le quadruplet $(1,0,0,1)$?
+        \item Trouver un code qui représente $M = 10$. Trouver un code qui représente $M = 15$.
+        \item Peut-on trouver un code pour représenter $M = 20$ ?
+        \item Quels sont les différents messages possibles ?
+    \end{enumalph}
+
+    \small{\textit{Un message est parfois altéré (on dit aussi « corrompu ») lors de sa transmission du fait d’un matériel défectueux ou de
+    signaux parasites. Des erreurs modifient des bits, un 0 se transformant en 1 ou un 1 se transformant en 0. Aussi des
+    techniques permettant de détecter et de corriger ces anomalies ont-elles été mises au point. Ceci fait l’objet de la suite.}}\\
+
+    \normalsize
+
+    {\titlefont\color{UGLiBlue}{Codage d'un message avec protection contre les erreurs}}\\
+    \question \textbf{\textcolor{UGLiBlue}{Principe du bit de parité}}\\
+    Le code $(x_1,x_2,x_3,x_4)$ est transformé en le quintuplet $(x_1,x_2,x_3,x_4,y)$, dont le dernier bit $y$, dit de parité, vaut 0 si la somme $x_1+x_2+x_3+x_4$ est paire, et 1 si elle est impaire. C’est ce quintuplet qui est transmis, il représente le même message $M$ que le code $(x_1,x_2,x_3,x_4)$, à savoir $M=x_1+2\times x_2+4\times x_3+8\times x_4$. Les bits dits d’information demeurent $x_1,x_2,x_3,x_4$ et le bit de parité, $y$, est transmis avec les plus grandes précautions.\\[.5em]
+    Par exemple, pour transmettre le nombre $M = 12$ correspondant à $x_1 = 0, x_2 = 0, x_3 = 1$ et $x_4 = 1$, on calcule d’abord $x_1 + x_2 + x_3 + x_4 = 2$, qui est pair ; on pose donc $y = 0$ et on émet le quintuplet $(0,0,1,1,0)$.\\ 
+
+    \question \textbf{\textcolor{UGLiBlue}{Principe des bits de contrôle}}\\
+    Le code $(x_1, x_2, x_3, x_4)$ est transformé en l’heptuplet $(x_1, x_2, x_3, x_4, y_1, y_2, y_3)$, où $y_1 = 0$ si $x_1 + x_2 + x_3$ est pair, $y_1 = 1$ sinon ; $y_2 = 0$ si $x_2 + x_3 + x_4$ est pair, $y_2 = 1$ sinon ; $y_3 = 0$ si $x_1 + x_3 + x_4$ est pair, $y_3 = 1$ sinon. Les bits dits d’information demeurent $x_1, x_2, x_3, x_4$.\\
+    L’heptuplet $(x_1, x_2, x_3, x_4, y_1, y_2, y_3)$ code toujours le message $M = x_1 + 2 \times x_2 + 4 \times x_3 + 8 \times x_4$.
+
+    \begin{enumalph}
+        \item Quels sont les bits $y_1, y_2, y_3$, dits de contrôle, associés au quadruplet $(1,0,0,1)$ codant le nombre $M = 9$ ?
+        \item Pourquoi est-on certain que l’heptuplet reçu $(1,1,0,1,0,0,1)$ résulte d’une altération de transmission dans le cas où on est sûr des bits de contrôle ?
+        \item Si on est sûr de la justesse des bits de contrôle, dans l’hypothèse où exactement un des quatre bits d’information est erroné, pourquoi peut-on détecter qu’il y a eu une altération et pourquoi peut-on la localiser (et donc la corriger) ? Peut-on détecter l’erreur quand exactement deux des quatre bits d’information sont erronés ?
+        
+    \end{enumalph}
+
+
+
+\end{document}

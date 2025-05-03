@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{population}\PYG{p}{(}\PYG{n}{annee}\PYG{p}{)} \PYG{p}{:}
+   \PYG{n}{pop} \PYG{o}{=} \PYG{l+m+mi}{3000}
+   \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{annee}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):}
+      \PYG{n}{pop} \PYG{o}{=} \PYG{n}{pop}\PYG{o}{*}\PYG{l+m+mf}{0.98}
+   \PYG{k}{return} \PYG{n}{pop}
+\end{Verbatim}

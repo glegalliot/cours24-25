@@ -1,0 +1,48 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Mercredi 11/09/2024}\\
+\classe{\terminale Comp}
+\titre{Interrogation 1}
+\maketitle
+\begin{center}
+	Calculatrice interdite
+\end{center}
+
+\vspace{1cm}
+
+Soit $(u_n)$ une suite définie pour tout entier $n\in\N$ par $u_n = 5n^2$$+2n$$+3$.\\Calculer $u_{7}$.\\[.5em]
+\carreauxseyes{16.8}{6.4}\\
+
+Soit $(v_n)$ une suite définie par $v_0=1$ et pour tout entier $n\in\N$ par $v_{n+1} = 5 v_n -4$.\\Calculer $v_{4}$.\\[.5em]
+\carreauxseyes{16.8}{8}\\
+
+
+%\end{document}
+
+Dans l'expression de $u_n$ on remplace $n$ par $7$, on obtient : $u_{7} = 5\times 7^2+2\times 7+3=262$.
+
+On calcule successivent les termes jusqu'à obtenir $u_4$ :\\ $u_{1} = 5\times {\color{violet}\boldsymbol{u_{0}}} -4=5 \times {\color{violet}\boldsymbol{1}} -4 =
+            {\color{purple}\boldsymbol{1}}$\\ $u_{2} = 5\times {\color{purple}\boldsymbol{u_{1}}} -4=5 \times {\color{purple}\boldsymbol{1}} -4 =
+            {\color{blue}\boldsymbol{1}}$\\ $u_{3} = 5\times {\color{blue}\boldsymbol{u_{2}}} -4=5 \times {\color{blue}\boldsymbol{1}} -4 =
+            {\color[HTML]{008002}\boldsymbol{1}}$\\ $u_{4} = 5\times {\color[HTML]{008002}\boldsymbol{u_{3}}} -4=5 \times {\color[HTML]{008002}\boldsymbol{1}} -4 =
+            {\color{lime}\boldsymbol{1}}$
+\end{document}

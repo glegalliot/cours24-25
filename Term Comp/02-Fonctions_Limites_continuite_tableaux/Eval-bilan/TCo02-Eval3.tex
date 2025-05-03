@@ -1,0 +1,82 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Vendredi 10/01/2025}\\
+\classe{\terminale Comp}
+\titre{Évaluation-bilan 3}
+\maketitle
+\begin{center}
+	Calculatrice autorisée. Toutes les réponses doivent être justifiées.
+\end{center}
+
+\vspace*{1cm}
+
+\exo{}
+\begin{enumerate}
+    \item Soit $f$ la fonction définie sur $I=\fif{0}{12}$ par $\quad f(x)=2xe^{-x}$.\bareme{8 pts}
+    \begin{enumalph}
+        \item Démontrer que pour tout $x\in I, \quad f'(x)=2(1-x)e^{-x}$.
+        \item Dresser le tableau de variations de la fonction $f$ sur $I=\fif{0}{12}$.
+        \item Démontrer que l'équation $f(x)=0,2$ admet deux solutions sur l'intervalle $I$.\\
+        Donner, à l'aide de la calculatrice, une valeur approchée au centième de chacune de ces solutions.
+    \end{enumalph}
+    \carreauxseyes{16}{12.8}\\
+    \carreauxseyes{16}{25.6}
+    \item Le taux d'alcoolémie d'une personne pendant les 12 heures qui suivent la consommation d'une certaine quantité d'alcool est modélisé par la fonction $f$.\bareme{4 pts}
+    \begin{enumerate}[label=\textbullet]
+        \item $x$ représente le temps écoulé (en heures) depuis la consommation d'alcool.
+        \item $f(x)$ représente le taux d'alcoolémie (en grammes par litre de sang).
+    \end{enumerate}
+    \begin{enumalph}
+        \item Décrire les variations du taux d'alcoolémie de cette personne pendant les 12 heures suivant la consommation d'alcool.
+        \item À quel moment le taux d'alcoolémie de cette personne est-il maximal ? Quelle est alors sa valeur ? Arrondir au centième.
+        \item Le code de la route fixe le taux d'alcoolémie maximal autorisé à 0,2 g/L pour les jeunes conducteurs. Combien de temps après la consommation d'alcool cette personne jeune conductrice est-elle autorisée à prendre le volant ? Donner la réponse en heures et minutes.
+    \end{enumalph}
+    \carreauxseyes{16}{17.6}
+\end{enumerate}
+
+\exo{}\bareme{ pts}\\
+Un supermarché souhaite acheter des pommes à un fournisseur qui propose des prix au kilogramme dégressifs en fonction de la masse commandée.\\
+Pour une commande de $x$ kilogrammes de pommes, le prix $p(x)$, en euros, pour un kilogramme de fruit est donné par :
+$$ p(x)=\dfrac{x+300}{x+100}\quad \text{pour }x\in\fio{100}{+\infty}.$$
+\subsection*{Partie A : Étude du prix $p$ proposé par le fournisseur}\bareme{7 pts}
+\begin{enumerate}
+    \item Montrer que pour tout $x\in\fio{100}{+\infty}, \quad p(x)=\dfrac{1+\dfrac{300}{x}}{1+\dfrac{100}{x}}$.
+    \item En déduire la limite de la fonction $p$ en $+\infty$.
+    \item Calculer $p'(x)$ pour tout $x\in\fio{100}{+\infty}$ puis dreser le tableau de variations de la fonction $p$.
+    \item Interpréter économiquement les variations de la fonction $p$.
+\end{enumerate}
+\carreauxseyes{16.8}{15.2}\\
+\carreauxseyes{16.8}{25.6}
+\subsection*{Partie B : Étude de la somme à dépenser}
+\begin{enumerate}
+    \item Quelle somme devra dépenser le supermarché pour acheter à ce fournisseur 150 kilogrammes de pommes ? 700 kilogrammes de pommes ?\bareme{2 pts}\\[.5em]
+    \carreauxseyes{16}{6.4}
+    \item On appelle $S(x)$ la somme, en euros, que le supermarché devra dépenser pour acheter $x$ kilogrammes de pommes vendues au prix de $p(x)$ euros par kilogramme.
+    \begin{enumalph}
+        \item Par définition, $S(x)=xp(x)$. Déterminer la limite de la fonction $S$ en $+\infty$.
+        \item Calculer $S'(x)$ puis dresser le tableau de variations de la fonction $S$ sur $\fio{100}{+\infty}$.
+    \end{enumalph}
+    \item Le magasin dispose d'un budget de 900 euros pour acheter des pommes. Quelle masse maximale de pommes pourra-t-il acheter chez ce fournisseur ? 
+\end{enumerate}
+\carreauxseyes{16.8}{12}\\
+\carreauxseyes{16.8}{25.6}
+\end{document}

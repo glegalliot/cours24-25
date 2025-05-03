@@ -1,0 +1,115 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Jeudi 17/10/2024}\\
+\classe{\terminale Comp}
+\titre{Évaluation-bilan 1}
+\maketitle
+\begin{center}
+	Calculatrice autorisée. Toutes les réponses doivent être justifiées.
+\end{center}
+
+\vspace*{1cm}
+
+\exo{}\bareme{10 pts}\\
+Soit $(u_n)$ la suite définie par $u_0=6$ et pour tout $n\in\N, \quad u_{n+1}=\dfrac{1}{2}u_n+1$.
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item Représenter graphiquement la fonction $f$ définie sur $\R$ par $\quad f(x)=\dfrac{1}{2}x+1$.
+        \item Représenter sur le graphique les quatre premiers termes de la suite $(u_n)$.
+        \item Conjecturer les variations et la limite de la suite.
+    \end{enumalph}
+    \begin{center}
+        \def\xmin{-3} \def\ymin{-3}\def\xmax{10}\def\ymax{6}
+        \begin{tikzpicture}[scale=1]
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \reperenb{\xmin}{\ymin}{\xmax}{\ymax}{}{}
+        \end{tikzpicture}
+    \end{center}
+    \carreauxseyes{16}{4}
+    \item Soit $(c_n)$ la suite constante définie sur $\N$ par $c_n=2$.\\
+    Montrer que $(c_n)$ vérifie la relation de récurrence $\ c_{n+1}=\dfrac{1}{2}c_n+1\ $ pour tout $n\in\N$.\\[.5em]
+    \carreauxseyes{16}{4}
+    \item Soit $(v_n)$ la suite définie sur $\N$ par $\quad v_n=u_n-c_n\ $ pour tout $n\in\N$.\\
+    Montrer que $(v_n)$ est une suite géométrique.\\[.5em]
+    \carreauxseyes{16}{6.4}
+    \item En déduire l'expression de $v_n$ en fonction de $n$, puis celle de $u_n$ en fonction de $n$.\\[.5em]
+    \carreauxseyes{16}{5.6}
+    \item Démontrer les conjectures de la question \textbf{1.c}.\\[.5em]
+    \carreauxseyes{16}{4}
+    
+\end{enumerate}
+
+
+%\vspace*{1cm}
+
+
+\exo{}\\
+Une biologiste désire étudier l'évolution de la population de singes sur une île.\\
+En 2024, elle estime qu'il y a 1000 singes sur l'île.
+\subsection*{Premier modèle\bareme{6 pts}} 
+La biologiste suppose que la population de singes augmente de 4 \% chaque année.\\
+On note $u_n$ le nombre de singes en milliers sur l'île en $2024+n$.
+\begin{enumerate}
+    \item Donner la valeur de $u_0$ et calculer $u_1$.\\[.5em]
+    \carreauxseyes{16}{3.2}
+    \item Déterminer la nature de la suite $(u_n)$, puis exprimer $u_n$ en fonction de $n$.\\[.5em]
+    \carreauxseyes{16}{5.6}
+    \item Déterminer la limite de la suite $(u_n)$.\\[.5em]
+    \carreauxseyes{16}{4}
+    \item Que peut-on penser de ce modèle ?\\[.5em]
+    \carreauxseyes{16}{4}
+\end{enumerate}
+\subsection*{Second modèle \bareme{10 pts}}
+La biologiste suppose finalement que la population de singes (en milliers) l'année $2024+n$ est modélisée par la suite $(v_n)$ définie par $v_0=1$ et, pour tout $n\in\N, \ v_{n+1}=0,9v_n+0,15$
+\begin{enumerate}
+    \item Avec ce modèle, combien peut-on prévoir de singes en 2025 ?\\[.5em]
+    \carreauxseyes{16}{4}
+    \item Déterminer l'expression de $v_n$ en fonction de $n$.\\[.5em]
+    \carreauxseyes{16}{17.6}\\
+    \carreauxseyes{16}{8}
+    \item Déterminer les variations de la suite $(v_n)$ et interpréter avec le contexte.\\[.5em]
+    \carreauxseyes{16}{5.6}
+    \item Déterminer la limite de la suite $(v_n)$ et interpréter avec le contexte.\\[.5em]
+    \carreauxseyes{16}{5.6}
+\end{enumerate}
+
+\vspace*{1cm}
+
+\newpage
+\exo{} \bareme{6 pts}\\
+En 2020, Valentin a acquis un petit verger de pommes pour la somme de 10 000 €.\\
+En 2020, la vente de pommes lui a rapporté un bénéfice de 1500 €, mais chaque année, ses récoltes diminuent et son bénéfice baisse de 20\%.\\[.5em]
+Pour tout entier naturel $n$, on note $b_n$ le bénéfice (en euros) réalisé en $2020+n$.\\
+Ainsi $b_0=1500$.
+\begin{enumerate}
+    \item Déterminer la nature de la suite $(b_n)$ et en déduire l'expression de $b_n$ en fonction de $n$.\\[.5em]
+    \carreauxseyes{16}{4}
+    \item Quel est le montant du bénéfice total réalisé par Valentin au bout de 10 ans ? Arrondir à l'euro.\\[.5em]
+    \carreauxseyes{16}{7.2}
+    \item Valentin espère rentabiliser son investissement. Le montant total des bénéfices atteindra-t-il un jour les 10 000 € investis dans le verger ?\\[.5em]
+    \carreauxseyes{16}{6.4}
+\end{enumerate}
+
+
+
+\end{document}

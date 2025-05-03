@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{algues}\PYG{p}{()} \PYG{p}{:}
+    \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{230}
+    \PYG{n}{r} \PYG{o}{=} \PYG{l+m+mf}{8.5}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{o}{...}\PYG{p}{)} \PYG{p}{:}
+        \PYG{n}{a} \PYG{o}{=} \PYG{o}{...}
+        \PYG{n}{r} \PYG{o}{=} \PYG{o}{...}
+    \PYG{k}{return}\PYG{p}{(}\PYG{o}{...}\PYG{p}{)}
+\end{Verbatim}

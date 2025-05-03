@@ -1,0 +1,39 @@
+\documentclass[a4paper,10pt,exos]{nsi} 
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Olympiades nationales 2023 - Exercice 2 (candidats spé)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \classe{Olympiades}
+    \titre{Une descente infinie}
+    \maketitle
+
+
+    Dans tout l’exercice, $\alpha$ désigne un entier naturel supérieur ou égal à 4.
+    On considère l’équation $(E)$ ci-dessous dont l’inconnue est le triplet d’entiers relatifs $(x_1, x_2, x_3) \in\Z^3$.
+    $$(E): \quad x_1^2+x_2^2+x_3^2=\alpha x_1 x_2 x_3$$
+    Le but de l’exercice est de démontrer que le seul triplet dans $\Z^3$ solution de $(E)$ est $(0,0,0)$.\\
+    
+    \textbf{Partie 1}\\
+    Soient $b$ et $c$ deux réels. On considère la fonction polynôme $𝑃$ de $\R$ dans $\R$ définie par $P(x) = x^2 + bx + c$.\\
+    Un réel $r$ tel que $P(r) = 0$ est appelé \textit{racine} de $P$. On suppose dans cette partie que $P$ admet deux racines distinctes, $r_1$ et $r_2$. Ainsi, $P(x) = (x − r_1)(x − r_2)$ pour tout réel $x$.
+    \begin{enumerate}
+        \item Exprimer $b$ et $c$ en fonction de $r_1$ et $r_2$.
+        \item On suppose ici $b\leqslant 0$ et $c\geqslant 0$.\\
+            Que peut-on dire du signe de $r_1$ et $r_2$ ?
+    \end{enumerate}
+
+    \textbf{Partie 2}
+    \begin{enumerate}
+        \item \begin{enumalph}
+            \item On suppose que le triplet $(x_1, x_2, x_3) \in\Z^3$ est solution de l'équation $(E)$. Montrer que $\left(|x_1|, |x_2|,|x_3|\right)$ est aussi solution de $(E)$.\\
+            Pour $x$ réel, $|x|$ désigne la \textit{valeur absolue} de $x$ et vaut $x$ si $x$ est positif et $-x$ si $x$ est négatif.
+            \item En déduire que, s’il existe un triplet d’entiers relatifs différent de $(0,0,0)$ solution de l’équation $(E)$, alors il existe un triplet d’entiers naturels différent de $(0,0,0)$ solution de l’équation $(E)$.
+        \end{enumalph}
+        \item Si le triplet $(x_1, x_2, x_3) \in\Z^3$ est solution de l'équation $(E)$, que dire du triplet $(x_2, x_1, x_3)$ ?
+        \item En déduire que, si l’équation $(E)$ admet une solution dans $\Z^3$ différente du triplet $(0,0,0)$, alors elle admet une solution $(x_1, x_2, x_3)$ dans $\N^3$ différente du triplet $(0,0,0)$ et telle que $x_1\leqslant x_2\leqslant x_3$.
+    \end{enumerate}
+\end{document}

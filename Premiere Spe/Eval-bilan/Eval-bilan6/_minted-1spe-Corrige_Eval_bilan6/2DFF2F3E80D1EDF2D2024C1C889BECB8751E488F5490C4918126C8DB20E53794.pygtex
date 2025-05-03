@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{semaine}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)} \PYG{p}{:}
+    \PYG{n}{u} \PYG{o}{=} \PYG{l+m+mi}{1200}
+    \PYG{n}{S} \PYG{o}{=} \PYG{l+m+mi}{1200}
+    \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{while} \PYG{n}{S} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{30000} \PYG{p}{:}
+        \PYG{n}{n} \PYG{o}{=} \PYG{n}{n} \PYG{o}{+} \PYG{l+m+mi}{1}
+        \PYG{n}{u} \PYG{o}{=} \PYG{l+m+mf}{1.02} \PYG{o}{*} \PYG{n}{u}
+        \PYG{n}{S} \PYG{o}{=} \PYG{n}{S} \PYG{o}{+} \PYG{n}{u}
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}
+\end{Verbatim}

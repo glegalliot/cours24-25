@@ -1,0 +1,249 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+
+
+\begin{document}
+\classe{\premiere spé}
+\titre{Corrigés exo 3 - Indépendance}
+\maketitle
+
+\exo{}
+\textcolor{UGLiBlue}{Dans chaque cas, déterminer si les événements $A$ et $B$ sont indépendants.
+\begin{enumerate}
+    \item $P(A)=0,2$, $P(B)=0,8$ et $P(A\cap B)=0,2$.
+    \item $P(A)=0,3$, $P(B)=0,7$ et $P(A\cap B)=0,21$.
+    \item $P(A)=0,5$, $P(B)=0,3$ et $P(A\cup B)=0,65$.
+    \item $P(A)=0,48$, $P(B)=0,25$ et $P(A\cup B)=0,73$.
+\end{enumerate}}
+
+\begin{enumerate}
+    \item $P(A)\times P(B)=0,2\times 0,8=0,16\neq 0,2=P(A\cap B)$\\
+    Donc $A$ et $B$ ne sont pas indépendants.
+    \item $P(A)\times P(B)=0,3\times 0,7=0,21=0,21=P(A\cap B)$\\
+    Donc $A$ et $B$ sont indépendants.	
+    \item $P(A\cap B)=P(A)+P(B)-P(A\cup B)=0,5+0,3-0,65=0,15$\\
+    $P(A)\times P(B)=0,5\times 0,3=0,15=0,15=P(A\cap B)$\\
+    Donc $A$ et $B$ sont indépendants.
+    \item $P(A\cap B)=P(A)+P(B)-P(A\cup B)=0,48+0,25-0,73=0$\\
+    $P(A)\times P(B)=0,48\times 0,25=0,12\neq 0=P(A\cap B)$\\
+    Donc $A$ et $B$ ne sont pas indépendants.
+\end{enumerate}
+
+\exo{}
+\textcolor{UGLiBlue}{Soient $A$ et $B$ deux événements indépendants tels que $P(\overline{A})=0,6$ et $P(A\cap B)=0,3$.\\
+Calculer $P(A)$ puis $P(B)$.}
+
+\begin{multicols}{2}
+    \begin{tabbing}
+        $P(A)$  \=$=1-P(\overline{A})$\\
+                \>$=1-0,6$\\
+                \>$0,4$
+    \end{tabbing}
+    \vfill\null
+    \columnbreak
+    \begin{tabbing}
+        $P(B)$  \=$=P_A(B)\quad$ car $A$ et $B$ sont indépendants\\
+                \>$=\dfrac{P(A\cap B)}{P(A)}$\\
+                \>$=\dfrac{0,3}{0,4}$\\
+                \>$=0,75$
+    \end{tabbing}
+\end{multicols}
+
+\exo{ \faStar}
+\textcolor{UGLiBlue}{$A$ et $B$ sont deux événements incompatibles de probabilité non nulle.\\
+Démontrer que $A$ et $B$ ne sont pas indépendants.}\\
+
+$A$ et $B$ sont incompatibles donc $A\cap B=\varnothing$ et $P(A\cap B)=0$.\\
+$P_B(A)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{0}{P(B)}=0\neq P(A)$\\
+Donc $A$ et $B$ ne sont pas indépendants.
+
+\exo{}
+\textcolor{UGLiBlue}{On lance un dé non truqué à six faces et on note les événements suivants :
+\begin{enumerate}[label=\textbullet]
+    \item $A$ : « le résultat est 4 ; 5 ou 6 ».
+    \item $B$ : « le résultat est un nombre pair ».
+\end{enumerate}
+Les événements $A$ et $B$ sont-ils indépendants ?}\\
+
+On a $A\cap B$ est l'événement « le résultat est 4 ou 6 ».\\[.5em]
+D'où $P(A)=\dfrac{3}{6}=\dfrac{1}{2}$, $\quad P(B)=\dfrac{3}{6}=\dfrac{1}{2}\quad$ et $\quad P(A\cap B)=\dfrac{2}{6}=\dfrac{1}{3}$.\\[.5em]
+$P(A)\times P(B)=\dfrac{1}{2}\times \dfrac{1}{2}=\dfrac{1}{4}\neq \dfrac{1}{3}=P(A\cap B)$.\\[.5em]
+Donc $A$ et $B$ ne sont pas indépendants.
+
+\exo{}
+\textcolor{UGLiBlue}{Dans un magasin de décoration, 20 \% des clients à la caisse achètent de la peinture, les autres achètent du papier peint.\\
+Parmi les clients qui achètent de la peinture, la moitié paie à crédit. Parmi les clients qui achètent du papier peint, les trois quarts paient à crédit.
+On choisi au hasard un client à la caisse.
+\begin{enumerate}
+    \item Décrire la situation par un arbre de probabilité ou un tableau.
+    \item Les événements « le client achète de la peinture » et « le client paye à crédit » sont-ils indépendants ?
+\end{enumerate}}
+
+\begin{enumerate}
+    \item On note $P$ l'événement « le client achète de la peinture » et $C$ l'événement « le client paye à crédit ».\\
+    On obtient l'arbre de probabilité suivant :
+    \def\abun{$P$}
+ \def\alun{0,2}
+ \def\abdeux{$\barmaj{P}$}
+ \def\aldeux{0,8}
+ \def\abtrois{$C$}
+ \def\altrois{0,5}
+ \def\abquatre{$\barmaj{C}$}
+ \def\alquatre{0,5}
+ 
+\def\abcinq{$C$}
+ \def\alcinq{0,75}
+ \def\absix{$\barmaj{C}$}
+ \def\alsix{0,25}
+ \begin{center}
+ \arbreproba
+ \end{center}
+    \item \begin{multicols}{3}
+        \begin{tabbing}
+            $P(P\cap C)$ \=$=P(P)\times P_P(C)$\\
+                        \>$=0,2\times 0,5$\\
+                        \>$=0,1$
+        \end{tabbing}
+        \vfill\null
+        \columnbreak
+        \begin{tabbing}
+            $P(P)$ \=$=0,2$\\[.5em]
+            $P(C)$ \=$=P(P\cap C)+P(\barmaj{P}\cap C)$\\
+                    \>$=0,1+0,8\times 0,75$\\
+                    \>$=0,7$
+        \end{tabbing}
+        
+        \begin{tabbing}
+            $P(P)\times P(C)$ \=$=0,2\times 0,7$\\
+                            \>$=0,14$\\
+                            \>$\neq P(P\cap C)$
+        \end{tabbing}
+    \end{multicols}
+    Donc Les événements « le client achète de la peinture » et « le client paye à crédit » ne sont pas indépendants.
+\end{enumerate}
+
+\exo{}
+\textcolor{UGLiBlue}{André est un piètre  pêcheur : la probabilité qu'il réussisse à pêcher un poisson est égale à 0,3 chaque jour.
+\begin{enumerate}
+    \item En supposant que le résultat de sa pêche est indépendant du résultat du jour précédent, déterminer la probabilité qu'il attrappe un poisson quatre jours de suite.
+    \item En supposant cette fois que la probabilité d'une pêche fructueuse augmente de 0,5 le jour suivant un échec et de 0,15 le jour suivant une réussite (et vaut 1 si ce nombre devait dépasser 1 avec les instructions précédentes), calculer la probabilité qu'il attrape un poisson chacun des deux premiers jours puis la probabilité qu'il en attappe un chacun des trois premiers jours.
+\end{enumerate}}
+
+\begin{enumerate}
+    \item La probabilité qu'André attrape un poisson quatre jours de suite est $0,3^4=0,0081$.
+    \item On note $P_i$ l'évenement « André attrape un poisson le jour $i$ ».\\
+    On obtient l'arbre suivant :
+    \def\abun{$P_1$}
+\def\alun{0,3}
+\def\abdeux{$\barmaj{P_1}$}
+\def\aldeux{0,7}
+\def\abtrois{$P_2$}
+\def\altrois{0,45}
+\def\abquatre{$\barmaj{P_2}$}
+\def\alquatre{0,55}
+\def\abcinq{$P_2$}
+\def\alcinq{0,8}
+\def\absix{$\barmaj{P_2}$}
+\def\alsix{0,2}
+\begin{center}
+\arbreproba
+\end{center}
+
+    \begin{enumerate}[label=\textbullet]
+        \item 
+        La probabilité qu'André attrape un poisson chacun des deux premiers jours est $0,3\times 0,45=0,135$.
+        \item La probabilité qu'André attrape un poisson chacun des trois premiers jours est $0,3\times 0,45\times 0,6=0,081$.
+    \end{enumerate}
+\end{enumerate}
+
+\exo{}
+\textcolor{UGLiBlue}{Soit $x\in\fif{0}{1}$.\\
+On considère deux événements $A$ et $B$ tels que $P(A)=x$, $P(B)=1-x$ et $P(A\cap B)=\dfrac{1}{4}$.\\
+Déterminer les valeurs de $x$ pour lesquelles $A$ et $B$ sont indépendants.}
+
+\begin{tabbing}
+    $A$ et $B$ sont indépendants \= $\iff P(A)\times P(B)=P(A\cap B)$\\[.5em]
+                                \> $\iff x\times (1-x)=\dfrac{1}{4}$\\[.5em]
+                                \> $\iff x-x^2=\dfrac{1}{4}$\\[.5em]
+                                \> $\iff -x^2+x-\dfrac{1}{4}=0$\\[.5em]
+                                \> $\iff x^2-x+\dfrac{1}{4}=0$\\[.5em]
+                                \> $\iff x^2-x+\dfrac{1}{4}=0$\\[.5em]
+                                \> $\iff (x-\dfrac{1}{2})^2=0$\\[.5em]
+                                \> $\iff x=\dfrac{1}{2}$
+\end{tabbing}
+
+\exo{}
+\textcolor{UGLiBlue}{Soit $p\in\oio{0}{1}$. On considère deux événements $A$ et $B$ tels que $$P(A)=p,\quad P(B)=P(\overline{A})\quad \text{et}\quad P(A\cap B)=0,2p+0,15.$$
+\begin{enumerate}
+    \item Résoudre dans $\R$ l'équation $\quad -x^2+0,8x-0,15=0$.
+    \item En déduire les valeurs de $p$ pour lesquelles $A$ et $B$ sont indépendants.
+\end{enumerate}}
+
+\begin{enumerate}
+    \item On calcule le discriminant du polynome $-x^2+0,8x-0,15$ :
+    \begin{tabbing}
+        $\Delta$ \=$=0,8^2-4\times (-1)\times (-0,15)$\\
+                \>$=0,64-0,6$\\
+                \>$=0,04$
+    \end{tabbing}
+    Calculons les racines du polynome :
+    \begin{tabbing}
+        $x_1$ \=$=\dfrac{-0,8-\sqrt{\Delta}}{-2} \qquad x_2$ \=$=\dfrac{-0,8+\sqrt{\Delta}}{-2}$\\[.5em]
+                \>$=\dfrac{-0,8-0,2}{-2}$ \>$=\dfrac{-0,8+0,2}{-2}$\\[.5em]
+                \>$=0,5$   \>$=0,3$            
+    \end{tabbing}
+    D'où $\mathcal{S}=\{0,3;0,\}$.
+    \item \begin{tabbing}
+        $A$ et $B$ sont indépendants \= $\iff P(A)\times P(B)=P(A\cap B)$\\
+                                    \> $\iff p\times P(\overline{A})=0,2p+0,15$\\
+                                    \> $\iff p\times (1-p)=0,2p+0,15$\\
+                                    \> $\iff -p^2+p=0,2p+0,15$\\
+                                    \> $\iff -p^2+0,8p-0,15=0$\\
+                                    \> $\iff p= 0,3 \ $ ou $\ p=0,5$
+    \end{tabbing}
+    Donc $A$ et $B$ sont indépendants si, et seulement si $p=0,3$ ou $p=0,5$.
+\end{enumerate}
+
+
+\exo{ \faStar\faStar}
+\textcolor{UGLiBlue}{On considère deux événements $A$ et $B$ tels que $P(A\cap B)=0,8$ et $P(A\cup B)=0,9$.
+\begin{enumerate}
+    \item Résoudre dans $\R$ l'équation $x^2-1,7x+0,8=0$.
+    \item Monter que $A$ et $B$ ne peuvent pas être indépendants.
+\end{enumerate}}
+
+\begin{enumerate}
+    \item On calcule le discriminant du polynome $x^2-1,7x+0,8$ :
+    \begin{tabbing}
+        $\Delta$ \=$=(-1,7)^2-4\times 1\times 0,8$\\
+                \>$=2,89-3,2$\\
+                \>$=-0,31$
+    \end{tabbing}
+    $\Delta<0$ donc le polynome n'a pas de racine réelle et l'équation $x^2-1,7x+0,8=0$ n'a pas de solution dans $\R$.
+    \item \begin{enumerate}[label =\textbullet]
+        \item Montrons que $A$ et $B$ sont deux événements tels que $P(A)\neq 0$ et $P(B)\neq 0$ :\\[.5em]
+        Supposons par l'absurde que $P(A)=0$ ou $P(B)=0$.\\
+        Alors $A$ ou $B$ et l'événement impossible et $P(A\cap B)=0$.\\
+        Il y a une contradiction avec l'énoncé, donc $P(A)\neq 0$ et $P(B)\neq 0$.
+        \item Supposons par l'absurde que $A$ et $B$ sont indépendants.\\[.5em]
+        On a : $\quad P(A\cup B)= P(A) + P(B) - P(A\cap B)$\\
+        Donc $\quad 0,9 = P(A) + P(B) - 0,8$\\
+        Et $\quad P(A) + P(B) = 1,7$\\[.5em]
+        Comme on a supposé que $A$ et $B$ sont indépendants,  $\quad P(A\cap B) = P(A)\times P(B)=0,8$\\
+        Donc $\quad P(A)=\dfrac{0,8}{P(B)}$\\
+        Et $\quad P(A)+P(B)=1,7\quad$ donne $\quad \dfrac{0,8}{P(B)}+P(B)=1,7$.\\
+        Posons $p=P(B)$.\\
+        $p$ est solution de l'équation $\dfrac{0,8}{p}+p=1,7$\\ 
+        Soit $p$ un réel strictement positif.
+        \begin{tabbing}
+            $\dfrac{0,8}{p}+p=1,7$  \=$\iff 0,8+p^2=1,7p$\\
+                                    \>$\iff p^2-1,7p+0,8=0$
+        \end{tabbing}
+        D'après la question précédente, cette équation n'a pas de solution dans $\R$.\\
+        Il y a une contradition. Donc $A$ et $B$ ne peuvent pas être indépendants.
+    \end{enumerate}
+\end{enumerate}
+\end{document}

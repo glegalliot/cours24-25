@@ -1,0 +1,69 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spé}
+\titre{Ceinture verte 01 - Corrigé}
+\maketitle
+
+
+%Exercice 2N52-5 en selectionnant 4 questions
+
+
+\begin{exercice}[ : Équations avec un quotient]
+    Pour chacune des équations suivantes, préciser les valeurs interdites éventuelles puis résoudre l'équation :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\dfrac{3x-7}{-3x}=-5$.
+	        \item $\dfrac{x^2+1}{4x-16}=0$.
+	        %\item $\dfrac{4x-6}{-x+9}=0$.
+	        \item  \textit{BONUS :} $\dfrac{4}{9x+1}=\dfrac{4}{3x-2}$.
+        \end{enumerate}
+    \end{multicols}
+    
+\end{exercice}
+
+\begin{enumerate}
+    \item Déterminer les valeurs interdites revient à déterminer les valeurs qui annulent le dénominateur du quotient, puisque la division par $0$ n'existe pas.\\Or $-3x=0 \quad \iff \quad x=0$. Donc l'ensemble des valeurs interdites est  $\left\{0\right\}$. \\
+          Pour tout $x\in \mathbb{R}\smallsetminus\left\{0\right\}$,
+        \begin{tabbing}
+            $\dfrac{3x-7}{-3x}=-5 \quad$ \= $\iff \quad \dfrac{3x-7}{-3x}=\dfrac{-5}{1}$\\
+            \>  $\iff \quad 3x-7=-5\times(-3x)\quad \text{ car les produits en croix sont égaux.}$\\
+            \>  $\iff \quad 3x-7= 15x$\\
+            \>  $\iff \quad -12x= 7$\\
+            \>  $\iff \quad x=-\dfrac{7}{12}$
+        \end{tabbing}
+    Le nombre $-\dfrac{7}{12}$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{-\dfrac{7}{12}\right\}$.
+
+    \item $4x-16=0 \quad \iff \quad x=4$. Donc l'ensemble des valeurs interdites est  $\left\{4\right\}$.\\
+    Pour tout $x\in \mathbb{R}\smallsetminus\left\{4\right\}$,
+    \begin{tabbing}
+        $\dfrac{x^2+1}{4x-16}=0 \quad$ \=  $\iff \quad x^2+1=0\quad$  car $\quad\dfrac{A(x)}{B(x)}=0 \iff  \quad A(x)=0 \text { et } B(x)\neq 0$\\
+        \>  $\iff \quad x^2=-1$
+    \end{tabbing}
+    Puisque $-1<0$, cette équation n'a pas de solution, donc l'ensemble des solutions est  $\mathcal{S}=\varnothing$.
+
+    %\item Déterminer les valeurs interdites revient à déterminer les valeurs qui annulent le dénominateur du quotient, puisque la division par $0$ n'existe pas.\\Or $-x+9=0$ si et seulement si  $x=9$. \\
+    %      Donc l'ensemble des valeurs interdites est  $\left\{9\right\}$. \\Pour tout $x\in \mathbb{R}\smallsetminus\left\{9\right\}$,\\
+    %$\begin{aligned}
+    %\dfrac{4x-6}{-x+9}&=0\\
+    %4x-6&=0\,\,\,\,\,\,\, \text{ car }\dfrac{A(x)}{B(x)}=0 \text { si et seulement si } A(x)=0 \text { et } B(x)\neq 0\\
+    %x&= \dfrac{3}{2}
+    %\end{aligned}$\\ $\dfrac{3}{2}$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{\dfrac{3}{2}\right\}$.
+
+    \item $9x+1=0 \quad\iff\quad x=-\dfrac{1}{9} \quad$ et $\quad 3x-2=0 \quad\iff\quad x=\dfrac{2}{3}$. \\
+          Donc l'ensemble des valeurs interdites est  $\left\{-\dfrac{1}{9}\,;\,\dfrac{2}{3}\right\}$. \\Pour tout $x\in \mathbb{R}\smallsetminus\left\{-\dfrac{1}{9}\,;\,\dfrac{2}{3}\right\}$,
+    \begin{tabbing}
+        $\dfrac{4}{9x+1}=\dfrac{4}{3x-2} \quad$ \=  $\iff \quad 4\times (9x+1)=4\times (3x-2)\quad \text{ car les produits en croix sont égaux.}$\\
+        \>  $\iff\quad  36x+4=12x-8$\\
+        \>  $\iff\quad  24x= -12$\\
+        \>  $\iff\quad  x=-\dfrac{1}{2}$
+    \end{tabbing}
+    $-\dfrac{1}{2}$ n'est pas une valeur interdite, donc l'ensemble des solutions de cette équation est  $\mathcal{S}=\left\{-\dfrac{1}{2}\right\}$.
+\end{enumerate}
+
+\end{document}
+

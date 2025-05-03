@@ -1,0 +1,180 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Jeudi 19/09/2024}\\
+\classe{\premiere spé}
+\titre{Interrogation 1 - Sujet A}
+\maketitle
+\begin{center}
+	Calculatrice interdite
+\end{center}
+
+\vspace{1cm}
+
+\dleft{7.5cm}{
+    \exo{}\\
+
+	On définit sur $\R$ la fonction $f$ par 
+	$$f(x)=\dfrac{1}{2}x-3.$$
+    Représenter $\courbe{f}$, la courbe représentative de $f$ dans le repère ci-contre.
+	}
+{
+
+\def\xmin{-5} \def\ymin{-5}\def\xmax{7}\def\ymax{5}
+\begin{center}
+	\begin{tikzpicture}[scale=.7]
+		\reperevl{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+	\end{tikzpicture}
+\end{center}
+}
+
+\exo{}\\
+
+\dleft{8cm}{
+	\def\xmin{-8} \def\ymin{-8}\def\xmax{8}\def\ymax{8}
+	\begin{tikzpicture}[scale=.5]
+		\reperevl{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{-2*\x+6});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{3*\x-7});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{2/3*\x+1});
+		\draw (4,-4) node[below]{$\mathcal{C}_f$};
+		\draw (-7,-4) node[below]{$\mathcal{C}_g$};
+		\draw (-1,-7) node[below]{$\mathcal{C}_h$};
+		
+\end{tikzpicture}}
+{	On a représenté ici trois fonctions affines $f$, $g$ et $h$.\\
+	
+	Compléter  sans justifier:\\
+	
+	$f(x)=\quad$\dotfill\\
+	
+	$g(x)=\quad$\dotfill\\
+	
+	$h(x)=\quad$\dotfill\\	
+	
+}
+
+\newpage
+\exo{}\\
+\begin{enumerate}
+    \item Donner le tableau de signes des expressions suivantes :
+    \begin{multicols}{3}
+        \begin{enumalph}
+            \item   $3x-2$
+            \item 	$(2x+1)(-3x+2)$
+            \item	$\dfrac{-5x-2}{x+8}$
+        \end{enumalph}
+    \end{multicols}
+    \carreauxseyes{16}{16}
+    \item En déduire les solutions des inéquations suivantes :
+    \begin{multicols}{3}
+        \begin{enumalph}
+            \item   $3x-2\leqslant 0$
+            \item 	$(2x+1)(-3x+2)<0$
+            \item	$\dfrac{-5x-2}{x+8}\geqslant 0$
+        \end{enumalph}
+    \end{multicols}
+    \carreauxseyes{16}{3.2}
+\end{enumerate}
+
+\newpage
+\setcounter{exoNum}{0}
+\textcolor{UGLiBlue}{Jeudi 19/09/2024}\\
+\classe{\premiere spé}
+\titre{Interrogation 1 - Sujet B}
+\maketitle
+\begin{center}
+	Calculatrice interdite
+\end{center}
+
+\vspace{1cm}
+
+\dleft{7.5cm}{
+    \exo{}\\
+
+	On définit sur $\R$ la fonction $f$ par 
+	$$f(x)=-\dfrac{1}{2}x+3.$$
+    Représenter $\courbe{f}$, la courbe représentative de $f$ dans le repère ci-contre.
+	}
+{
+
+\def\xmin{-5} \def\ymin{-5}\def\xmax{7}\def\ymax{5}
+\begin{center}
+	\begin{tikzpicture}[scale=.7]
+		\reperevl{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+	\end{tikzpicture}
+\end{center}
+}
+
+\exo{}\\
+
+\dleft{8cm}{
+	\def\xmin{-8} \def\ymin{-8}\def\xmax{8}\def\ymax{8}
+	\begin{tikzpicture}[scale=.5]
+		\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{3*\x-4});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{-2*\x+5});
+		\draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{3/2*\x+2});
+		\draw (-2.2,-6) node[below right]{$\mathcal{C}_f$};
+		\draw (7,-6) node[below]{$\mathcal{C}_g$};
+		\draw (-6,-6) node[below left]{$\mathcal{C}_h$};
+		
+\end{tikzpicture}}
+{	On a représenté ici trois fonctions affines $f$, $g$ et $h$.\\
+	
+	Compléter  sans justifier:\\
+	
+	$f(x)=\quad$\dotfill\\
+	
+	$g(x)=\quad$\dotfill\\
+	
+	$h(x)=\quad$\dotfill\\	
+	
+}
+
+\newpage
+\exo{}\\
+\begin{enumerate}
+    \item Donner le tableau de signes des expressions suivantes :
+    \begin{multicols}{3}
+        \begin{enumalph}
+            \item   $2x-5$
+            \item 	$(2x-1)(-5x-3)$
+            \item	$\dfrac{-4x+1}{x+3}$
+        \end{enumalph}
+    \end{multicols}
+    \carreauxseyes{16}{16}
+    \item En déduire les solutions des inéquations suivantes :
+    \begin{multicols}{3}
+        \begin{enumalph}
+            \item   $2x-5\geqslant 0$
+            \item 	$(2x-1)(-5x-3)>0$
+            \item	$\dfrac{-4x+1}{x+3}\leqslant 0$
+        \end{enumalph}
+    \end{multicols}
+    \carreauxseyes{16}{3.2}
+\end{enumerate}
+
+\end{document}

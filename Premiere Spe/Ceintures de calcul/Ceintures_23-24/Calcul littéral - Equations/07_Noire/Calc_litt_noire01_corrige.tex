@@ -1,0 +1,47 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+
+\classe{\premiere spé}
+\titre{Ceinture noire 01 - Corrigé}
+\maketitle
+
+\begin{exercice}[ : Mettre au même dénominateur des expressions littérales]%2N41-8
+    Préciser les valeurs interdites éventuelles, puis écrire l'expression sous la forme d'un quotient et réduire le numérateur.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $5x+\dfrac{1}{-x-2}$
+            \item $\dfrac{-1}{9x+1}-\dfrac{7}{2x+8}$
+        \end{enumerate}
+    \end{multicols}
+    
+\end{exercice}
+
+\begin{enumerate}
+    \item Déterminer les valeurs interdites de cette expression, revient à
+    déterminer les valeurs qui annulent le dénominateur de $\dfrac{1}{-x-2}$,
+    puisque la division par $0$ n'existe pas.\\L'équation $-x-2=0$ a pour solution $-2$. \\
+    $-2$ est une valeur interdite pour le quotient $\dfrac{1}{-x-2}$.\\
+    Pour $x\in \mathbb{R}\smallsetminus\left\{-2\right\}$, \\
+    $\begin{aligned}
+    5x+\dfrac{1}{-x-2}&=\dfrac{5x(-x-2)}{-x-2}+\dfrac{1}{-x-2}\\
+    &=\dfrac{-5x^2-10x+1}{-x-2}\\
+    &=\dfrac{-5x^2-10x+1}{-x-2}
+    \end{aligned}$
+
+    \item Déterminer les valeurs interdites de cette expression, revient à déterminer les valeurs qui annulent les dénominateurs de $\dfrac{-1}{9x+1}$ et de $\dfrac{7}{2x+8}$, puisque la division par $0$ n'existe pas.\\
+    L'équation $9x+1=0$ a pour solution $\dfrac{-1}{9}$. \\
+  L'équation $2x+8=0$ a pour solution $-4$. \\
+  $\dfrac{-1}{9}$ et $-4$ sont donc des valeurs interdites pour l'expression. \\
+  Pour $x\in \mathbb{R}\smallsetminus\left\{-4\,;\,\dfrac{-1}{9}\right\}$, \\
+  $\begin{aligned}
+  \dfrac{-1}{9x+1}-\dfrac{7}{2x+8}
+  &= \dfrac{-1(2x+8)}{(9x+1)(2x+8)}-\dfrac{7(9x+1)}{(9x+1)(2x+8)}\\
+  &=\dfrac{-1(2x+8)-7(9x+1)}{(9x+1)(2x+8)}\\
+  &=\dfrac{-65x-15}{(9x+1)(2x+8)}
+  \end{aligned}$
+\end{enumerate}
+\end{document}

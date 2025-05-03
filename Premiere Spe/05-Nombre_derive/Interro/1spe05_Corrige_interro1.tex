@@ -1,0 +1,237 @@
+\documentclass[a4paper,11pt,exos]{nsi} 
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+
+\classe{\premiere spé}
+\titre{Corrigé de l'interrogation - Sujet A}
+\maketitle
+
+
+\exo{ Questions de cours}
+On se donne une fonction $f$ définie que $\R$, $a$ un nombre réel et $h$ un nombre réel non nul.\\
+On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère orthonormé.
+\begin{enumerate}
+    \item Donner le taux de variation de $f$ entre $a$ et $a+h$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        Le taux de variation de $f$ entre $a$ et $a+h$ est $\dfrac{f(a+h)-f(a)}{h}$.
+    }
+    \item Donner deux manières de définir le nombre dérivé de $f$ en $a$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        Le nombre dérivé de $f$ en $a$ est la limite du taux de variation de $f$ entre $a$ et $a+h$ lorsque $h$ tend vers 0.\\
+        Le nombre dérivé de $f$ en $a$ est le coefficient directeur de la tangente à $\mathcal{C}_f$ en $a$.
+    }
+    \item Donner l'équation de la tangente à $\mathcal{C}_f$ en $a$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        L'équation de la tangente à $\mathcal{C}_f$ en $a$ est $y=f'(a)(x-a)+f(a)$.
+    }
+\end{enumerate}
+
+
+\dleft{10cm}{
+    \exo{}
+    $f$ est une fonction dérivable sur $\R$ dont la courbe $\mathcal{C}_f$ est représentée ci-contre ainsi que trois de ses tangentes.\\[.5em]	
+	Lire $f'(0)$, $f'(2)$ et $f'(6)$.\\[.5em]
+	\textcolor{UGLiBlue}{
+        $f'(0)=-\dfrac{1}{2}$, $\quad f'(2)=0\quad$ et $\quad f'(6)=\dfrac{9}{2}$.}
+}
+{
+    \begin{tikzpicture}[scale=0.6]
+		\reperevl{-2}{-2}{8}{10}
+		\clip (-2,-2) rectangle (8,10);
+		\draw [thick, domain = -2:8, samples = 1000] plot(\x,{1/24*(\x)^3-0.5*\x+2});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4/3});
+		\draw [domain = -2:8, samples = 2] plot(\x,{2-0.5*\x});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4.5*(\x-6)+8});
+		\draw [ball color=gray] (0,2) circle (.05) (2,4/3) circle (.05) (6,8) circle(.05);
+	\end{tikzpicture}
+}
+
+
+\begin{minipage}{10.5cm}
+    \exo{}
+	Le plan est muni d'un repère $\rep$.\\
+	On considère la fonction $f$ définie sur $\R$ par $f(x)=x^2-4x+\dfrac{3}{2}$.\\
+	
+	$\mathcal{C}_f$ est sa courbe représentative dans le repère $\rep$.
+	\begin{enumerate}[]
+		\item 	Soit $h$ un réel non nul.\\
+        Calculer le taux d'accroissement de $f$ entre $3$ et $3+h$.
+		\item En déduire $f'(3)$.
+		\item 	Donner l'équation de la tangente $(T_3)$ à $\mathcal{C}_f$ au point d'abscisse 3 et la tracer sur ce graphique.\\
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{6.5cm}
+	\begin{center}
+		\begin{tikzpicture}
+			\clip (-1,-3) rectangle (5,4);
+			\reperev{-1}{-3}{5}{4}
+			\draw [thick, domain = -2:7, samples = 1000] plot(\x,{\x*\x-4*\x+1.5});
+			\draw (4,3.5) node{$\courbe{f}$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+%\vspace{1cm}
+\textcolor{UGLiBlue}{
+    \begin{enumerate}
+        \item Soit $h$ un réel non nul.
+        \begin{multicols}{2}
+            \begin{tabbing}
+                $f(3+h)$ \= $=(3+h)^2-4(3+h)+\dfrac{3}{2}$\\
+                \> $= (9+6h+h^2)-12-4h+\dfrac{3}{2}$\\
+                \> $= h^2+2h-\dfrac{3}{2}$   
+            \end{tabbing}
+            \begin{tabbing}
+                et $\quad f(3)$ \= $=3^2-4\times 3+\dfrac{3}{2}$\\
+                \> $=9-12+\dfrac{3}{2}$\\
+                \> $=-\dfrac{3}{2}$
+            \end{tabbing}
+        \end{multicols}
+        \begin{tabbing}
+            D'où $\quad \dfrac{f(3+h)-f(3)}{h}$ \= $= \dfrac{h^2+2h-\dfrac{3}{2}+\dfrac{3}{2}}{h}$\\
+            \> $= \dfrac{h^2+2h}{h}$\\
+            \> $= h+2$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $f'(3)$ \= $= \lim\limits_{h\to 0} \dfrac{f(3+h)-f(3)}{h}$\\[.5em]
+            \> $= \lim\limits_{h\to 0} h+2$\\[.5em]
+            \> $= 2$
+        \end{tabbing}
+        \item L'équation de la tangente $(T_3)$ à $\mathcal{C}_f$ au point d'abscisse 3 est $y=2(x-3)-\dfrac{3}{2}$.
+        \begin{tabbing}
+            $(T_3)$ \= $: y=2(x-3)-\dfrac{3}{2}$\\[.5em]
+            \> $: y=2x-6-\dfrac{3}{2}$\\[.5em]
+            \> $: y=2x-\dfrac{15}{2}$
+        \end{tabbing}
+        \begin{tikzpicture}
+            \clip (-1,-3) rectangle (5,4);
+            \reperev{-1}{-3}{5}{4}
+            \draw [thick, domain = -2:7, samples = 1000] plot(\x,{\x*\x-4*\x+1.5});
+            \draw [UGLiRed,domain = -1:5, samples = 2] plot(\x,{2*(\x-3)-1.5});
+            \draw (4,3.5) node{$\courbe{f}$};
+            \draw[UGLiRed] (4.2,1.5) node[below right]{$(T_3)$};
+        \end{tikzpicture}
+    \end{enumerate}
+}
+
+\newpage
+
+\setcounter{section}{0}
+
+
+\titre{Corrigé de l'interrogation - Sujet B}
+\maketitle
+
+
+\exo{ Questions de cours}
+On se donne une fonction $f$ définie que $\R$, $a$ un nombre réel et $h$ un nombre réel non nul.\\
+On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère orthonormé.
+\begin{enumerate}
+    \item Donner le taux de variation de $f$ entre $a$ et $a+h$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        Le taux de variation de $f$ entre $a$ et $a+h$ est $\dfrac{f(a+h)-f(a)}{h}$.
+    }
+    \item Donner deux manières de définir le nombre dérivé de $f$ en $a$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        Le nombre dérivé de $f$ en $a$ est la limite du taux de variation de $f$ entre $a$ et $a+h$ lorsque $h$ tend vers 0.\\
+        Le nombre dérivé de $f$ en $a$ est le coefficient directeur de la tangente à $\mathcal{C}_f$ en $a$.
+    }
+    \item Donner l'équation de la tangente à $\mathcal{C}_f$ en $a$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        L'équation de la tangente à $\mathcal{C}_f$ en $a$ est $y=f'(a)(x-a)+f(a)$.
+    }
+\end{enumerate}
+
+
+\dleft{10cm}{
+    \exo{}
+    $f$ est une fonction dérivable sur $\R$ dont la courbe $\mathcal{C}_f$ est représentée ci-contre ainsi que trois de ses tangentes.\\[.5em]	
+	Lire $f'(0)$, $f'(2)$ et $f'(6)$.\\[.5em]
+	\textcolor{UGLiBlue}{
+        $f'(0)=-\dfrac{1}{2}$, $\quad f'(2)=0\quad$ et $\quad f'(6)=\dfrac{9}{2}$.}
+}
+{
+    \begin{tikzpicture}[scale=0.6]
+		\reperevl{-2}{-2}{8}{10}
+		\clip (-2,-2) rectangle (8,10);
+		\draw [thick, domain = -2:8, samples = 1000] plot(\x,{1/24*(\x)^3-0.5*\x+2});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4/3});
+		\draw [domain = -2:8, samples = 2] plot(\x,{2-0.5*\x});
+		\draw [domain = -2:8, samples = 2] plot(\x,{4.5*(\x-6)+8});
+		\draw [ball color=gray] (0,2) circle (.05) (2,4/3) circle (.05) (6,8) circle(.05);
+	\end{tikzpicture}
+}
+
+
+\begin{minipage}{10.5cm}
+    \exo{}
+	Le plan est muni d'un repère $\rep$.\\
+	On considère la fonction $f$ définie sur $\R$ par $f(x)=x^2-2x-\dfrac{3}{2}$.\\
+	
+	$\mathcal{C}_f$ est sa courbe représentative dans le repère $\rep$.
+	\begin{enumerate}[]
+		\item 	Soit $h$ un réel non nul.\\
+        Calculer le taux d'accroissement de $f$ entre $3$ et $3+h$.
+		\item En déduire $f'(3)$.
+		\item 	Donner l'équation de la tangente $(T_3)$ à $\mathcal{C}_f$ au point d'abscisse 3 et la tracer sur ce graphique.\\
+	\end{enumerate}
+\end{minipage}
+\begin{minipage}{6.5cm}
+	\begin{center}
+		\begin{tikzpicture}
+			\clip (-1,-3) rectangle (5,4);
+			\reperev{-1}{-3}{5}{4}
+			\draw [thick, domain = -2:7, samples = 1000] plot(\x,{\x*\x-2*\x-1.5});
+			\draw (3,3.5) node{$\courbe{f}$};
+		\end{tikzpicture}
+	\end{center}
+\end{minipage}
+\textcolor{UGLiBlue}{
+    \begin{enumerate}
+        \item Soit $h$ un réel non nul.
+        \begin{multicols}{2}
+            \begin{tabbing}
+                $f(3+h)$ \= $=(3+h)^2-2(3+h)-\dfrac{3}{2}$\\
+                \> $= (9+6h+h^2)-6-2h-\dfrac{3}{2}$\\
+                \> $= h^2+4h+\dfrac{3}{2}$   
+            \end{tabbing}
+            \begin{tabbing}
+                et $\quad f(3)$ \= $=3^2-2\times 3-\dfrac{3}{2}$\\
+                \> $=9-6-\dfrac{3}{2}$\\
+                \> $=\dfrac{3}{2}$
+            \end{tabbing}
+        \end{multicols}
+        \begin{tabbing}
+            D'où $\quad \dfrac{f(3+h)-f(3)}{h}$ \= $= \dfrac{h^2+4h+\dfrac{3}{2}-\dfrac{3}{2}}{h}$\\
+            \> $= \dfrac{h^2+4h}{h}$\\
+            \> $= h+4$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $f'(3)$ \= $= \lim\limits_{h\to 0} \dfrac{f(3+h)-f(3)}{h}$\\[.5em]
+            \> $= \lim\limits_{h\to 0} h+4$\\[.5em]
+            \> $= 4$
+        \end{tabbing}
+        \item L'équation de la tangente $(T_3)$ à $\mathcal{C}_f$ au point d'abscisse 3 est $y=4(x-3)+\dfrac{3}{2}$.
+        \begin{tabbing}
+            $(T_3)$ \= $: y=4(x-3)+\dfrac{3}{2}$\\[.5em]
+            \> $: y=4x-12+\dfrac{3}{2}$\\[.5em]
+            \> $: y=4x-\dfrac{21}{2}$
+        \end{tabbing}
+        \begin{tikzpicture}
+            \clip (-1,-3) rectangle (5,4);
+            \reperev{-1}{-3}{5}{4}
+            \draw [thick, domain = -2:7, samples = 1000] plot(\x,{\x*\x-2*\x-1.5});
+            \draw [UGLiRed,domain = -1:5, samples = 2] plot(\x,{4*(\x-3)+1.5});
+            \draw (3,3.5) node{$\courbe{f}$};
+            \draw[UGLiRed] (2,-2.5) node[right]{$(T_3)$};
+        \end{tikzpicture}
+    \end{enumerate}
+}
+\end{document}

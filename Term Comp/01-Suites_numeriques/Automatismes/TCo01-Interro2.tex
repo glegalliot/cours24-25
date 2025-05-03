@@ -1,0 +1,88 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+
+\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Mercredi 18/09/2024}\\
+\classe{\terminale Comp}
+\titre{Interrogation 2}
+\maketitle
+\begin{center}
+	Calculatrice autorisée
+\end{center}
+
+%\vspace{1cm}
+
+\begin{enumerate}
+    \item Soit $u$ la suite arithmétique de premier terme $u_0 = 2$ et de raison $5$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $u_n$, le terme général de la suite $u$.
+        \item Calculer $\mathcal{S}_{30} = u_0 + u_1 + ... + u_{30} $.
+    \end{enumalph}
+    \carreauxseyes{16}{7.2}
+    \item Soit $v$ la suite géométrique de premier terme $v_0 = 10$ et de raison $1,5$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $v_n$, le terme général de la suite $v$.
+        \item Calculer $\mathcal{S}_{10} = v_0 + v_1 + ... + v_{10}$. Donner un arrondi au millième près.
+    \end{enumalph}
+    \carreauxseyes{16}{6.4}
+\end{enumerate}
+
+%\end{document}
+
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N.\quad u_n$\=$=u_0+n\times 5$\\
+            \>  $=2+5n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{30}$    \=  $=u_0 + u_1 + ... + u_{30} $\\[.5em]
+            \>  $=31\times \dfrac{u_0+u_{30}}{2}$\\[.5em]
+            \>  $=31\times \dfrac{2+(2+5\times 30)}{2}$\\[.5em]
+            \>  $=31\times \dfrac{2+152}{2}$\\[.5em]
+            \>  $=31\times \dfrac{154}{2}$\\[.5em]
+            \>  $=31\times 77$\\[.5em]
+            \>  $=2387$
+        \end{tabbing}
+    \end{enumalph}
+
+    \columnbreak
+
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad v_n$\=$=v_0\times 1,5^{n}$\\
+            \>  $=10\times 1,5^{n}$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{10}$    \=  $= v_0 + v_1 + ... + v_{10}$\\[.5em]
+            \>  $=v_0\times \dfrac{1-1,5^{11}}{1-1,5}$\\[.5em]
+            \>  $=10\times \dfrac{1-1,5^{11}}{1-1,5}$\\[.5em]
+            \>  $\approx 10 \times 170.9951$\\[.5em]
+            \>  $\approx 1709,951$
+        \end{tabbing}
+    \end{enumalph}
+\end{enumerate}
+\end{multicols}
+
+\end{document}

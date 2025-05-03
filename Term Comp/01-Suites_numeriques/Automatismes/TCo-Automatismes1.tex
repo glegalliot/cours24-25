@@ -1,0 +1,416 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\geometry{margin=2cm}
+
+
+
+
+%\aut{intitulé}
+%
+\newcounter{autNum}
+\setcounter{autNum}{0}
+%
+\newcommand{\aut}[1]
+{
+	\addtocounter{autNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Automatisme\ \theautNum\ \normalsize{#1}}\smallskip	
+}
+
+%\aut{intitulé}
+%
+\newcounter{corNum}
+\setcounter{corNum}{0}
+%
+\newcommand{\cor}[1]
+{
+	\addtocounter{corNum}{1}
+	{\titlefont\color{UGLiOrange}\Large Corrigé\ \thecorNum\ \normalsize{#1}}\smallskip	
+}
+
+
+\begin{document}
+\classe{\terminale Comp}
+\titre{Automatismes 1 - Suites}
+\maketitle
+
+\aut{}
+\begin{enumerate}
+    \item %1AL10-3
+    Soit $(u_n)$ une suite définie pour tout entier $n\in\N$ par $u_n = 2n^2$$-4n$$+2$.\\Calculer $u_{7}$.
+    \item %1AL10-4
+    Soit $(v_n)$ une suite définie par $v_0=4$ et pour tout entier $n\in\N$ par $v_{n+1} = -2 v_n +3$.\\Calculer $v_{3}$.
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+    \item  Dans l'expression de $u_n$ on remplace $n$ par $7$, on obtient : $u_{7} = 2\times 7^2-4\times 7+2=72$.
+    \item On calcule successivent les termes jusqu'à obtenir $v_3$ :\\ $v_{1} = -2\times {\color{violet}\boldsymbol{v_{0}}} +3=-2 \times {\color{violet}\boldsymbol{4}} +3 =
+    {\color{purple}\boldsymbol{-5}}$\\ $v_{2} = -2\times {\color{purple}\boldsymbol{v_{1}}} +3=-2 \times {\color{purple}\boldsymbol{(-5)}} +3 =
+    {\color{blue}\boldsymbol{13}}$\\ $v_{3} = -2\times {\color{blue}\boldsymbol{v_{2}}} +3=-2 \times {\color{blue}\boldsymbol{13}} +3 =
+    {\color[HTML]{008002}\boldsymbol{-23}}$
+\end{enumerate}    
+
+\vspace*{.5cm}
+
+\aut{}
+\begin{enumerate}
+    \item Soit $(u_n)$ une suite définie pour tout entier $n\in\N$ par $u_n = \dfrac{-5n-2}{2n+1}$.\\Calculer $u_{4}$.
+    \item  Soit $(v_n)$ une suite définie par $v_0=-4$ et pour tout entier $n\in\N$ par $v_{n+1} = -4 - v_n^2$.\\Calculer $v_{2}$.
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+    \item Dans l'expression de $u_n$ on remplace $n$ par $4$, on obtient : $u_{4} = \dfrac{-5\times 4 -2}{2\times 4
+    +1} = \dfrac{-22}{9}$.
+    \item On calcule successivent les termes jusqu'à obtenir $v_2$ :\\ $v_{1} = -4 - ({\color{violet}\boldsymbol{v_{0}}})^2=-4 - {\color{violet}\boldsymbol{(-4)}}^2 =
+    {\color{purple}\boldsymbol{-20}}$\\ $v_{2} = -4 - ({\color{purple}\boldsymbol{v_{1}}})^2=-4 - {\color{purple}\boldsymbol{(-20)}}^2 =
+    {\color{blue}\boldsymbol{-404}}$
+\end{enumerate}
+
+\vspace*{.5cm}
+\aut{}
+\begin{enumerate}
+    \item Soit $(u_n)$ une suite définie pour tout entier $n\in\N$ par $u_n = -3n^2$$+2$.\\Calculer $u_{8}$.
+    \item  Soit $(v_n)$ une suite définie par $v_0=2$ et pour tout entier $n\in\N$ par $v_{n+1} = -4 v_n +4$.\\Calculer $v_{4}$.
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+    \item Dans l'expression de $u_n$ on remplace $n$ par $8$, on obtient : $u_{8} = -3\times 8^2+2=-190$.
+    \item On calcule successivent les termes jusqu'à obtenir $v_4$ :\\ $v_{1} = -4\times {\color{violet}\boldsymbol{v_{0}}} +4=-4 \times {\color{violet}\boldsymbol{2}} +4 =
+    {\color{purple}\boldsymbol{-4}}$\\ $v_{2} = -4\times {\color{purple}\boldsymbol{v_{1}}} +4=-4 \times {\color{purple}\boldsymbol{(-4)}} +4 =
+    {\color{blue}\boldsymbol{20}}$\\ $v_{3} = -4\times {\color{blue}\boldsymbol{v_{2}}} +4=-4 \times {\color{blue}\boldsymbol{20}} +4 =
+    {\color[HTML]{008002}\boldsymbol{-76}}$\\ $v_{4} = -4\times {\color[HTML]{008002}\boldsymbol{v_{3}}} +4=-4 \times {\color[HTML]{008002}\boldsymbol{(-76)}} +4 =
+    {\color{lime}\boldsymbol{308}}$
+\end{enumerate}
+
+\vspace*{.5cm}
+\aut{}
+\begin{enumerate}
+    \item Soit $v$ la suite arithmétique de premier terme $v_0 = 1$ et de raison $10$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $v_n$, le terme général de la suite $v$.
+        \item Calculer $\mathcal{S}_{40} = v_0 + v_1 + ... + v_{40} $.
+    \end{enumalph}
+    \item Soit $u$ la suite géométrique de premier terme $u_0 = 4$ et de raison $0{,}2$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $u_n$, le terme général de la suite $u$.
+        \item Calculer $\mathcal{S}_{15} = u_0 + u_1 + ... + u_{15}$.
+    \end{enumalph}
+\end{enumerate}
+
+\cor{}
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N.\quad v_n$\=$=v_0+n\times 10$\\
+            \>  $=1+10n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{40}$    \=  $=v_0 + v_1 + ... + v_{40} $\\[.5em]
+            \>  $=41\times \dfrac{v_0+v_{40}}{2}$\\[.5em]
+            \>  $=41\times \dfrac{1+(1+10\times 40)}{2}$\\[.5em]
+            \>  $=41\times \dfrac{1+401}{2}$\\[.5em]
+            \>  $=41\times \dfrac{402}{2}$\\[.5em]
+            \>  $=41\times 201$\\[.5em]
+            \>  $=8241$
+        \end{tabbing}
+    \end{enumalph}
+
+    \columnbreak
+
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N.\quad u_n$\=$=u_0\times 0,2^n$\\
+            \>  $=4\times 0,2^n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{15}$    \=  $ =u_0 + u_1 + ... + u_{15}$\\[.5em]
+            \>  $=u_0\times \dfrac{1-0,2^{16}}{1-0,2}$\\[.5em]
+            \>  $=4\times \dfrac{1-0,2^{16}}{1-0,2}$\\[.5em]
+            \>  $\approx 4 \times 1,25$\\[.5em]
+            \>  $\approx 5$
+        \end{tabbing}
+    \end{enumalph}
+\end{enumerate}
+\end{multicols}
+
+
+
+\vspace*{.5cm}
+\aut{}
+\begin{enumerate}
+    \item $w$ la suite arithmétique de premier terme $w_0 = 7$ et de raison $4$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $w_n$, le terme général de la suite $w$.
+        \item Calculer $\mathcal{S}_{30} = w_0 + w_1 + ... + w_{30} $.
+    \end{enumalph}
+    \item Soit $v$ la suite géométrique de premier terme $v_1 = 7$ et de raison $0{,}6$.
+    \begin{enumalph}
+        \item Pour $n\in\N$, donner $v_n$, le terme général de la suite $v$.
+        \item Calculer $\mathcal{S}_{10} = v_1 + v_2 + ... + v_{10}$. Donner un arrondi au millième près.
+    \end{enumalph}
+\end{enumerate}
+
+\newpage
+
+\cor{}
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N.\quad w_n$\=$=w_0+n\times 4$\\
+            \>  $=7+4n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{30}$    \=  $=w_0 + w_1 + ... + w_{30} $\\[.5em]
+            \>  $=31\times \dfrac{w_0+w_{30}}{2}$\\[.5em]
+            \>  $=31\times \dfrac{7+(7+4\times 30)}{2}$\\[.5em]
+            \>  $=31\times \dfrac{7+127}{2}$\\[.5em]
+            \>  $=31\times \dfrac{134}{2}$\\[.5em]
+            \>  $=31\times 67$\\[.5em]
+            \>  $=2077$
+        \end{tabbing}
+    \end{enumalph}
+
+    \columnbreak
+
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad v_n$\=$=v_1\times 0,6^{n-1}$\\
+            \>  $=7\times 0,6^{n-1}$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{10}$    \=  $= v_1 + v_2 + ... + v_{10}$\\[.5em]
+            \>  $=v_1\times \dfrac{1-0,6^{10}}{1-0,6}$\\[.5em]
+            \>  $=7\times \dfrac{1-0,6^{10}}{1-0,6}$\\[.5em]
+            \>  $\approx 7 \times 2,4849$\\[.5em]
+            \>  $\approx 17,394$
+        \end{tabbing}
+    \end{enumalph}
+\end{enumerate}
+\end{multicols}
+
+\vspace*{.5cm}
+\aut{}
+\begin{enumerate}
+    \item Soit $v$ la suite arithmétique de premier terme $v_1 = 3$ et de raison $10$.
+    \begin{enumalph}
+        \item Pour $n\in\N^*$, donner $v_n$, le terme général de la suite $v$.
+        \item Calculer $\mathcal{S}_{20} = v_1 + v_2 + ... + v_{20} $.
+    \end{enumalph}
+    \item Soit $u$ la suite géométrique de premier terme $u_1 = 8$ et de raison $0{,}3$.
+    \begin{enumalph}
+        \item Pour $n\in\N^*$, donner $u_n$, le terme général de la suite $u$.
+        \item Calculer $\mathcal{S}_{12} = u_1 + u_2 + ... + u_{12}$.
+    \end{enumalph}
+\end{enumerate}
+
+\cor{}
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad v_n$\=$=v_1+(n-1)\times 10$\\
+            \>  $=3+10(n-1)$\\
+            \>  $=3+10n-10$\\
+            \>  $=-7+10n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{20}$    \=  $=v_1 + v_2 + ... + v_{20} $\\[.5em]
+            \>  $=20\times \dfrac{v_1+v_{20}}{2}$\\[.5em]
+            \>  $=20\times \dfrac{3+(-7+10\times 20)}{2}$\\[.5em]
+            \>  $=20\times \dfrac{3+193}{2}$\\[.5em]
+            \>  $=20\times \dfrac{196}{2}$\\[.5em]
+            \>  $=20\times 98$\\[.5em]
+            \>  $=1960$
+        \end{tabbing}
+    \end{enumalph}
+
+    \columnbreak
+
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad u_n$\=$=u_1\times 0,3^{n-1}$\\
+            \>  $=8\times 0,3^{n-1}$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{12}$    \=  $= u_1 + u_2 + ... + u_{12}$\\[.5em]
+            \>  $=u_1\times \dfrac{1-0,3^{12}}{1-0,3}$\\[.5em]
+            \>  $=8\times \dfrac{1-0,3^{12}}{1-0,3}$\\[.5em]
+            \>  $\approx 8 \times 1,4286$\\[.5em]
+            \>  $\approx 11,429$
+        \end{tabbing}
+    \end{enumalph}
+\end{enumerate}
+\end{multicols}
+
+\newpage
+\vspace*{.5cm}
+\aut{}
+\begin{enumerate}
+    \item Soit $v$ la suite arithmétique de premier terme $v_1 = -3$ et de raison $5$.
+    \begin{enumalph}
+        \item Pour $n\in\N^*$, donner $v_n$, le terme général de la suite $v$.
+        \item Calculer $\mathcal{S}_{20} = v_1 + v_2 + ... + v_{20} $.
+    \end{enumalph}
+    \item Soit $u$ la suite géométrique de premier terme $u_1 = 4$ et de raison $3$.
+    \begin{enumalph}
+        \item Pour $n\in\N^*$, donner $u_n$, le terme général de la suite $u$.
+        \item Calculer $\mathcal{S}_{12} = u_1 + u_2 + ... + u_{12}$.
+    \end{enumalph}
+\end{enumerate}
+
+
+\cor{}
+\begin{multicols}{2}
+\begin{enumerate}
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad v_n$\=$=v_1+(n-1)\times 10$\\
+            \>  $=-3+5(n-1)$\\
+            \>  $=-3+5n-5$\\
+            \>  $=-8+5n$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{20}$    \=  $=v_1 + v_2 + ... + v_{20} $\\[.5em]
+            \>  $=20\times \dfrac{v_1+v_{20}}{2}$\\[.5em]
+            \>  $=20\times \dfrac{-3+(-8+5\times 20)}{2}$\\[.5em]
+            \>  $=20\times \dfrac{-3+92}{2}$\\[.5em]
+            \>  $=20\times \dfrac{89}{2}$\\[.5em]
+            \>  $=890$
+        \end{tabbing}
+    \end{enumalph}
+
+    \columnbreak
+
+    \item \begin{enumalph}
+        \item \begin{tabbing}
+            Soit $n\in\N^*.\quad u_n$\=$=u_1\times 3^{n-1}$\\
+            \>  $=4\times 3^{n-1}$
+        \end{tabbing}
+        \item \begin{tabbing}
+            $S_{12}$    \=  $= u_1 + u_2 + ... + u_{12}$\\[.5em]
+            \>  $=u_1\times \dfrac{1-3^{12}}{1-3}$\\[.5em]
+            \>  $=4\times \dfrac{1-3^{12}}{1-3}$\\[.5em]
+            \>  $= 4 \times 265\ 720$\\[.5em]
+            \>  $=1\ 062\ 880$
+        \end{tabbing}
+    \end{enumalph}
+\end{enumerate}
+\end{multicols}
+
+\aut{}
+% Code Mathalea TS1-0
+\begin{enumerate}
+		\item Déterminer la limite de la suite $(u_n)$ définie pour tout entier $n$, strictement positif, par : $$u_n=\left(7-\dfrac{3}{n}\right)\left(\dfrac{9}{n^4}+4\right)$$
+		\item Déterminer la limite de la suite $(v_n)$ définie pour tout entier strictement positif $n$ par : $$v_n=\dfrac{4-7n}{n}$$
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+     \item On sait que $\lim\limits_{n\to\infty} 7-\dfrac{3}{n}=7$ et $\lim\limits_{n\to\infty} \dfrac{9}{n^4}+4=4$.\\Ainsi, d'après les propriétés des limites d'un produit, $\lim\limits_{n\to\infty} \left(7-\dfrac{3}{n}\right)\left(\dfrac{9}{n^4}+4\right)={\color[HTML]{f15929}\boldsymbol{28}}$.
+     
+     \item Pour tout entier $n$ strictement positif, on a : $\dfrac{4-7n}{n}=\dfrac{4}{n}-7$.\\$\lim\limits_{n\to\infty} \dfrac{4}{n}=0$ et $\lim\limits_{n\to\infty} -7=-7$.\\Ainsi, d'après les propriétés des limites d'une somme, $\lim\limits_{n\to\infty} \dfrac{4-7n}{n}={\color[HTML]{f15929}\boldsymbol{-7}}$.
+\end{enumerate}
+
+\aut{}
+\begin{enumerate}
+	\item Déterminer la limite de la suite $(u_n)$ définie pour tout entier positif ou nul $n$ par : $$u_n=n^{8}+\sqrt{n}$$
+    \item Déterminer la limite de la suite $(v_n)$ définie pour tout entier $n$, strictement positif, par : $$v_n=\dfrac{6+n^9}{n^5}$$
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}[itemsep=1em]
+    \item On sait que $\lim\limits_{n\to\infty} n^{8}=+\infty$ et $\lim\limits_{n\to\infty} \sqrt{n}=+\infty$.\\Ainsi, d'après les propriétés des limites de la somme, $\lim\limits_{n\to\infty} n^{8}+\sqrt{n}={\color[HTML]{f15929}\boldsymbol{+\infty}}$.
+    \item On sait que $\lim\limits_{n\to\infty} 6+n^9=+\infty$ et $\lim\limits_{n\to\infty} n^5=+\infty$.\\Nous avons donc une forme indeterminée du type « $\dfrac{\infty}{\infty}$», donc nous allons factoriser le numérateur par son terme de plus haut degré $n^9$ :
+    \begin{tabbing}
+        $\dfrac{6+n^9}{n^5}$    \=$=\dfrac{n^9\left(\dfrac{6}{n^9}+1\right)}{n^5}$\\[.5em]
+        \>  $=\dfrac{n^5\times n^4\left(\dfrac{6}{n^9}+1\right)}{n^5}$ \\[.5em]
+        \>  $= n^4\left(\dfrac{6}{n^9}+1\right)\quad$ en simplifiant par $n^5$. 
+    \end{tabbing}
+    Or $\lim\limits_{n\to\infty} n^4=+\infty$ et $\lim\limits_{n\to\infty} \dfrac{6}{n^9}+1=1$.\\
+    Ainsi, d'après les propriétés des limites d'un produit, $\lim\limits_{n\to\infty} \dfrac{6+n^9}{n^5}={\color[HTML]{f15929}\boldsymbol{+\infty}}$.
+    \end{enumerate}
+    
+
+    \aut{}
+    \begin{enumerate}
+        \item Déterminer la limite de la suite $(u_n)$ définie pour tout entier $n$ strictement positif, par : $$u_n=\dfrac{-3-\dfrac{5}{n}}{\dfrac{2}{n^8}}$$
+        \item Déterminer la limite de la suite $(v_n)$ définie pour tout entier $n$ strictement positif, par : $$v_n=\dfrac{2+n^4}{n^4}$$
+    \end{enumerate}
+    
+    \cor{}
+    \begin{enumerate}[itemsep=1em]
+        \item On sait que $\lim\limits_{n\to\infty} -3-\dfrac{5}{n}=-3$ et $\lim\limits_{n\to\infty} \dfrac{2}{n^8}=0$.\\Ainsi, d'après les propriétés des limites d'un quotient, $\lim\limits_{n\to\infty} \dfrac{-3-\dfrac{5}{n}}{\dfrac{2}{n^8}}={\color[HTML]{f15929}\boldsymbol{-\infty}}$.
+
+        \item On sait que $\lim\limits_{n\to\infty} 2+n^4=+\infty$ et $\lim\limits_{n\to\infty} n^4=+\infty$.\\Nous obtenons une forme indeterminée du type « $\dfrac{\infty}{\infty}$ », nous allons donc factoriser le numérateur par $n^4$ :
+        \begin{tabbing}
+            $\dfrac{2+n^4}{n^4}$    \=  $=\dfrac{n^4(\dfrac{2}{n^4}+1)}{n^4}$\\[.5em]
+            \>  $=\dfrac{2}{n^4}+1$ en simplifiant par $n^4$.
+        \end{tabbing} 
+        Or, $\lim\limits_{n\to\infty} \dfrac{2}{n^4}=0$.\\Donc, $\lim\limits_{n\to\infty} \dfrac{2+n^4}{n^4}={\color[HTML]{f15929}\boldsymbol{1}}$.
+
+        \end{enumerate}
+
+        
+
+\aut{}
+% Code Mathalea TS1-0
+\begin{enumerate}
+		\item Déterminer la limite de la suite $(u_n)$ définie pour tout entier $n$, , par : $$u_n=\dfrac{1-4^n}{1+\left(\dfrac{1}{4}\right)^n}$$
+		\item Déterminer la limite de la suite $(v_n)$ définie pour tout entier positif $n$ par : $$v_n=2^n-3^n$$
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+     \item $4>1$ donc $\lim\limits_{n\to\infty} 4^n=+\infty \quad$  et $\lim\limits_{n\to\infty} 1-4^n=-\infty$.\\
+     $0<\dfrac{1}{4}<1$ donc $\lim\limits_{n\to\infty} \left(\dfrac{1}{4}\right)^n=0 \quad$  et $\lim\limits_{n\to\infty} 1+\left(\dfrac{1}{4}\right)^n=1$.\\
+     Ainsi, d'après les propriétés des limites d'un quotient, $\lim\limits_{n\to\infty} \dfrac{1-4^n}{1+\left(\dfrac{1}{4}\right)^n}={\color[HTML]{f15929}\boldsymbol{-\infty}}$.
+     
+     \item On sait que $\lim\limits_{n\to\infty} 2^n=+\infty$ et $\lim\limits_{n\to\infty} 3^n=+\infty$.\\[.5em]
+     Nous obtenons une forme indeterminée du type « $+\infty-\infty$ », nous allons donc factoriser l'expression par le terme le plus « grand » ($3^n$) :
+     \begin{tabbing}
+         $2^n-3^n$    \=  $=3^n\times \dfrac{2^n}{3^n}-3^n\times 1$\\[.5em]
+         \>  $=3^n\times \left(\dfrac{2^n}{3^n}-1\right)$\\[.5em]
+         \> $=3^n\times \left(\left(\dfrac{2}{3}\right)^n-1\right)$
+     \end{tabbing} 
+     $0<\dfrac{2}{3}<1$, donc $\lim\limits_{n\to\infty}  \left(\dfrac{2}{3}\right)^n=0\quad$ et $\quad \lim\limits_{n\to\infty}  \left(\dfrac{2}{3}\right)^n-1=-1$.\\[.5em]
+     $3>1$, donc $\lim\limits_{n\to\infty} 3^n=+\infty\quad$.\\[.5em]
+     Donc, d'après les propriétés des limites d'un produit, $\lim\limits_{n\to\infty} 2^n-3^n={\color[HTML]{f15929}\boldsymbol{-\infty}}$.
+\end{enumerate}
+
+\newpage
+
+\aut{}
+% Code Mathalea TS1-0
+\begin{enumerate}
+		\item Déterminer la limite de la suite $(u_n)$ définie pour tout entier  $n$ strictement positif par : $$u_n=\dfrac{5+\dfrac{2}{n}}{\dfrac{7}{n^8}}$$
+		\item Déterminer la limite de la suite $(v_n)$ définie pour tout entier positif $n$ par : $$v_n=10^n-5^n$$
+\end{enumerate}
+
+\cor{}
+\begin{enumerate}
+     \item On sait que $\lim\limits_{n\to\infty} 5+\dfrac{2}{n}=5$ et $\lim\limits_{n\to\infty} \dfrac{7}{n^8}=0$.\\Ainsi, d'après les règles des limites d'un quotient, $\lim\limits_{n\to\infty} \dfrac{5+\dfrac{2}{n}}{\dfrac{7}{n^8}}={\color[HTML]{f15929}\boldsymbol{+\infty}}$.
+
+     
+     \item On sait que $\lim\limits_{n\to\infty} 10^n=+\infty$ et $\lim\limits_{n\to\infty} 5^n=+\infty$.\\[.5em]
+     Nous obtenons une forme indeterminée du type « $+\infty-\infty$ », nous allons donc factoriser l'expression par le terme le plus « grand » ($10^n$) :
+     \begin{tabbing}
+         $10^n-5^n$    \=  $=10^n\times 1- 10^n \times \dfrac{5^n}{10^n}$\\[.5em]
+         \>  $=10^n\times \left(1-\dfrac{5^n}{10^n}\right)$\\[.5em]
+         \> $=10^n\times \left(1-\left(\dfrac{5}{10}\right)^n\right)$\\[.5em]
+         \> $=10^n\times \left(1-\left(\dfrac{1}{2}\right)^n\right)$
+     \end{tabbing} 
+     $0<\dfrac{1}{2}<1$, donc $\lim\limits_{n\to\infty}  \left(\dfrac{1}{2}\right)^n=0\quad$ et $\quad \lim\limits_{n\to\infty}  1-\left(\dfrac{1}{2}\right)^n=1$.\\[.5em]
+     $10>1$, donc $\lim\limits_{n\to\infty} 10^n=+\infty\quad$.\\[.5em]
+     Donc, d'après les propriétés des limites d'un produit, $\lim\limits_{n\to\infty} 10^n-5^n={\color[HTML]{f15929}\boldsymbol{+\infty}}$.
+\end{enumerate}
+
+
+\end{document}
+
+
+

@@ -1,0 +1,39 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+
+
+\pagestyle{empty}
+\begin{document}
+
+
+
+\classe{\premiere spé}
+\titre{Ceinture blanche 01 - Corrigé}
+\maketitle
+
+
+
+
+\begin{exercice}[ : Forme canonique]
+    Déterminer la forme canonique du polynôme $P$, défini pour tout $x \in \mathbb{R}$ par : 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $P(x)=x^2+6x+9$
+            \item $P(x)=-2x^2+20x-45$
+        \end{enumerate}
+    \end{multicols}
+\end{exercice}
+
+
+
+\begin{enumerate}[itemsep=1em]
+    \item On reconnaît une identité remarquable de la forme $a^2+2ab+b^2$.
+    \begin{tabbing}
+        $P(x)$  \=  $=x^2+6x+9$\\
+        \>  $=x^2+2\times x\times 3 +3^2$\\
+        \>  $=\color[HTML]{f15929}\boldsymbol{(x+3)^2}$
+    \end{tabbing}
+    \item On sait que si le polynôme, sous forme développée, s'écrit $P(x)=ax^2+bx+c$, alors sa forme canonique est de la forme $P(x)=a(x-\alpha)^2+\beta$,\\avec $\alpha=\dfrac{-b}{2a}$ et $\beta=P(\alpha).$\\Avec l'énoncé : $a=-2$ et $b=20$, on en déduit que $\alpha=5$.\\On calcule alors $\beta=P(5)$, et on obtient au final que $\beta=5$.\\d'où, $P(x)=-2\big(x-5\big)^2+5$\\Finalement, $P(x)={\color[HTML]{f15929}\boldsymbol{-2(x -5)^2+5}}$
+\end{enumerate}
+    
+    \end{document}
+    
