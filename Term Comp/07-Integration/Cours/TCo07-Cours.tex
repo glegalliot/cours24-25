@@ -1,0 +1,446 @@
+\documentclass[a4paper,11pt,cours]{nsi} % COMPILE WITH DRAFT
+\geometry{margin=2cm}
+\usepackage[]{fontawesome5}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+
+
+\setcounter{chapter}{6} % 1 de moins que le num de chapitre
+
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{1cm}
+
+\chapter{Intégration}
+
+\begin{document}
+
+
+\section{Intégrale d'une fonction continue et positive sur un intervalle}
+Dans cette partie, on considère une fonction $f$ \textbf{continue} et \textbf{positive} sur un intervalle $\fif{a}{b}$.\\
+$\courbe{f}$ est la courbe représentative de $f$ sur $\fif{a}{b}$ dans un repère orthogonal $\repaff$.
+
+\begin{center}
+    \begin{tikzpicture}[yscale=.8]
+    \draw[fill = white](-1,-1) rectangle (5,5);
+    \fill[pattern =north east lines, pattern color = UGLiBlue] (0,0) -- (1,0) -- (1,1)--(0,1) -- cycle;
+    \draw[thick] (0,0) -- (1,0) -- (1,1)--(0,1) -- cycle;
+    
+    \fill[pattern =north east lines, pattern color = UGLiGreen] 	(2,0) --(2,3) --
+            plot[thick,domain=2:4,smooth,variable=\x]  ({\x},{-0.5*(\x-2)^2+3}) --
+            (4,0)--cycle;
+    \repereal{-1}{-1}{5}{5}
+    \draw[thick,domain=2:4,smooth,variable=\x]  plot ({\x},{-0.5*(\x-2)^2+3});
+    
+    \draw (0,0) -- (1,0) -- (1,1) --(0,1) -- cycle;
+    
+    \draw[thick, dashed ] (2,0) node [below] {$a$} -- (2,3);
+    \draw[thick, dashed ] (4,0) node [below] {$b$} -- (4,1);
+    \draw (2,3) node [above right] {$\courbe{f}$};
+    \draw[fill = UGLiGreen!40,opacity = 50]  (3,1) circle(1em) node{$\mathcal{D}$};
+    \end{tikzpicture}
+    \end{center}
+
+
+%\begin{center}
+%    \def\xmin{-3} \def\ymin{-1}\def\xmax{5}\def\ymax{6}
+%    \def\f{-0.1*\x^3+.5*\x^2-0.5*\x+4}
+%    \begin{tikzpicture}[yscale=.8]
+%        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+%        \draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+%        \draw[UGLiGreen,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\f});
+%        \fill[UGLiGreen!50] (-2,0) -- (-2,7.8) -- plot[domain=-2:4] (\x,{-0.1*\x^3+.5*\x^2-0.5*\x+4}) -- (4,0) -- cycle;
+%        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+%        \draw (-2,0) node[below]{$a$};
+%        \draw (4,0) node[below]{$b$};
+%        \draw (-2.5,4) node[]{$\textcolor{UGLiGreen}{\mathcal{C}}$};
+%    \end{tikzpicture}
+%\end{center}
+\begin{definition}[s]
+    \begin{enumerate}[label=\textbullet]
+        \item L'\textbf{unité d'aire}, notée u.a., est l'aire du rectangle de côtés $[OI]$ et $[OJ]$.
+        \item Le \textbf{domaine situé sous la courbe} $\mathcal{C}$ est la partie du plan $\mathcal{D}$ délimitée par la courbe $\courbe{f}$, l'axe des abscisses et les droites d'équations $x=a$ et $x=b$.
+        \item L'\textbf{intégrale de $a$ à $b$ de la fonction $f$} est l'aire, exprimée en u.a., du domaine situé sous la courbe $\courbe{f}$. On la note $\displaystyle \int_a^b f(x) \ dx$ (lire « intégrale de $a$ à $b$ de $f$).
+    \end{enumerate}
+\end{definition}
+
+\begin{remarque}[s]
+    \begin{enumerate}[label=\textbullet]
+        \item Pour toute fonction continue et positive $f$ sur un intervalle $\fif{a}{b}$, l'intégrale $\displaystyle \int_a^b f(x) \ dx$ est un nombre réel positif.
+        \item On dit que $x$ est une variable muette car elle n'intervient pas dans le résultat de l'intégrale.\\
+        $\displaystyle \int_a^b f(x) \ dx= \int_a^b f(t) \ dt = \int_a^b f(u) \ du=\ldots$.
+    \end{enumerate}
+\end{remarque}
+\newpage
+
+\begin{propriete}[ : Relation de Chasles]
+    Soit $f$ une fonction continue et positive sur un intervalle $\fif{a}{b}$ et $c$ un réel tel que $a < c < b$.\\
+    Alors, on a la relation suivante :
+    $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx + \int_c^b f(x) \ dx $$
+
+    %\begin{center}
+    %    \def\xmin{-3} \def\ymin{-1}\def\xmax{5}\def\ymax{6}
+    %    \def\f{-0.1*\x^3+.5*\x^2-0.5*\x+4}
+    %    \begin{tikzpicture}[yscale=.8]
+    %        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+    %        \draw[fill = white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+    %        \draw[UGLiGreen,domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\f});
+    %        \fill[UGLiGreen!50] (-2,0) -- (-2,7.8) -- plot[domain=-2:4] (\x,{-0.1*\x^3+.5*\x^2-0.5*\x+4}) -- (4,0) -- cycle;
+    %        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+    %        \draw (-2,0) node[below]{$a$};
+    %        \draw (4,0) node[below]{$b$};
+    %        \draw (-2.5,4) node[]{$\textcolor{UGLiGreen}{\mathcal{C}}$};
+    %        \draw (1.7,0) node[below]{$c$};
+    %        \draw[dashed] (1.7,0) -- (1.7,4.1);
+    %    \end{tikzpicture}
+    %\end{center}
+    \begin{center}
+        \def\xmin{-2} \def\ymin{-1}\def\xmax{5}\def\ymax{3}
+        \def\F{-1.1*(2.711828^(-0.5*\x))*cos(360*\x/3.141592654)+1.5}
+        \begin{tikzpicture}
+            \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        
+        \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (2,1.53)--(2,0) --(-1,0) -- (-1,2.25)-- plot[thick,domain=-1:2,smooth,variable=\x]  ({\x},{\F}) -- cycle;
+            \draw[domain=-1:4,smooth,variable=\x] plot ({\x},{\F});	
+        
+        
+        \fill[pattern =north west lines, pattern color = UGLiRed] 
+        (4,1.53)--(4,0) --(2,0) -- (2,1.53)-- plot[thick,domain=2:4,smooth,variable=\x]  ({\x},{\F}) -- cycle;
+        \draw[domain=-1:4,smooth,variable=\x,thick] plot ({\x},{\F});	
+        \draw[thick, dashed] (-1,0) node[below]{$a$} -- (-1,2.25);
+        \draw[thick, dashed] (2,0) node[below]{$c$} -- (2,1.76);
+        \draw[thick, dashed] (4,0) node[below]{$b$} -- (4,1.53);
+        \draw[fill = UGLiDarkBlue!30,opacity = 80]  (1,0.8) circle(1em) node{$\mathcal{D}_1$};
+        \draw[fill = UGLiRed!20,opacity = 80]  (3,0.8) circle(1em) node{$\mathcal{D}_2$};
+        \end{tikzpicture}
+        \end{center}
+\end{propriete}
+
+\section{Estimer la valeur d'une intégrale}
+
+\begin{encadrecolore}{La métode des rectangles}{UGLiDarkBlue}
+        Pour $f$ une fonction positive, \textbf{croissante} et continue sur un intervalle $\fif{a}{b}$, on subdivise l'intervalle $\fif{a}{b}$ en $n$ sous-intervalles de même longueur $h = \dfrac{b-a}{n}$ et on note $x_k=a+kh$ pour $k=0,1,\ldots,n$.\\
+        Sur chaque intervalle $[x_k,x_{k+1}]$, on construit les rectangles de hauteur $f(x_k)$ et $f(x_{k+1})$.\\
+        $s_n$ est la somme des aires, en u.a. des rectangles hachurés contenus dans le domaine sous la courbe $\courbe{f}$.\\
+        $S_n$ est la somme des aires, en u.a. des rectangles colorés qui contiennent le domaine sous la courbe $\courbe{f}$.
+
+        \begin{center}
+            \def\xmin{-.5} \def\ymin{-.5}\def\xmax{8}\def\ymax{6.5}
+        \def\f{.1*\x^2+1}
+        \begin{tikzpicture}
+            %\draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \fill[UGLiBlue!40] (2,1.4)--(2,0) --(1,0) -- (1,1.4) -- cycle;
+            \fill[UGLiBlue!40] (3,1.9)--(3,0) --(2,0) -- (2,1.9) -- cycle;
+            \fill[UGLiBlue!40] (4,2.6)--(4,0) --(3,0) -- (3,2.6) -- cycle;
+            \fill[UGLiBlue!40] (5,3.5)--(5,0) --(4,0) -- (4,3.5) -- cycle;
+            \fill[UGLiBlue!40] (6,4.6)--(6,0) --(5,0) -- (5,4.6) -- cycle;
+            \fill[UGLiBlue!40] (7,5.9)--(7,0) --(6,0) -- (6,5.9) -- cycle;
+            \draw[thick, ->] (\xmin,0) -- (\xmax,0);
+            \draw [thick, ->] (0,\ymin) -- (0,\ymax);
+            \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+            \draw[thick,UGLiRed,domain=1:7,smooth,variable=\x] plot ({\x},{\f});
+            \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (2,1.1)--(2,0) --(1,0) -- (1,1.1)-- cycle;
+            \draw[dashed] (1,1.1) -- (2,1.1);
+            \draw[dashed] (1,1.4) -- (2,1.4);     
+            \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (3,1.4)--(3,0) --(2,0) -- (2,1.4)-- cycle;
+            \draw[dashed] (2,1.4) -- (3,1.4);
+            \draw[dashed] (2,1.9) -- (3,1.9);
+            \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (4,1.9)--(4,0) --(3,0) -- (3,1.9)-- cycle;
+            \draw[dashed] (3,1.9) -- (4,1.9);
+            \draw[dashed] (3,2.6) -- (4,2.6);
+            \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (5,2.6)--(5,0) --(4,0) -- (4,2.6)-- cycle;
+            \draw[dashed] (4,2.6) -- (5,2.6);
+            \draw[dashed] (4,3.5) -- (5,3.5);
+            \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (6,3.5)--(6,0) --(5,0) -- (5,3.5)-- cycle;
+            \draw[dashed] (5,3.5) -- (6,3.5);
+            \draw[dashed] (5,4.6) -- (6,4.6);
+            \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+            (7,4.6)--(7,0) --(6,0) -- (6,4.6)-- cycle;
+            \draw[dashed] (6,4.6) -- (7,4.6);
+            \draw[dashed] (6,5.9) -- (7,5.9);
+        \draw[thick, dashed] (1,0) node[below]{$x_0=a$} -- (1,1.4);
+        \draw[thick, dashed] (2,0) node[below]{$x_1$} -- (2,1.9);
+        \draw[thick, dashed] (3,0) node[below]{$x_2$} -- (3,2.6);
+        \draw[thick, dashed] (4,0) -- (4,3.5);
+        \draw[thick, dashed] (5,0) node[below left]{$\ldots$} -- (5,4.6);
+        \draw[thick, dashed] (6,0) node[below]{$x_{n-1}$} -- (6,5.9);
+        \draw[thick, dashed] (7,0) node[below]{$x_n=b$} -- (7,5.9);
+        \end{tikzpicture}
+        \end{center}
+    \end{encadrecolore}
+
+\begin{propriete}[]
+    Si $f$ est une fonction \textbf{positive, croissante et continue} sur un intervalle $\fif{a}{b}$, alors pour tout entier naturel $n \geqslant 1$, on a :
+    $$s_n\leqslant \int_a^b f(x) \ dx \leqslant S_n$$
+    avec :
+    \begin{enumerate}[label=\textbullet]
+        \item $s_n=h\left(f(x_0)+f(x_1)+\ldots+f(x_{n-1})\right)\quad$ (aire des rectangles hachurés)
+        \item $S_n=h\left(f(x_1)+f(x_2)+\ldots+f(x_n)\right)\quad$ (aire des rectangles colorés)
+        \item $h=\dfrac{b-a}{n}\quad$ (largeur de chaque sous-intervalle)
+    \end{enumerate}
+\end{propriete}
+
+\begin{remarque}[s]
+    \begin{enumerate}[label=\textbullet]
+        \item Lorsque la fonction $f$ est positive \textbf{décroissante} et continue sur l'intervalle $\fif{a}{b}$, il faut changer le sens des inégalités.
+        \item Plus la la valeur de $n$ augmente, plus les valeurs de $s_n$ et $S_n$ se rapprochent de la valeur de l'intégrale $\displaystyle \int_a^b f(x) \ dx$.\\[.5em]
+        En effet, si $f$ est croissante sur $\fif{a}{b}$, on a :
+        \begin{tabbing}
+            $S_n-s_n$ \= $=h\left(f(x_n)-f(x_0)\right)$\\
+            \> $=\dfrac{b-a}{n}\left(f(b)-f(a)\right)$
+        \end{tabbing}
+        Donc $\quad \lim\limits_{n \to +\infty} (S_n-s_n) = 0$.
+    \end{enumerate}
+\end{remarque}
+
+\section{Calcul intégral}
+
+\subsection*{Intégrale d'une fonction de signe quelconque}
+On généralise la définition de l'intégrale d'une fonction continue sur un intervalle $\fif{a}{b}$ à une fonction de signe quelconque en partageant $\fif{a}{b}$ en intervalles sur lesquels la fonction $f$ est de signe constant.
+
+\begin{definition}[]
+    \begin{enumerate}
+        \item Si $f$ est négative sur l'intervalle $\fif{a}{b}$, alors l'intégrale de $f$ entre $a$ et $b$ est égale à $\displaystyle -\int_a^b -f(x) \ dx$.
+        \begin{center}
+            \def\xmin{-2} \def\ymin{-3}\def\xmax{5}\def\ymax{3}
+            \def\F{.1*(\x-3)^2-2.5}
+            \def\G{-.1*(\x-3)^2+2.5}
+            \begin{tikzpicture}[yscale=.8]
+                \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+                \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+                \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+            
+            \fill[pattern =north east lines, pattern color = UGLiRed] (4,-2.4)--(4,0) --(-1,0) -- (-1,-.9)-- plot[thick,domain=-1:4,smooth,variable=\x]  ({\x},{\F}) -- cycle;
+            \draw[thick, UGLiRed,domain=-1:4,smooth,variable=\x] plot ({\x},{\F});	
+            
+            
+            \fill[pattern =north west lines, pattern color = UGLiGreen] (4,2.4)--(4,0) --(-1,0) -- (-1,.9)-- plot[thick,domain=-1:4,smooth,variable=\x]  ({\x},{\G}) -- cycle;
+            \draw[thick, UGLiGreen,domain=-1:4,smooth,variable=\x] plot ({\x},{\G});
+        
+            \draw[fill = UGLiRed!30,opacity = 80]  (1.5,-1) circle(1em) node{$\mathcal{D}$};
+            \draw[UGLiRed] (-1,-1) node[below]{$\courbe{f}$};
+            \draw[UGLiGreen] (-1,1) node[above]{$\courbe{-f}$};
+            \end{tikzpicture}
+        \end{center}
+
+        \item Si $f$ est positive sur $\fif{a}{c}$ et négative sur $\fif{c}{b}$, avec $c$ un réel compris entre $a$ et $b$, alors l'intégrale de $f$ entre $a$ et $b$ est égale à :
+        $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx - \int_c^b -f(x) \ dx$$
+        \begin{center}
+            \def\xmin{-2} \def\ymin{-3}\def\xmax{5}\def\ymax{3}
+            \def\F{2*cos(.5*(360*\x/(3.141592654))-25)}
+            \begin{tikzpicture}[yscale=.8]
+                \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+                \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+                \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+            
+            \fill[pattern =north east lines, pattern color = UGLiGreen] (2,0)--(-1,0) -- plot[thick,domain=-1:2,smooth,variable=\x]  ({\x},{\F}) -- cycle;
+            \draw[thick, UGLiRed,domain=-1:4,smooth,variable=\x] plot ({\x},{\F});	
+            
+            \fill[pattern =north west lines, pattern color = UGLiDarkBlue] (4,0)--(2,0) -- plot[thick,domain=2:4,smooth,variable=\x]  ({\x},{\F}) -- cycle;
+            
+            \draw[UGLiRed] (-1,1) node[above]{$\courbe{f}$};
+            \draw[thick, dashed] (-1,0) node[below]{$a$} -- (-1,.3);
+            \draw (2,0) node[below]{$c$};
+            \draw[thick, dashed] (4,0) node[above]{$b$} -- (4,-1.9);
+            \end{tikzpicture}
+        \end{center}
+    \end{enumerate}
+\end{definition}
+
+\begin{remarque}[]
+    Lorsque $f$ est négative, alors $-f$ est positive
+\end{remarque}
+
+\subsection*{Théorème fondamental}
+
+\begin{encadrecolore}{Théorème}{UGLiRed}
+    Soit $f$ une fonction continue sur un intervalle $\fif{a}{b}$.\\
+    La fonction $F$ définie sur $\fif{a}{b}$ par : $\displaystyle \quad F(x)=\int_a^x f(t) \ dt\quad$ est dérivable sur $\fif{a}{b}$ et sa dérivée est la fonction $f$.\\
+    Autement dit, pour tout $x$ de $\fif{a}{b}$, on a : $\quad F'(x)=f(x)$.\\
+    La fonction $F$ est \textbf{la primitive} de la fonction $f$ sur l'intervalle $\fif{a}{b}$ telle que $F(a)=0$.
+\end{encadrecolore}
+
+\begin{demonstration}
+    On se limite au cas où la fonction $f$ est positive et croissante sur l'intervalle $\fif{a}{b}$.\\
+    Soit $x_0$ un réel de $\fif{a}{b}$.\\
+    On note $h$ un réel non nul tel que $x_0+h$ est dans $\fif{a}{b}$.\\
+    \dleft{8cm}{
+            \textbf{Cas où $h>0$ :}\\
+            $f$ est positive sur $\fif{a}{b}$ donc $F(x_0)$ est l'aide en u.a. de la surface colorée verte.\\
+            D'après la relation de Chasles, la différence $F(x_0+h)-F(x_0)$ est l'aire de la surface hachurée bleue.\\
+            Comme $f$ est croisssante, on peut encadrer l'aire de cette surface par l'aire, en u.a. des rectangles $CDEF$ et $CDGH$ de largeur $h$ et de hauteurs respectives $f(x_0)$ et $f(x_0+h)$.
+        }
+        {
+            \def\xmin{-.5} \def\ymin{-1}\def\xmax{8}\def\ymax{6.5}
+    \def\f{.1*\x^2+1}
+    \begin{tikzpicture}[scale=.8]
+        
+        \draw[thick, ->] (\xmin,0) -- (\xmax,0);
+        \draw [thick, ->] (0,\ymin) -- (0,\ymax);
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        
+        
+        \fill[UGLiGreen] (4,2.6)--(4,0) --(1,0) -- (1,1.1)-- plot[thick,domain=1:4,smooth,variable=\x]  ({\x},{\f}) -- cycle;
+        
+        \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+        (5,3.5)--(5,0) --(4,0) -- (4,2.6)-- plot[thick,domain=4:5,smooth,variable=\x]  ({\x},{\f}) -- cycle;
+        \draw[dashed] (4,2.6) -- (5,2.6);
+        \draw[dashed] (4,3.5) -- (5,3.5);
+
+        \draw[thick,UGLiRed,domain=1:7,smooth,variable=\x] plot ({\x},{\f});
+        
+        \draw[thick, dashed] (1,0) node[below]{$a$} -- (1,1.1);
+        \draw[thick, dashed] (4,0) node[below]{$x_0$}-- (4,3.5);
+        \draw[thick, dashed] (5,0) node[below]{$x_0+h$} -- (5,3.5);
+        \draw[thick, dashed] (7,0) node[below]{$b$} -- (7,5.9);
+        \draw (4,0) \ball node[above left]{$C$} (5,0) \ball node[above right]{$D$} 
+        (5,2.6) \ball node[right]{$E$} (4,2.6) \ball node[left]{$F$} 
+        (5,3.5) \ball node[above]{$G$} (4,3.5) \ball node[above left]{$H$};
+    \end{tikzpicture}
+        }
+    On a donc :
+    $$hf(x_0)\leqslant F(x_0+h)-F(x_0)\leqslant hf(x_0+h)$$
+    En divisant par $h$, on obtient :
+    
+    $$f(x_0)\leqslant \dfrac{F(x_0+h)-F(x_0)}{h}\leqslant f(x_0+h)$$
+
+    \textbf{Cas où $h<0$ :}\\
+    De façon analogue, on obtient :
+    $$f(x_0+h)\leqslant \dfrac{F(x_0+h)-F(x_0)}{h}\leqslant f(x_0)$$
+    
+    \textbf{Conclusion :}\\
+    $f$ est continue sur $\fif{a}{b}$ donc $\displaystyle \lim\limits_{h \to 0} f(x_0+h)=f(x_0)$.\\[.5em]
+    D'après le théorème des gendarmes, on en déduit que :
+    $$\lim\limits_{h \to 0} \dfrac{F(x_0+h)-F(x_0)}{h}=f(x_0)$$
+    Donc $F$ est dérivable en $x_0$ et $F'(x_0)=f(x_0)$.\\
+    Par suite, $F$ est dérivable sur $\fif{a}{b}$ et pour tout $x$ de $\fif{a}{b}$, $F'(x)=f(x)$.
+\end{demonstration}
+
+\subsection*{Calcul d'une intégrale}
+
+\begin{propriete}[]
+    Soit $f$ une fonction continue sur un intervalle $\fif{a}{b}$ et $F$ une primitive de $f$ sur cet intervalle.\\
+    On a :
+    $$\int_a^b f(x) \ dx = F(b)-F(a)$$
+\end{propriete}
+\begin{demonstration}
+    D'après le théorème fondamental, la fonction $G$ définie sur $\fif{a}{b}$ par $\displaystyle G(x)=\int_a^x f(t) \ dt$ est une primitive de $f$ sur cet intervalle.\\
+    \newpage
+    De plus, si $F$ est une primitive de $f$ sur $\fif{a}{b}$, alors il existe un réel $C$ tel que, pour tout $x$ appartenant à $\fif{a}{b}$, $F(x)=G(x)+C$.\\
+    On a donc : $F(b)-F(a)=G(b)+C-G(a)-C=G(b)-G(a)$.\\
+    Or $G(b)=\displaystyle \int_a^b f(t) \ dt$ et $\displaystyle G(a)=\int_a^a f(t) \ dt=0$.\\
+    Donc $\displaystyle F(b)-F(a)=\int_a^b f(t) \ dt$.
+\end{demonstration}
+
+\begin{encadrecolore}{Notation}{UGLiDarkBlue}
+    Pour effectuer les calculs, on note :
+    \begin{tabbing}
+        $\displaystyle \int_a^b f(x) \ dx$ \= $=\left[F(x)\right]_a^b$\\
+        \> $=F(b)-F(a)$
+    \end{tabbing}
+\end{encadrecolore}
+
+\begin{exemple}[]
+    On veut calculer l'intégrale de la fonction cube $f$ entre $-3$ et $1$.\\
+    On sait qur la fonction $F$ définie par $F(x)=\dfrac{x^4}{4}$ est une primitive de $f$ sur l'intervalle $\fif{-3}{1}$.
+    
+    \begin{tabbing}
+        On a donc : $\quad \displaystyle \int_{-3}^1 x^3 \ dx$ \= $=\displaystyle \left[\dfrac{x^4}{4}\right]_{-3}^1$\\[.5em]
+        \> $=\dfrac{1^4}{4}-\dfrac{(-3)^4}{4}$\\[.5em]
+        \> $=\dfrac{1}{4}-\dfrac{81}{4}$\\[.5em]
+        \> $=-20$   
+    \end{tabbing}
+\end{exemple}
+
+\section{Propriétés des intégrales}
+\begin{propriete}[s algébriques]
+    Soit $f$ et $g$ deux fonctions continues sur un intervalle $\fif{a}{b}$ et $k$ un réel.\\
+    On a :
+    \begin{enumerate}[label=\textbullet]
+        \item $\displaystyle \int_a^b (f(x)+g(x)) \ dx = \int_a^b f(x) \ dx + \int_a^b g(x) \ dx$
+        \item $\displaystyle \int_a^b kf(x) \ dx = k\int_a^b f(x) \ dx$
+    \end{enumerate}
+\end{propriete}
+
+\begin{propriete}[ : Relation de Chasles]
+    Soit $f$ une fonction continue sur un intervalle $\fif{a}{b}$ et $c$ un réel tel que $a < c < b$.\\
+    Alors, on a la relation suivante :
+    $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx + \int_c^b f(x) \ dx$$
+\end{propriete}
+
+\begin{propriete}[ : positivité de l'intégrale]
+    Soit $f$ une fonction continue sur un intervalle $\fif{a}{b}$.
+    \begin{enumerate}[label=\textbullet]
+        \item Si pour tout $x$ de $\fif{a}{b}$, $f(x) \geqslant 0$, alors $\displaystyle \int_a^b f(x) \ dx \geqslant 0$.
+        \item Si pour tout $x$ de $\fif{a}{b}$, $f(x) \leqslant 0$, alors $\displaystyle \int_a^b f(x) \ dx \leqslant 0$.
+    \end{enumerate}
+\end{propriete}
+
+\begin{propriete}[ : intégration et inégalités]
+    Soit $f$ et $g$ deux fonctions continues sur un intervalle $\fif{a}{b}$.\\
+    Si pour tout $x$ de $\fif{a}{b}$, $f(x) \leqslant g(x)$, alors $\displaystyle \int_a^b f(x) \ dx \leqslant \int_a^b g(x) \ dx$.
+\end{propriete}
+
+\section{Applications du calcul intégral}
+\subsection*{Calculs d'aires}
+La définition de l'intégrale d'une fonction $f$ continue et positive sur un intervalle $\fif{a}{b}$ permet de calculer l'aire du domaine situé sous sa courbe. Plus généralement, l'intégrale d'une d'une fonction continue de signe quelconque permet de calculer l'aire de certaines surfaces planes délimitées par deux courbes.
+
+\begin{propriete}[]
+    Soient $f$ et $g$ deux fonctions continues et positives sur $\fif{a}{b}$ et telles que $f\leqslant g$ sur $\fif{a}{b}$.\\
+	Soit $A$ l'aire du domaine délimité par $\mathcal{C}_f$, $\mathcal{C}_g$ et les droites d'équation $x=a$ et $x=b$.
+	\begin{center}
+		\def\xmin{-2} \def\ymin{-1}\def\xmax{5}\def\ymax{5}
+		\def\G{-1.05*(2.711828^(-0.5*\x))*cos(200*\x)+2.5}
+		\def\F{-1.1*(2.711828^(-0.5*\x))*cos(360*\x/3.141592654)+1.5}
+		\begin{tikzpicture}
+			\draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+			\repereal{\xmin}{\ymin}{\xmax}{\ymax}
+			\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+			\fill[pattern =north east lines, pattern color = UGLiRed] 
+		 	 plot[thick,domain=-1:4,smooth,variable=\x]  ({\x},{\F}) -- (4,2.5) -- (4,1.5) --
+					plot[thick,domain=4:-1,smooth,variable=\x]  ({\x},{\G}) -- cycle;
+			\draw[domain=-1:4,thick,smooth,variable=\x] plot ({\x},{\F});
+			\draw[domain=-1:4,thick,smooth,variable=\x] plot ({\x},{\G});
+			\draw[thick, dashed](-1,4.1)--(-1,0) node[below]{$a$};
+			\draw[thick, dashed](4,2.5)--(4,0) node[below]{$b$};	
+            \draw (-1,4) node[above left]{$\courbe{g}$};
+            \draw (-1,2.2) node[left]{$\courbe{f}$};
+		\end{tikzpicture}
+	\end{center}
+	$$A=\int_a^b\left(g(x)-f(x)\right)\ dx$$
+\end{propriete}
+
+\subsection*{Valeur moyenne d'une fonction}
+\begin{definition}[]
+    Soit $f$ une fonction continue sur l'intervalle $\fif{a}{b}$ $(a<b)$.\\
+	On appelle \textbf{valeur moyenne de $f$ sur $\fif{a}{b}$} le réel $\mu$ défini par :
+    $$\mu=\frac{1}{b-a}\int_a^bf(t)\text{d}t$$ 
+\end{definition}
+
+\dleft{10cm}{
+    Dans le cas où la fonction $f$ est positive sur l'intervalle $\fif{a}{b}$, la valeur moyenne de $f$ sur cet intervalle est égale à la hauteur du rectangle de base $b-a$ et d'aire égale à l'aire du domaine délimité par la courbe $\courbe{f}$ et les droites d'équations $x=a$ et $x=b$.
+}
+{
+    \def\xmin{-1} \def\ymin{-1}\def\xmax{4}\def\ymax{4}
+
+    \def\F{-.5*(\x-3)^2+3}
+    \begin{tikzpicture}
+    \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+        \draw[fill = UGLiRed!20](1,0) rectangle (3,2.333);
+        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        \draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\F});
+        \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
+                  plot[thick,domain=1:3,smooth,variable=\x]  ({\x},{\F}) -- (3,3) -- (3,0) -- (1,0) -- cycle;
+        \draw[domain=\xmin:\xmax,smooth,variable=\x,thick] plot ({\x},{\F});
+    \end{tikzpicture}
+}
+
+\end{document}
