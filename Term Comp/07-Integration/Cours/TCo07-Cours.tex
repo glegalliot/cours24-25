@@ -424,21 +424,24 @@ La définition de l'intégrale d'une fonction $f$ continue et positive sur un in
     $$\mu=\frac{1}{b-a}\int_a^bf(t)\text{d}t$$ 
 \end{definition}
 
-\dleft{10cm}{
+\dleft{9cm}{
     Dans le cas où la fonction $f$ est positive sur l'intervalle $\fif{a}{b}$, la valeur moyenne de $f$ sur cet intervalle est égale à la hauteur du rectangle de base $b-a$ et d'aire égale à l'aire du domaine délimité par la courbe $\courbe{f}$ et les droites d'équations $x=a$ et $x=b$.
 }
 {
-    \def\xmin{-1} \def\ymin{-1}\def\xmax{4}\def\ymax{4}
+    \def\xmin{-1} \def\ymin{-1}\def\xmax{6}\def\ymax{4}
     \def\F{-.5*(\x-3)^2+3}
     \begin{tikzpicture}
     \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
-        \draw[fill = UGLiRed!20](1,0) rectangle (3,2.333);
+        \draw[fill = UGLiRed!20](2,0) rectangle (5,2.5);
         \repereal{\xmin}{\ymin}{\xmax}{\ymax}
         \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
         \draw[domain=\xmin:\xmax,smooth,variable=\x] plot ({\x},{\F});
         \fill[pattern =north east lines, pattern color = UGLiDarkBlue] 
-                  plot[thick,domain=1:3,smooth,variable=\x]  ({\x},{\F}) -- (3,3) -- (3,0) -- (1,0) -- cycle;
+                  plot[thick,domain=2:5,smooth,variable=\x]  ({\x},{\F}) -- (5,1) -- (5,0) -- (2,0) -- cycle;
         \draw[domain=\xmin:\xmax,smooth,variable=\x,thick] plot ({\x},{\F});
+        \draw(2,0) node[below]{$a$};
+        \draw(5,0) node[below]{$b$};
+        \draw[thick, dashed] (0,2.5) node[left]{$\mu$} -- (2,2.5);
     \end{tikzpicture}
 }
 
