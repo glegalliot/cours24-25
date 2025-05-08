@@ -1,0 +1,65 @@
+\documentclass[a4paper,11pt,landscape,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{hyperref}
+
+\pagestyle{empty}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+
+
+
+
+\begin{multicols}{2}
+
+\textcolor{UGLiBlue}{
+        Vendredi 09/05/2025\\
+        NOM, Prénom :}\\
+\classe{\terminale Comp}
+    \titre{\includegraphics[width=3cm]{CAN.png} Interrogation 4}
+    \maketitle
+
+
+    Pour les questions \textbf{1.}, \textbf{2.} et \textbf{3.}, on donne les courbes de deux fonctions $f$ et $g$ :\\
+    
+    \def\xmin{-1}\def\xmax{5}\def\ymin{-1}\def\ymax{5}
+	\def\F{-(\x-2)^2+3}
+    \def\G{(\x-1)*(\x-4)*(-\x+3)+2}
+	\begin{tikzpicture}
+	\reperenb{\xmin}{\ymin}{\xmax}{\ymax}{$x$}{$y$}
+	\clip	(\xmin,\ymin) rectangle (\xmax,\ymax);
+	\draw[UGLiRed,ultra thick,domain=\xmin:\xmax,smooth,variable=\x]  plot ({\x},{\F});
+    \draw[UGLiDarkBlue,ultra thick, dashed,domain=\xmin:\xmax,smooth,variable=\x]  plot ({\x},{\G});
+    \draw[UGLiRed] (.2,-.5) node[right] {$\courbe{f}$};
+    \draw[UGLiDarkBlue] (1,4.5) node[] {$\courbe{g}$};
+	\end{tikzpicture}
+    
+    
+
+\begin{enumerate}[itemsep=.9em]
+    \item Image de $3$ par $f$
+    \item Résoudre $f(x)\geqslant 2$.
+    \item Solutions de $f(x)=g(x)$
+    \item $f(x)=x^2+x+1$\\$f(-4)=\ldots$
+	\item $6$ stylos identiques coûtent $9$ €. \\
+        Quel est le prix de $15$ stylos ? \\$\ldots$ €
+	\item Équation réduite de la droite $(d)$.\\
+	\def\xmin{-4}\def\xmax{4}\def\ymin{-4}\def\ymax{2}
+	\def\F{\x/3-2}
+	\begin{tikzpicture}
+	\reperenb{\xmin}{\ymin}{\xmax}{\ymax}{$x$}{$y$}
+	\clip	(\xmin,\ymin) rectangle (\xmax,\ymax);
+	\draw[UGLiRed,ultra thick,domain=\xmin:\xmax,smooth,variable=\x]  plot ({\x},{\F});
+    \draw[UGLiRed] (-3,-3) node[above] {$(d)$};
+	\end{tikzpicture}
+    \item Multiplier une quantité par $0{,}35$ revient à la diminuer de : $\ldots\,\%$
+	\item $(u_n)$ est une suite géométrique telle que $u_1=-1$ et $u_2=3$\\La raison de cette suite est :  $\ldots$
+	
+	\item Solution de l'équation $5x-2=13$
+
+	
+	\item $f(x)=2x^3+x^2-2\ ; \qquad$
+    $f'(x)=$ $\ldots$
+\end{enumerate}
+\end{multicols}
+\end{document}
