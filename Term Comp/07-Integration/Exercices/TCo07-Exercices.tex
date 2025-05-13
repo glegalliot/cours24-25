@@ -181,4 +181,142 @@ On note $$\displaystyle J=\int_{0}^{3}g(x)\text{d}x$$
 		\draw[dashed] (.75,2.12) -- (1,2.12);
 	\end{tikzpicture}
 }
+
+\subsection*{Intégrale d'une fonction de signe quelconque}
+\exo{}
+\dleft{10cm}{
+	Sur le graphique ci-contre est tracé la courbe représentative d'une fonction $f$ définie sur $\R$.
+	\begin{enumerate}
+		\item Déterminer la valeur de l'intégrale $\displaystyle \int_{-2}^{0} f(x) \, dx$.
+		\item Déterminer la valeur de l'intégrale $\displaystyle \int_{0}^{4} f(x) \, dx$.
+		\item En déduire la valeur de l'intégrale $\displaystyle \int_{-2}^{4} f(x) \, dx$.
+	\end{enumerate}
+	
+}
+{
+	\def\xmin{-3} \def\ymin{-3}\def\xmax{5}\def\ymax{4}
+    \def\F{.5*\x}
+    \begin{tikzpicture}[xscale=.8,yscale=.6]
+    \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		%\fill[UGLiOrange!30] 	(2,0)-- (-2,0) -- plot[thick,domain=-2:2,smooth,variable=\x] ({\x},{\F})  --cycle;
+        %\draw[fill = UGLiOrange!30](-3,0) rectangle (1,2);
+        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        \draw[UGLiRed,domain=\xmin:\xmax,smooth,variable=\x,thick] plot ({\x},{\F});
+    \end{tikzpicture}
+}
+
+\exo{} %Sesamath 49 p 153
+\begin{enumerate}
+	\item Représenter dans un repère orthogonal la fonction $f$ définie sur $\R$ par : $f(x)=x-1$.
+	\item Déterminer la valeur de l'intégrale $\displaystyle \int_{-2}^{3} f(x) \, dx$.
+\end{enumerate}
+
+\subsection*{Calculs d'intégrales}
+\exo{ VRAI ou FAUX ?}
+\begin{enumerate}
+	\item Soit $f$ une fonction continue sur $\fif{-3}{4}$ et $F$ une primitive de $f$ sur cet intervalle.
+	\begin{multicols}{2}
+		\begin{enumalph}
+		\item $\displaystyle \int_{-3}^{4} f(x) \, dx = F(-3)-F(4)$
+		\begin{multicols}{2}
+			\begin{enumerate}[label=\ding{111}]
+				\item VRAI
+				\item FAUX
+			\end{enumerate}
+		\end{multicols}
+		\item $\displaystyle \int_{-3}^{4} f(x) \, dx = f(4)-f(-3)$
+		\begin{multicols}{2}
+			\begin{enumerate}[label=\ding{111}]
+				\item VRAI
+				\item FAUX
+			\end{enumerate}
+		\end{multicols}
+	\end{enumalph}
+	\end{multicols}
+	
+	\item $\displaystyle \int_{-1}^{1} x \, dx = 0$
+	\begin{multicols}{4}
+		\begin{enumerate}[label=\ding{111}]
+			\item VRAI
+			\item FAUX
+		\end{enumerate}
+	\end{multicols}
+	\item $\displaystyle \int_{-2}^{-1} x^2 \, dx < 0$	
+	\begin{multicols}{4}
+		\begin{enumerate}[label=\ding{111}]
+			\item VRAI
+			\item FAUX
+		\end{enumerate}
+	\end{multicols}
+\end{enumerate}
+
+\exo{}
+Soit $f$ la fonction définie sur $\R$ par $f(x)=3x^2+2x$.
+\begin{enumerate}
+	\item Vérifier que la fonction $F$ définie sur $\R$ par $F(x)=x^3+x^2+1$ est une primitive de $f$ sur $\R$.
+	\item Calculer $\displaystyle \int_{0}^{3} f(x) \, dx$ .
+\end{enumerate}
+
+\exo{}
+Soit $f$ la fonction définie sur $\R$ par $f(x)=8x^3-6x^2+1$.
+\begin{enumerate}
+	\item Vérifier que la fonction $F$ définie sur $\R$ par $F(x)=2x^4-2x^3+x-2$ est une primitive de $f$ sur $\R$.
+	\item Calculer $\displaystyle \int_{-2}^{1} f(x) \, dx$.
+\end{enumerate}
+
+\exo{}
+Calculer les intégrales suivantes :
+\begin{multicols}{3}
+	\begin{enumerate}
+		\item $I=\displaystyle \int_{-3}^{1} x^3 \, dx$
+		\item $J=\displaystyle \int_{-1}^{2} (-3x+5) \, dx$
+		\item $K=\displaystyle \int_{0}^{1} (3x^2-2x+1) \, dx$
+	\end{enumerate}
+\end{multicols}
+
+\exo{}
+Calculer les intégrales suivantes :
+\begin{multicols}{3}
+	\begin{enumerate}
+		\item $I=\displaystyle \int_{1}^{2} \left(1-\dfrac{1}{x}\right) \, dx$
+		\item $J=\displaystyle \int_{-1}^{0} (x^3-5x) \, dx$
+		\item $K=\displaystyle \int_{-1}^{1} 14x(7x^2+5) \, dx$
+	\end{enumerate}
+\end{multicols}
+
+\exo{}
+Soient $f$ et $F$ les fonctions définies sur $\R$ par :
+$$f(x)=(3x+1)e^{3x}\quad \text{et}\quad F(x)=xe^{3x}.$$
+\begin{enumerate}
+	\item Montrer que $F$ est une primitive de $f$ sur $\R$.
+	\item Vérifier que $\displaystyle \int_{-1}^{1} f(x) \, dx = e^3+\dfrac{1}{e^3}$.
+\end{enumerate}
+
+\subsection*{Application au calcul d'aires}
+
+\dleft{10cm}{
+	\exo{}
+	Soient $f$ et $g$ les fonctions définies sur $\R$ par :
+	$$f(x)=x^2\quad \text{et}\quad g(x)=x$$
+	dont on donne les courbes représentatives $\courbe{f}$ et $\courbe{g}$ ci-contre.\\
+	\begin{enumerate}
+		\item Justifier que l'aire de la surface colorée est égale, en unités d'aire, à $\displaystyle \int_{0}^{1} (x-x^2) \, dx$.
+		\item Calculer cette aire.
+	\end{enumerate}
+}
+{
+	\def\xmin{-1} \def\ymin{-1}\def\xmax{2}\def\ymax{2.5}
+	\def\F{\x^2}
+	\def\G{\x}
+	\begin{tikzpicture}[scale=2]
+	\draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\fill[UGLiOrange!30] 	(0,0)-- plot[thick,domain=0:1,smooth,variable=\x] ({\x},{\F})  --plot[thick,domain=0:1,smooth,variable=\x] ({\x},{\G})--cycle;
+		%\draw[fill = UGLiOrange!30](-3,0) rectangle (1,2);
+		\reperea{\xmin}{\ymin}{\xmax}{\ymax}
+		\clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+		\draw[UGLiRed,domain=\xmin:\xmax,smooth,variable=\x,ultra thick] plot ({\x},{\F});
+		\draw[UGLiDarkBlue,domain=\xmin:\xmax,smooth,variable=\x,ultra thick] plot ({\x},{\G});
+	\end{tikzpicture}
+}
 \end{document}
