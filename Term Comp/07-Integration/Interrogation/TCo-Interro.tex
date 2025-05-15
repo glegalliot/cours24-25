@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+
+\usepackage{pifont}
+\usepackage{fontawesome5}
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Vendredi 16/05/2025}\\
+\classe{\premiere spé}
+\titre{Interrogation }
+\maketitle
+\begin{center}
+	Calculatrice interdite
+\end{center}
+
+\begin{enumerate}
+    \item \hspace*{1cm}\\
+    \dleft{8cm}{
+    \begin{enumalph}
+    \item Représenter dans le repère ci-contre la fonction $f$ définie sur $\mathbb{R}$ par : $\quad f(x) = 2$.
+    \item En déduire la valeur de l'intégrale $\displaystyle\int_{-3}^{1} 2 \, dx$.\\[.5em]
+\end{enumalph}
+}
+{
+    \def\xmin{-5} \def\ymin{-3}\def\xmax{5}\def\ymax{4}
+    \def\F{.5*\x}
+    \begin{tikzpicture}[xscale=.725,yscale=.65]
+    \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		%\fill[UGLiOrange!30] 	(2,0)-- (-2,0) -- plot[thick,domain=-2:2,smooth,variable=\x] ({\x},{\F})  --cycle;
+        %\draw[fill = UGLiOrange!30](-3,0) rectangle (1,2);
+        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        %\draw[UGLiRed,domain=\xmin:\xmax,smooth,variable=\x,thick] plot ({\x},{\F});
+    \end{tikzpicture}\\}
+    \carreauxseyes{16cm}{2.4cm}
+
+    \item \hspace*{1cm}\\
+    \dleft{8cm}{
+    \begin{enumalph}
+    \item Représenter dans le repère ci-contre la fonction $g$ définie sur $\mathbb{R}$ par : $\quad g(x) = \dfrac{1}{2}x+1$.
+    \item En déduire la valeur de l'intégrale $\displaystyle\int_{0}^{4} \left(\dfrac{1}{2}x+1\right) \, dx$.\\[.5em]
+\end{enumalph}
+}
+{
+    \def\xmin{-3} \def\ymin{-2}\def\xmax{7}\def\ymax{5}
+    \def\F{.5*\x}
+    \begin{tikzpicture}[xscale=.725,yscale=.65]
+    \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		%\fill[UGLiOrange!30] 	(2,0)-- (-2,0) -- plot[thick,domain=-2:2,smooth,variable=\x] ({\x},{\F})  --cycle;
+        %\draw[fill = UGLiOrange!30](-3,0) rectangle (1,2);
+        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        %\draw[UGLiRed,domain=\xmin:\xmax,smooth,variable=\x,thick] plot ({\x},{\F});
+    \end{tikzpicture}\\
+}
+    \carreauxseyes{16cm}{2.4cm}
+\newpage
+    \item \hspace*{1cm}\\
+    \dleft{8cm}{
+    \begin{enumalph}
+    \item Représenter dans le repère ci-contre la fonction $h$ définie sur $\mathbb{R}$ par : $\quad h(x) = -x+2$.
+    \item En déduire la valeur de l'intégrale $\displaystyle\int_{-1}^{4} \left(-x+2\right) \, dx$.\\[.5em]
+\end{enumalph}
+}
+{
+    \def\xmin{-3} \def\ymin{-4}\def\xmax{7}\def\ymax{5}
+    \def\F{.5*\x}
+    \begin{tikzpicture}[xscale=.725,yscale=.65]
+    \draw[fill=white] (\xmin,\ymin) rectangle (\xmax,\ymax);
+		%\fill[UGLiOrange!30] 	(2,0)-- (-2,0) -- plot[thick,domain=-2:2,smooth,variable=\x] ({\x},{\F})  --cycle;
+        %\draw[fill = UGLiOrange!30](-3,0) rectangle (1,2);
+        \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+        \clip (\xmin,\ymin) rectangle (\xmax,\ymax);
+        %\draw[UGLiRed,domain=\xmin:\xmax,smooth,variable=\x,thick] plot ({\x},{\F});
+    \end{tikzpicture}\\
+}
+    \carreauxseyes{16cm}{4cm}
+\end{enumerate}
+
+
+\end{document}
