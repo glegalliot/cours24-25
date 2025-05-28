@@ -1,0 +1,138 @@
+\documentclass[a4paper,11pt,eval]{nsi} 
+\usepackage{fontawesome5}
+
+%\pagestyle{empty}
+
+
+\newcounter{exoNum}
+\setcounter{exoNum}{0}
+%
+\newcommand{\exo}[1]
+{
+	\addtocounter{exoNum}{1}
+	{\titlefont\color{UGLiBlue}\Large Exercice\ \theexoNum\ \normalsize{#1}}\smallskip	
+}
+
+
+
+\begin{document}
+
+
+
+\textcolor{UGLiBlue}{Mercredi 28/05/2025}\\
+\classe{\terminale Comp}
+\titre{Évaluation-bilan 7}
+\maketitle
+\begin{center}
+	Calculatrice autorisée. Toutes les réponses doivent être justifiées.
+\end{center}
+
+%\vspace*{1cm}
+
+
+
+
+
+\exo{}\bareme{10 pts}\\
+\textbf{Dans cet exercice, les questions 1, 2, 3 et 4 peuvent être traitées de façon indépendante les unes des autres.}
+
+Un parachutiste est en chute libre dans l'air jusqu'à l'instant $t = 0$ où il ouvre son parachute. Sa vitesse est alors de 50~m.s$^{-1}$. On admet par la suite que sa vitesse $v$, en m.s$^{-1}$, en fonction du temps $t$, en $s$, est solution de l'équation différentielle sur l'intervalle $[0\;;\;+\infty[$:
+
+\[(E)\;:\quad y'=-5y+10.\]
+
+
+
+\begin{enumerate}
+    \item La fonction constante $g$ définie sur l'intervalle $[0\;;\;+\infty[$ par $g(t)=2$ est-elle une solution de l'équation différentielle $(E)$ ? 
+    Justifier la réponse.\\[.5em]
+    \carreauxseyes{16}{6.4}
+
+    \item Montrer que les solutions de l'équation différentielle $(E)$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{-5t}+2$, où $k$ est un nombre réel donné.\\[.5em]
+    \carreauxseyes{16}{4}\\
+    \carreauxseyes{16}{5.6}
+
+    \item En admettant le résultat de la question précédente, montrer que la fonction $v$ est donnée sur $[0\;;\;+\infty[$ par $v(t) = 48 \e^{-5t} + 2$.\\[.5em]
+    \carreauxseyes{16}{6.4}
+
+    \item La distance parcourue, en mètre, par le parachutiste pendant les 10 premières secondes après ouverture du parachute est donnée  par l'intégrale :
+    \[\displaystyle\int_{0}^{10} \left ( 48 \e^{-5t} +2 \right ) \ dt\]
+    Calculer cette intégrale (arrondir à $10^{-1}$).\\[.5em]
+    \carreauxseyes{16.8}{8}
+\end{enumerate}
+
+\newpage
+\exo{}\bareme{10 pts}\\
+Le tableau suivant donne l'évolution du prix $p_i$, en euros, d'une action en Bourse depuis son introduction.
+\begin{center}
+    \tabstyle[UGLiBlue]
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \ccell Jour $j_i$ & 2 & 7 & 12 & 16 & 20 & 25 \\
+        \hline
+        \ccell $p_i$ & 13,6 & 13,8 & 14,3 & 14,2 & 14,9 & 15,3 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item À l'aide de la calculatrice, déterminer le coefficient de corrélation linéaire entre les variables $p$ et $j$. \textit{Arrondir au millième.}\\[.5em]
+    \carreauxseyes{16}{4}
+    \item Peut-on envisager un ajustement affine du nuage ? Si oui, donner l'équation de la droite de régression de $p$ en $j$. \textit{Arrondir les coefficients au millième.}\\[.5em]
+    \carreauxseyes{16}{4}
+    \item Peut-on estimer le prix de cette action au 30$^{\text{e}}$ jour ? Si oui, donner la valeur estimée.\\[.5em]
+    \carreauxseyes{16}{5.6}\\
+    Quelle fiabilité peut-on accorder à cette estimation ?\\[.5em]
+    \carreauxseyes{16}{3.2}
+    \item Estimer le nombre de jours nécessaires pour que le prix de l'action atteigne 14 euros.\\[.5em]
+    \carreauxseyes{16}{24.8}
+\end{enumerate}
+
+\newpage
+\begin{flushleft}
+\textbf{Question 1}
+\end{flushleft}
+
+Soit $g$ la fonction constante définie sur l'intervalle $[0\;;\;+\infty[$ par $g(t)=2$.
+
+$g'(t)=0$ et $-5g(t)+10=-5\times 2 +10=0$ donc $g'(t)=-5g(t)+10$.
+
+Donc $g$ est solution de l'équation différentielle $(E)$.
+
+\begin{flushleft}
+\textbf{Question 2}
+\end{flushleft}
+
+D'après le cours, les solutions de l'équation différentielle $y'=ay$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{at}$,  où $k$ est un nombre réel quelconque, donc les solutions de l'équation différentielle $y'=-5y$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{-5t}$,  où $k$ est un nombre réel quelconque.
+
+Une solution de l'équation différentielle $y'=-5y+10$ est la somme d'une solution de l'équation différentielle $y'=-5y$ et d'une solution constante de l'équation différentielle $y'=-5y+10$, donc les solutions de l'équation différentielle $(E)$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{-5t}+2$,  où $k$ est un nombre réel quelconque.
+
+\begin{flushleft}
+\textbf{Question 3}
+\end{flushleft}
+
+On sait que $v$ est solution de $(E)$ et que $v(0)=50$; donc $k\e^{0}+2 = 50$ donc $k=48$.
+
+La fonction $v$ est donc donnée sur $[0\;;\;+\infty[$ par $v(t) = 48 \e^{-5t} + 2$.
+
+\begin{flushleft}
+\textbf{Question 4}
+\end{flushleft}
+
+La distance parcourue, en mètre, par le parachutiste pendant les 10 premières secondes après ouverture du parachute est donnée  par l'intégrale:
+$\displaystyle\int_{0}^{10} \left ( 48 \e^{-5t} +2 \right ) \d t$.
+
+Pour calculer cette intégrale, il faut trouver une primitive de la fonction $v$.
+
+La fonction $t\longmapsto \e^{at}$ avec $a\neq 0$,  a pour primitive la fonction $t\longmapsto \dfrac{\e^{at}}{a}$, donc la fonction $v$ a pour primitive la fonction $V$ définie par $V(t) = 48 \dfrac{\e^{-5t}}{-5} + 2t$ soit $V(t) = - 9,6 \e^{-5t} +2t$.
+
+$\begin{aligned}
+\displaystyle\int_{0}^{10} \left ( 48 \e^{-5t} +2 \right ) \ dt&
+= \left [ V(t) \strut\right ]_{0}^{10}
+= V(10) - V(0)
+= \left (-9,6 \e^{-5\times 10} + 2 \times 10 \right ) - \left ( -9,6 \e^{-5\times 0} + 2 \times 0 \right )\\
+&
+= -9,6 \e^{-50} + 20+9,6  = 29,6 -9,6 \e^{-50} \approx 29,6
+\end{aligned}$
+
+
+\end{document}

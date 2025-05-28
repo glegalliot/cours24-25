@@ -1,0 +1,124 @@
+\documentclass[a4paper,11pt,exos]{nsi} 
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+
+
+\begin{document}
+
+
+
+%\textcolor{UGLiBlue}{Mercredi 05/02/2025}\\
+\classe{\premiere spé}
+\titre{Corrigé de l'interrogation A}
+\maketitle
+
+On considère $f$ , la fonction définie sur $\R$ par $\quad f(x)=4x^3-7x^2+30x-5$.\\
+Déterminer la fonction dérivée de $f$.\\[.5em]
+\textcolor{UGLiBlue}{
+    Soit $x$ un réel.
+    \begin{tabbing}
+        $f'(x)$ \= $=4\times 3x^2-7\times 2x+30\times 1+0$\\
+        \> $=12x^2-14x+30$
+    \end{tabbing}
+}
+
+
+On considère $g$ la fonction définie par $\quad g(x)=\dfrac{3x^2+2x+7}{x-1}$.\\[.5em]
+Quel est l'ensemble de définition de $g$ ?\\
+Déterminer la fonction dérivée de $g$.\\[.5em]
+\textcolor{UGLiBlue}{
+    Le dénominateur $x-1$ s'annule pour $x=1$.    L'ensemble de définition de $g$ est donc $\R\setminus\{1\}$.\\
+    Soient $u$ et $v$ les fonctions définies sur $\R\setminus\{1\}$ par :
+    \begin{tabbing}
+        \hspace*{1.5cm}\= $u(x)=3x^2+2x+7\quad$\= et $\quad$  \= $v(x)=x-1$\\
+        On a :  \>$u'(x)=6x^2+2$\> et \>$v'(x)=1$.
+    \end{tabbing}
+    D'où pour tout $x\in\R\setminus\{1\}$, on a :
+    \begin{tabbing}
+        $g'(x)$ \= $=\dfrac{u'(x)v(x)-u(x)v'(x)}{(v(x))^2}$\\
+        \> $=\dfrac{(6x+2)(x-1)-(3x^2+2x+7)\times 1}{(x-1)^2}$\\
+        \> $=\dfrac{6x^2-6x+2x-2-3x^2-2x-7}{(x-1)^2}$\\
+        \> $=\dfrac{3x^2-6x-9}{(x-1)^2}$
+    \end{tabbing}
+}
+
+On considère la fonction $h$ définie par $\quad h(x)=\sqrt{x}(x^2+1)$.\\[.5em]
+Quel est l'ensemble de définition de $h$ ?\\
+Déterminer la fonction dérivée de $h$.\\[.5em]
+\textcolor{UGLiBlue}{
+    La fonction racine carrée est définie sur $\fio{0}{+\infty}$ et dérivable sur $\oio{0}{+\infty}$. L'ensemble de définition de $h$ est $\fio{0}{+\infty}$.\\
+    Soient $u$ et $v$ les fonctions définies sur $\oio{0}{+\infty}$ par :
+    \begin{tabbing}
+        \hspace*{1.5cm}\= $u(x)=\sqrt{x}\quad$\= et $\quad$  \= $v(x)=x^2+1$\\
+        On a :  \>$u'(x)=\dfrac{1}{2\sqrt{x}}$\> et \>$v'(x)=2x$.
+    \end{tabbing}
+    D'où pour tout $x\in\oio{0}{+\infty}$, on a :
+    \begin{tabbing}
+        $h'(x)$ \= $=u'(x)v(x)+u(x)v'(x)$\\[.5em]
+        \> $=\dfrac{1}{2\sqrt{x}}(x^2+1)+\sqrt{x}\times 2x$\\[.5em]
+        \> $=\dfrac{x^2+1}{2\sqrt{x}}+2x\sqrt{x}$\\[.5em]
+        \> $=\dfrac{x^2+1+2x\sqrt{x}\times 2\sqrt{x}}{2\sqrt{x}}$\\[.5em]
+        \> $=\dfrac{x^2+1+4x^2}{2\sqrt{x}}$\\[.5em]
+        \> $=\dfrac{5x^2+1}{2\sqrt{x}}$
+    \end{tabbing}
+}
+
+\newpage
+
+\classe{\premiere spé}
+\titre{Corrigé de l'interrogation B}
+\maketitle
+
+
+n considère $f$ , la fonction définie sur $\R$ par $\quad f(x)=5x^3+3x^2-20x+7$.\\
+Déterminer la fonction dérivée de $f$.\\[.5em]
+\textcolor{UGLiBlue}{
+    Soit $x$ un réel.
+    \begin{tabbing}
+        $f'(x)$ \= $=5\times 3x^2+3\times 2x-20\times 1+0$\\
+        \> $=15x^2+6x-20$
+    \end{tabbing}
+}
+
+
+On considère $g$ la fonction définie par $\quad g(x)=\dfrac{2x^2-3x+5}{x+1}$.\\[.5em]
+Quel est l'ensemble de définition de $g$ ?\\
+Déterminer la fonction dérivée de $g$.\\[.5em]
+\textcolor{UGLiBlue}{
+    Le dénominateur $x+1$ s'annule pour $x=-1$.    L'ensemble de définition de $g$ est donc $\R\setminus\{-1\}$.\\
+    Soient $u$ et $v$ les fonctions définies sur $\R\setminus\{-1\}$ par :
+    \begin{tabbing}
+        \hspace*{1.5cm}\= $u(x)=2x^2-3x+5\quad$\= et $\quad$  \= $v(x)=x+1$\\
+        On a :  \>$u'(x)=4x-3$\> et \>$v'(x)=1$.
+    \end{tabbing}
+    D'où pour tout $x\in\R\setminus\{-1\}$, on a :
+    \begin{tabbing}
+        $g'(x)$ \= $=\dfrac{u'(x)v(x)-u(x)v'(x)}{(v(x))^2}$\\
+        \> $=\dfrac{(4x-3)(x+1)-(2x^2-3x+5)\times 1}{(x+1)^2}$\\
+        \> $=\dfrac{4x^2+4x-3x-3-2x^2+3x-5}{(x+1)^2}$\\
+        \> $=\dfrac{2x^2+4x-8}{(x+1)^2}$
+    \end{tabbing}
+}
+
+
+On considère la fonction $h$ définie par $\quad h(x)=\sqrt{x}(x^2-1)$.\\[.5em]
+Quel est l'ensemble de définition de $h$ ?\\
+Déterminer la fonction dérivée de $h$.\\[.5em]
+\textcolor{UGLiBlue}{
+    La fonction racine carrée est définie sur $\fio{0}{+\infty}$ et dérivable sur $\oio{0}{+\infty}$. L'ensemble de définition de $h$ est $\fio{0}{+\infty}$.\\
+    Soient $u$ et $v$ les fonctions définies sur $\oio{0}{+\infty}$ par :
+    \begin{tabbing}
+        \hspace*{1.5cm}\= $u(x)=\sqrt{x}\quad$\= et $\quad$  \= $v(x)=x^2-1$\\
+        On a :  \>$u'(x)=\dfrac{1}{2\sqrt{x}}$\> et \>$v'(x)=2x$.
+    \end{tabbing}
+    D'où pour tout $x\in\oio{0}{+\infty}$, on a :
+    \begin{tabbing}
+        $h'(x)$ \= $=u'(x)v(x)+u(x)v'(x)$\\[.5em]
+        \> $=\dfrac{1}{2\sqrt{x}}(x^2-1)+\sqrt{x}\times 2x$\\[.5em]
+        \> $=\dfrac{x^2-1}{2\sqrt{x}}+2x\sqrt{x}$\\[.5em]
+        \> $=\dfrac{x^2-1+4x^2}{2\sqrt{x}}$\\[.5em]
+        \> $=\dfrac{5x^2-1}{2\sqrt{x}}$
+    \end{tabbing}
+}
+\end{document}
