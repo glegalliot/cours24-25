@@ -1,0 +1,128 @@
+\documentclass[a4paper,11pt,exos]{nsi} 
+\usepackage{fontawesome5}
+
+%\pagestyle{empty}
+
+
+\begin{document}
+
+
+
+%\textcolor{UGLiBlue}{Mercredi 05/02/2025}\\
+\classe{\terminale Comp}
+\titre{Corrigé de l'évaluation-bilan 7}
+\maketitle
+
+\exo{}
+Un parachutiste est en chute libre dans l'air jusqu'à l'instant $t = 0$ où il ouvre son parachute. Sa vitesse est alors de 50~m.s$^{-1}$. On admet par la suite que sa vitesse $v$, en m.s$^{-1}$, en fonction du temps $t$, en $s$, est solution de l'équation différentielle sur l'intervalle $[0\;;\;+\infty[$:
+
+\[(E)\;:\quad y'=-5y+10.\]
+
+
+
+\begin{enumerate}
+    \item La fonction constante $g$ définie sur l'intervalle $[0\;;\;+\infty[$ par $g(t)=2$ est-elle une solution de l'équation différentielle $(E)$ ? 
+    Justifier la réponse.\\[.5em]
+    \textcolor{UGLiBlue}{
+        Soit $t$ un réel.\\
+        Soit $g$ la fonction constante définie sur l'intervalle $[0\;;\;+\infty[$ par $g(t)=2$.\\
+        $g'(t)=0$ et $-5g(t)+10=-5\times 2 +10=0$ donc $g'(t)=-5g(t)+10$.\\
+        La fonction $g$ est bien solution de l'équation différentielle $(E)$.
+    }
+
+    \item Montrer que les solutions de l'équation différentielle $(E)$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{-5t}+2$, où $k$ est un nombre réel donné.\\[.5em]
+    \textcolor{UGLiBlue}{
+        D'après le cours, les solutions de l'équation différentielle $y'=ay$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{at}$,  où $k$ est un nombre réel quelconque, donc les solutions de l'équation différentielle $y'=-5y$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{-5t}$,  où $k$ est un nombre réel quelconque.\\[.5em]
+        Une solution de l'équation différentielle $y'=-5y+10$ est la somme d'une solution de l'équation différentielle $y'=-5y$ et d'une solution constante de l'équation différentielle $y'=-5y+10$, donc les solutions de l'équation différentielle $(E)$ sur l'intervalle $[0\;;\;+\infty[$ sont les fonctions $f$ définies sur cet intervalle par $f(t)=k\e^{-5t}+2$,  où $k$ est un nombre réel quelconque.
+    }
+
+    \item En admettant le résultat de la question précédente, montrer que la fonction $v$ est donnée sur $[0\;;\;+\infty[$ par $v(t) = 48 \e^{-5t} + 2$.\\[.5em]
+    \textcolor{UGLiBlue}{
+        On sait que $v$ est solution de $(E)$ et que $v(0)=50$; donc $k\e^{0}+2 = 50$ donc $k=48$.\\
+        La fonction $v$ est donc donnée sur $[0\;;\;+\infty[$ par $v(t) = 48 \e^{-5t} + 2$.
+    }
+   
+
+    \item La distance parcourue, en mètre, par le parachutiste pendant les 10 premières secondes après ouverture du parachute est donnée  par l'intégrale :
+    \[\displaystyle\int_{0}^{10} \left ( 48 \e^{-5t} +2 \right ) \ dt\]
+    Calculer cette intégrale (arrondir à $10^{-1}$).\\[.5em]
+    \textcolor{UGLiBlue}{
+        La distance parcourue, en mètre, par le parachutiste pendant les 10 premières secondes après ouverture du parachute est donnée  par l'intégrale:
+        $\displaystyle\int_{0}^{10} \left ( 48 \e^{-5t} +2 \right ) \d t$.\\
+        Pour calculer cette intégrale, il faut trouver une primitive de la fonction $v$.\\
+        La fonction $t\longmapsto \e^{at}$ avec $a\neq 0$,  a pour primitive la fonction $t\longmapsto \dfrac{\e^{at}}{a}$, donc la fonction $v$ a pour primitive la fonction $V$ définie par $V(t) = 48 \dfrac{\e^{-5t}}{-5} + 2t$     soit $V(t) = - 9,6 \e^{-5t} +2t$.
+        $\begin{aligned}
+        \displaystyle\int_{0}^{10} \left ( 48 \e^{-5t} +2 \right ) \ dt
+        &= \left [ V(t) \strut\right ]_{0}^{10}\\
+        &= V(10) - V(0)\\
+        &= \left (-9,6 \e^{-5\times 10} + 2 \times 10 \right ) - \left ( -9,6 \e^{-5\times 0} + 2 \times 0 \right )\\
+        &= -9,6 \e^{-50} + 20+9,6  \\
+        &= 29,6 -9,6 \e^{-50} \\
+        &\approx 29,6
+        \end{aligned}$
+    }
+    
+
+\end{enumerate}
+
+
+\exo{}
+Le tableau suivant donne l'évolution du prix $p_i$, en euros, d'une action en Bourse depuis son introduction.
+\begin{center}
+    \tabstyle[UGLiBlue]
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \ccell Jour $j_i$ & 2 & 7 & 12 & 16 & 20 & 25 \\
+        \hline
+        \ccell $p_i$ & 13,6 & 13,8 & 14,3 & 14,2 & 14,9 & 15,3 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item À l'aide de la calculatrice, déterminer le coefficient de corrélation linéaire entre les variables $p$ et $j$. \textit{Arrondir au millième.}\\[.5em]
+    \textcolor{UGLiBlue}{
+        On utilise la calculatrice pour déterminer le coefficient de corrélation linéaire entre les variables $p$ et $j$.\\
+        On obtient le coefficient de corrélation linéaire $r\approx 0,965$.
+    }
+    \item Peut-on envisager un ajustement affine du nuage ? Si oui, donner l'équation de la droite de régression de $p$ en $j$. \textit{Arrondir les coefficients au millième.}\\[.5em]
+    \textcolor{UGLiBlue}{
+        Le coefficient de corrélation linéaire est proche de 1, donc on peut envisager un ajustement affine du nuage.\\
+        On utilise la calculatrice pour déterminer l'équation de la droite de régression de $p$ en $j$.\\
+        On obtient l'équation de la droite de régression : $p = 0,074j + 13,340$.
+    }
+    \item Peut-on estimer le prix de cette action au 30$^{\text{e}}$ jour ? Si oui, donner la valeur estimée.\\[.5em]
+    \textcolor{UGLiBlue}{
+        On peut estimer le prix de cette action au 30$^{\text{e}}$ jour en utilisant l'équation de la droite de régression.\\
+        En remplaçant $j$ par 30 dans l'équation $p = 0,074j + 13,340$, on obtient :
+        \[p = 0,074 \times 30 + 13,340 = 15,56.\]
+        On peut donc estimer que le prix de l'action au 30$^{\text{e}}$ jour sera d'environ 15,56 €.
+    }\\
+
+    Quelle fiabilité peut-on accorder à cette estimation ?\\[.5em]
+    \textcolor{UGLiBlue}{
+        Le prix d'une action en Bourse peut varier pour de nombreuses raisons, et l'estimation basée sur une droite de régression n'est une approximation. Si un évènement majeur survient, comme une annonce de bénéfices ou un changement dans la direction de l'entreprise, le prix peut ne pas suivre la tendance prévue par la droite de régression.\\
+    }
+    \item Estimer le nombre de jours nécessaires pour que le prix de l'action atteigne 14 euros.\\[.5em]
+    \textcolor{UGLiBlue}{
+        Pour estimer le nombre de jours nécessaires pour que le prix de l'action atteigne 14 euros, on résout l'équation $0,074j + 13,340 = 14$.\\
+        On obtient :
+        \[0,074j = 14 - 13,340\]
+        \[j = \dfrac{0,66}{0,074} \approx 8,92.\]
+        Donc il faut environ 9 jours pour que le prix de l'action atteigne 14 euros.
+    }
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
