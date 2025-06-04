@@ -1,0 +1,58 @@
+\documentclass[a4paper,11pt,exos]{nsi} % COMPILE WITH DRAFT
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+\pagestyle{empty}
+
+\begin{document}
+\classe{\terminale Comp}
+\titre{Estimer une aire par la méthode de Monte-Carlo}
+\maketitle
+
+\begin{encadrecolore}{Un peu d'histoire}{UGLiDarkBlue}
+    Le physicien gréco-américain \textbf{Nicholas Metropolis} (1915-1999) a inventé une méthode pour obtenir une estimation de l'aire de surfaces à l'aide de probalilités.\\
+    C'est Stanislaw Ulam et John von Neumann qui donnèrent le nom de \textbf{Monte-Carlo} à cette méthode, en référence aux jeux de hasard pratiqués au casino de Monte-Carlo.
+\end{encadrecolore}
+
+\subsection*{Partie A - Principe de la méthode}
+\dleft{11cm}{
+    Dans un repère orthogonal $\repaff$, on considère la courbe d'équation $y=\sqrt{x}$ sur l'intervalle $\fif{0}{1}$ et le point $\pc{K}{1}{1}$.\\[.5em]
+    On choisit au hasard un point $M$ dans le carré $OIKJ$.\\
+    La probabilité que le point $M$ se trouve dans le domaine hachuré est 
+    $$p=\dfrac{\text{aire du domaine hachuré}}{\text{aire du carré OIKJ}}.$$
+}
+{
+    \def\xmin{-0.25}	\def\xmax{1.25}	\def\ymin{-0.25}	\def\ymax{1.25}
+    \def\F{\x^(.5)}
+    \begin{tikzpicture}[scale=3]
+        \fill[UGLiOrange] (0,0) -- plot[thick,domain=0:1,smooth,variable=\x] ({\x},{\F}) -- (0,1) --cycle;
+	    \repereal{\xmin}{\ymin}{\xmax}{\ymax}
+	    \clip	(\xmin,\ymin) rectangle (\xmax,\ymax);
+        \draw (1,1) node[above right] {K};
+	    \fill[pattern =north east lines, pattern color = UGLiDarkBlue] (0,0) -- plot[thick,domain=0:1,smooth,variable=\x] ({\x},{\F}) -- (1,0) --cycle;
+	    \draw[UGLiRed,ultra thick,domain=0:1,smooth,variable=\x]  plot ({\x},{\F});
+    \end{tikzpicture}
+}
+
+\begin{enumerate}
+    \item Donner l'aire du carré OIKJ.
+    \item Soit un point $\pc{M}{x}{y}$ du plan.
+    \begin{enumerate}
+        \item À quelles conditions portant sur $x$ et $y$ le point $M$ appartient-il au carré OIKJ ?
+        \item À quelles conditions portant sur $x$ et $y$ le point $M$ appartient-il au domaine hachuré ? 
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie B - Utilisation d'une fonction Python}
+À l'aide de l'activité Capytale \textbf{77c8-6837146}, donner une valeur approchée de l'aire du domaine hachuré.
+
+\subsection*{Partie C - Calcul exact de l'aide du domaine}
+\begin{enumerate}
+    \item Donner l'expression de l'aire, en unités d'aires, du domaine hachuré à l'aide d'une intégrale.
+    \item Démontrer que la fonction $F$ définie sur $\fio{0}{+\infty}$ par $F(x)=\dfrac{2}{3}x\sqrt{x}$ est une primitive sur $\oio{0}{+\infty}$ de la fonction $f$ définie sur $\fio{0}{+\infty}$ par $f(x)=\sqrt{x}$.
+    \item Calculer l'aire du domaine hachuré et comparer le résultat avec l'estimation obtenue à l'aide de la méthode de Monte-Carlo dans la \textbf{partie B}.
+\end{enumerate}
+\end{document}
+
+
