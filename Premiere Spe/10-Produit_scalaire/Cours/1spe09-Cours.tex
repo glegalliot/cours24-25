@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\setcounter{chapter}{8} % 1 de moins que le num de chapitre
+\setcounter{chapter}{9} % 1 de moins que le num de chapitre
 
 
 
@@ -151,15 +151,11 @@ Dans cette partie, on considère trois points $A$, $B$ et $C$ et $\vv{u}$ et $\v
   \draw[->, thick, UGLiBlue] (A) -- (U) node[below right] {$B$};
   % Vecteur v
   \draw[->, thick, UGLiRed] (A) -- (V) node[above] {$C$};
-  % Proj de v sur u
-  \draw[dashed] (V) -- (P);
-  %\draw[fill=black] (P) circle (0.04);
-  \node[below] at (P) {$H$};
+ 
   % Angle
   \draw (0.6,0) arc (0:45:0.6);
   \node at (0.8,0.25) {$\theta$};
-  % Codage angle droit
-  \draw (P) ++(-0.2,0) -- ++(0,0.2) -- ++(0.2,0);
+  
   % Point O
   \fill (A) circle (0.04);
   \node[below left] at (A) {$A$};
@@ -180,16 +176,11 @@ Dans cette partie, on considère trois points $A$, $B$ et $C$ et $\vv{u}$ et $\v
   \draw[->, thick, UGLiBlue] (A) -- (U) node[below right] {$B$};
   % Vecteur v
   \draw[->, thick, UGLiRed] (A) -- (V) node[above left] {$C$};
-  % Proj de v sur u (ici, sur O)
-  \draw[dashed] (V) -- (H);
-  \draw[dashed] (-2,0) -- (P);
-  \draw[fill=black] (P) circle (0.04);
-  \node[below] at (H) {$H$};
+  
   % Angle obtus
   \draw (0.6,0) arc (0:116.5:0.6);
   \node[above right] at (0.2,0.5) {$\theta$};
-  % Codage angle droit
-  \draw (H) ++(-0.2,0) -- ++(0,0.2) -- ++(0.2,0);
+  
   % Point O
   \fill (A) circle (0.04);
   \node[below left] at (A) {$A$};
